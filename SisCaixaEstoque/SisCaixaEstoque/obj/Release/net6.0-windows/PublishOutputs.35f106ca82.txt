@@ -1,0 +1,5 @@
+D:\Publicação Sistemas\SisCaixaEstoque\SisCaixaEstoque.exe
+D:\Publicação Sistemas\SisCaixaEstoque\SisCaixaEstoque.dll
+D:\Publicação Sistemas\SisCaixaEstoque\SisCaixaEstoque.deps.json
+D:\Publicação Sistemas\SisCaixaEstoque\SisCaixaEstoque.runtimeconfig.json
+D:\Publicação Sistemas\SisCaixaEstoque\SisCaixaEstoque.pdb
