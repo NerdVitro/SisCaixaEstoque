@@ -61,7 +61,7 @@ namespace SisCaixaEstoque.Formularios
             // Definir os tamanhos das colunas
             DgvProdutosVenda.Columns["PrecoProduto"].Width = 100;
         }
-        
+
         private void DgvProdutosVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Verifica se o clique ocorreu na coluna de botão e não no cabeçalho da coluna

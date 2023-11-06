@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             PnlPrincipal = new Panel();
             PnlTrabalho = new Panel();
             BtnFinalizar = new Button();
@@ -44,9 +45,12 @@
             PnlLateral = new Panel();
             button10 = new Button();
             button8 = new Button();
-            button9 = new Button();
-            button7 = new Button();
-            button6 = new Button();
+            BtnEstoque = new Button();
+            BtnCliente = new Button();
+            BtnCaixa = new Button();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
             PnlPrincipal.SuspendLayout();
             PnlTrabalho.SuspendLayout();
             GrpProduto.SuspendLayout();
@@ -66,6 +70,9 @@
             // 
             // PnlTrabalho
             // 
+            PnlTrabalho.Controls.Add(label6);
+            PnlTrabalho.Controls.Add(label5);
+            PnlTrabalho.Controls.Add(label4);
             PnlTrabalho.Controls.Add(BtnFinalizar);
             PnlTrabalho.Controls.Add(GrpProduto);
             PnlTrabalho.Controls.Add(BtnPesquisarCliente);
@@ -205,9 +212,9 @@
             PnlLateral.BorderStyle = BorderStyle.FixedSingle;
             PnlLateral.Controls.Add(button10);
             PnlLateral.Controls.Add(button8);
-            PnlLateral.Controls.Add(button9);
-            PnlLateral.Controls.Add(button7);
-            PnlLateral.Controls.Add(button6);
+            PnlLateral.Controls.Add(BtnEstoque);
+            PnlLateral.Controls.Add(BtnCliente);
+            PnlLateral.Controls.Add(BtnCaixa);
             PnlLateral.Dock = DockStyle.Left;
             PnlLateral.Location = new Point(0, 0);
             PnlLateral.Name = "PnlLateral";
@@ -232,39 +239,80 @@
             button8.Text = "Ger 4";
             button8.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // BtnEstoque
             // 
-            button9.Location = new Point(3, 101);
-            button9.Name = "button9";
-            button9.Size = new Size(43, 43);
-            button9.TabIndex = 15;
-            button9.Text = "Ger 3";
-            button9.UseVisualStyleBackColor = true;
+            BtnEstoque.Location = new Point(3, 101);
+            BtnEstoque.Name = "BtnEstoque";
+            BtnEstoque.Size = new Size(43, 43);
+            BtnEstoque.TabIndex = 15;
+            BtnEstoque.Text = "Ger 3";
+            BtnEstoque.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // BtnCliente
             // 
-            button7.Location = new Point(3, 52);
-            button7.Name = "button7";
-            button7.Size = new Size(43, 43);
-            button7.TabIndex = 14;
-            button7.Text = "Ger 2";
-            button7.UseVisualStyleBackColor = true;
+            BtnCliente.Location = new Point(3, 52);
+            BtnCliente.Name = "BtnCliente";
+            BtnCliente.Size = new Size(43, 43);
+            BtnCliente.TabIndex = 14;
+            BtnCliente.Text = "Ger 2";
+            BtnCliente.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // BtnCaixa
             // 
-            button6.Location = new Point(3, 3);
-            button6.Name = "button6";
-            button6.Size = new Size(43, 43);
-            button6.TabIndex = 13;
-            button6.Text = "Ger 1";
-            button6.UseVisualStyleBackColor = true;
+            BtnCaixa.Location = new Point(3, 3);
+            BtnCaixa.Name = "BtnCaixa";
+            BtnCaixa.Size = new Size(43, 43);
+            BtnCaixa.TabIndex = 13;
+            BtnCaixa.Text = "Ger 1";
+            BtnCaixa.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = SystemColors.Control;
+            label4.FlatStyle = FlatStyle.Flat;
+            label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(12, 685);
+            label4.Name = "label4";
+            label4.Size = new Size(270, 37);
+            label4.TabIndex = 23;
+            label4.Text = "Caixa Pendente: Vitor";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.FlatStyle = FlatStyle.Flat;
+            label5.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(255, 128, 0);
+            label5.Location = new Point(28, 709);
+            label5.Name = "label5";
+            label5.Size = new Size(259, 37);
+            label5.TabIndex = 24;
+            label5.Text = "Caixa Fechado: Vitor";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.FlatStyle = FlatStyle.Flat;
+            label6.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.Lime;
+            label6.Location = new Point(61, 731);
+            label6.Name = "label6";
+            label6.Size = new Size(240, 37);
+            label6.TabIndex = 25;
+            label6.Text = "Caixa Aberto: Vitor";
             // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(584, 758);
             Controls.Add(PnlPrincipal);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela Principal";
@@ -294,10 +342,13 @@
         private Label label1;
         private TextBox textBox1;
         private Panel PnlLateral;
-        private Button button7;
-        private Button button6;
+        private Button BtnCliente;
+        private Button BtnCaixa;
         private Button button8;
-        private Button button9;
+        private Button BtnEstoque;
         private Button button10;
+        private Label label6;
+        private Label label5;
+        private Label label4;
     }
 }

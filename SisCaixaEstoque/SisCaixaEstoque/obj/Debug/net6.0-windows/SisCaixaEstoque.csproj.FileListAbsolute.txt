@@ -17,3 +17,4 @@ D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debu
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.pdb
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.genruntimeconfig.cache
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\ref\SisCaixaEstoque.dll
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmBaseVazio.resources
