@@ -10,6 +10,27 @@
     <Compile Update="Formularios\Base\FrmBaseVazio.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Consultas\FrmConsultaFormaPagemento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\FrmCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\FrmCadastroEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\FrmCadastroFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\FrmCadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\FrmCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\FrmConfiguracao.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\FrmPagamento.cs">
       <SubType>Form</SubType>
     </Compile>

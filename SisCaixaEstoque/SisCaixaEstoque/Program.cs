@@ -18,9 +18,9 @@ namespace SisCaixaEstoque
             if (login.Resultado == DialogResult.OK)
             {
                 //Verificar se caixa já esta aberto e não foi fechado.
+                //MessageBox.Show("Caixa aberto!!!");
 
-                MessageBox.Show("Caixa aberto!!!");
-                Application.Run(new FrmPrincipal());
+                Application.Run(new FrmPrincipal(login.NivelUsuario));
             }
         }
     }

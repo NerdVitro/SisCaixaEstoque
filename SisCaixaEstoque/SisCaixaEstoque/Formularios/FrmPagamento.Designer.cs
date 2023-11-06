@@ -28,66 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button5 = new Button();
-            button3 = new Button();
-            textBox2 = new TextBox();
-            button2 = new Button();
-            button1 = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPagamento));
+            BtnFinalizar = new Button();
+            BtnConsultaFormaPagamento = new Button();
+            TxbFormaPagamento = new TextBox();
+            BtnAdicionarFormaPagamento = new Button();
             label1 = new Label();
             label3 = new Label();
             label2 = new Label();
             DgvPagamento = new DataGridView();
+            TxbValorPago = new TextBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)DgvPagamento).BeginInit();
             SuspendLayout();
             // 
-            // button5
+            // BtnFinalizar
             // 
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(292, 467);
-            button5.Name = "button5";
-            button5.Size = new Size(137, 61);
-            button5.TabIndex = 30;
-            button5.Text = "Finalizar";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            BtnFinalizar.FlatStyle = FlatStyle.Flat;
+            BtnFinalizar.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnFinalizar.Location = new Point(292, 467);
+            BtnFinalizar.Name = "BtnFinalizar";
+            BtnFinalizar.Size = new Size(137, 61);
+            BtnFinalizar.TabIndex = 30;
+            BtnFinalizar.Text = "Finalizar";
+            BtnFinalizar.UseVisualStyleBackColor = true;
+            BtnFinalizar.Click += BtnFinalizar_Click;
             // 
-            // button3
+            // BtnConsultaFormaPagamento
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(354, 124);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 29;
-            button3.Text = "Pesquisar";
-            button3.UseVisualStyleBackColor = true;
+            BtnConsultaFormaPagamento.FlatStyle = FlatStyle.Flat;
+            BtnConsultaFormaPagamento.Image = (Image)resources.GetObject("BtnConsultaFormaPagamento.Image");
+            BtnConsultaFormaPagamento.Location = new Point(363, 95);
+            BtnConsultaFormaPagamento.Name = "BtnConsultaFormaPagamento";
+            BtnConsultaFormaPagamento.Size = new Size(30, 30);
+            BtnConsultaFormaPagamento.TabIndex = 29;
+            BtnConsultaFormaPagamento.UseVisualStyleBackColor = true;
+            BtnConsultaFormaPagamento.Click += BtnConsultaFormaPagamento_Click;
             // 
-            // textBox2
+            // TxbFormaPagamento
             // 
-            textBox2.Location = new Point(12, 95);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(417, 23);
-            textBox2.TabIndex = 26;
+            TxbFormaPagamento.Location = new Point(12, 95);
+            TxbFormaPagamento.Name = "TxbFormaPagamento";
+            TxbFormaPagamento.Size = new Size(345, 23);
+            TxbFormaPagamento.TabIndex = 26;
             // 
-            // button2
+            // BtnAdicionarFormaPagamento
             // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(12, 124);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 28;
-            button2.Text = "Remover";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(93, 124);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 27;
-            button1.Text = "Adicionar";
-            button1.UseVisualStyleBackColor = true;
+            BtnAdicionarFormaPagamento.FlatStyle = FlatStyle.Flat;
+            BtnAdicionarFormaPagamento.Image = (Image)resources.GetObject("BtnAdicionarFormaPagamento.Image");
+            BtnAdicionarFormaPagamento.Location = new Point(399, 95);
+            BtnAdicionarFormaPagamento.Name = "BtnAdicionarFormaPagamento";
+            BtnAdicionarFormaPagamento.Size = new Size(30, 30);
+            BtnAdicionarFormaPagamento.TabIndex = 27;
+            BtnAdicionarFormaPagamento.UseVisualStyleBackColor = true;
+            BtnAdicionarFormaPagamento.Click += BtnAdicionarFormaPagamento_Click;
             // 
             // label1
             // 
@@ -126,7 +120,7 @@
             DgvPagamento.AllowUserToResizeRows = false;
             DgvPagamento.BackgroundColor = SystemColors.ButtonFace;
             DgvPagamento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvPagamento.Location = new Point(12, 153);
+            DgvPagamento.Location = new Point(12, 175);
             DgvPagamento.MultiSelect = false;
             DgvPagamento.Name = "DgvPagamento";
             DgvPagamento.ReadOnly = true;
@@ -134,26 +128,50 @@
             DgvPagamento.RowTemplate.Height = 25;
             DgvPagamento.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvPagamento.ShowCellErrors = false;
-            DgvPagamento.Size = new Size(417, 306);
+            DgvPagamento.Size = new Size(417, 284);
             DgvPagamento.TabIndex = 31;
+            DgvPagamento.CellContentClick += DgvPagamento_CellContentClick;
+            // 
+            // TxbValorPago
+            // 
+            TxbValorPago.Location = new Point(12, 139);
+            TxbValorPago.Name = "TxbValorPago";
+            TxbValorPago.PlaceholderText = "00,00";
+            TxbValorPago.Size = new Size(100, 23);
+            TxbValorPago.TabIndex = 32;
+            TxbValorPago.TextAlign = HorizontalAlignment.Right;
+            TxbValorPago.KeyPress += TxbValorPago_KeyPress;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 122);
+            label4.Name = "label4";
+            label4.Size = new Size(63, 15);
+            label4.TabIndex = 33;
+            label4.Text = "Valor Pago";
             // 
             // FrmPagamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(442, 547);
+            Controls.Add(label4);
+            Controls.Add(TxbValorPago);
             Controls.Add(DgvPagamento);
-            Controls.Add(button5);
-            Controls.Add(button3);
-            Controls.Add(textBox2);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(BtnFinalizar);
+            Controls.Add(BtnConsultaFormaPagamento);
+            Controls.Add(TxbFormaPagamento);
+            Controls.Add(BtnAdicionarFormaPagamento);
             Controls.Add(label1);
             Controls.Add(label3);
             Controls.Add(label2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmPagamento";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmPagamento";
+            Text = "Tela de Pagamento";
             ((System.ComponentModel.ISupportInitialize)DgvPagamento).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -161,14 +179,15 @@
 
         #endregion
 
-        private Button button5;
-        private Button button3;
-        private TextBox textBox2;
-        private Button button2;
-        private Button button1;
+        private Button BtnFinalizar;
+        private Button BtnConsultaFormaPagamento;
+        private TextBox TxbFormaPagamento;
+        private Button BtnAdicionarFormaPagamento;
         private Label label1;
         private Label label3;
         private Label label2;
         private DataGridView DgvPagamento;
+        private TextBox TxbValorPago;
+        private Label label4;
     }
 }

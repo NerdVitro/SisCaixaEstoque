@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             PnlPrincipal = new Panel();
             PnlTrabalho = new Panel();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
             BtnFinalizar = new Button();
             GrpProduto = new GroupBox();
             label3 = new Label();
@@ -43,14 +46,12 @@
             label1 = new Label();
             textBox1 = new TextBox();
             PnlLateral = new Panel();
-            button10 = new Button();
-            button8 = new Button();
+            BtnSair = new Button();
+            BtnConfiguracao = new Button();
             BtnEstoque = new Button();
+            BtnProduto = new Button();
             BtnCliente = new Button();
             BtnCaixa = new Button();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
             PnlPrincipal.SuspendLayout();
             PnlTrabalho.SuspendLayout();
             GrpProduto.SuspendLayout();
@@ -84,6 +85,45 @@
             PnlTrabalho.Size = new Size(531, 758);
             PnlTrabalho.TabIndex = 1;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.FlatStyle = FlatStyle.Flat;
+            label6.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.Lime;
+            label6.Location = new Point(61, 731);
+            label6.Name = "label6";
+            label6.Size = new Size(240, 37);
+            label6.TabIndex = 25;
+            label6.Text = "Caixa Aberto: Vitor";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.FlatStyle = FlatStyle.Flat;
+            label5.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(255, 128, 0);
+            label5.Location = new Point(28, 709);
+            label5.Name = "label5";
+            label5.Size = new Size(259, 37);
+            label5.TabIndex = 24;
+            label5.Text = "Caixa Fechado: Vitor";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = SystemColors.Control;
+            label4.FlatStyle = FlatStyle.Flat;
+            label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(12, 685);
+            label4.Name = "label4";
+            label4.Size = new Size(270, 37);
+            label4.TabIndex = 23;
+            label4.Text = "Caixa Pendente: Vitor";
+            // 
             // BtnFinalizar
             // 
             BtnFinalizar.FlatStyle = FlatStyle.Flat;
@@ -104,6 +144,7 @@
             GrpProduto.Controls.Add(BtnPesquisarProduto);
             GrpProduto.Controls.Add(textBox2);
             GrpProduto.Controls.Add(BtnAdicinarProduto);
+            GrpProduto.ForeColor = Color.Black;
             GrpProduto.Location = new Point(6, 76);
             GrpProduto.Name = "GrpProduto";
             GrpProduto.Size = new Size(510, 603);
@@ -154,11 +195,11 @@
             // BtnPesquisarProduto
             // 
             BtnPesquisarProduto.FlatStyle = FlatStyle.Flat;
-            BtnPesquisarProduto.Location = new Point(429, 50);
+            BtnPesquisarProduto.Image = (Image)resources.GetObject("BtnPesquisarProduto.Image");
+            BtnPesquisarProduto.Location = new Point(434, 21);
             BtnPesquisarProduto.Name = "BtnPesquisarProduto";
-            BtnPesquisarProduto.Size = new Size(75, 23);
+            BtnPesquisarProduto.Size = new Size(30, 30);
             BtnPesquisarProduto.TabIndex = 9;
-            BtnPesquisarProduto.Text = "Pesquisar";
             BtnPesquisarProduto.UseVisualStyleBackColor = true;
             BtnPesquisarProduto.Click += BtnPesquisarProduto_Click;
             // 
@@ -166,35 +207,35 @@
             // 
             textBox2.Location = new Point(6, 21);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(498, 23);
+            textBox2.Size = new Size(422, 23);
             textBox2.TabIndex = 5;
             // 
             // BtnAdicinarProduto
             // 
             BtnAdicinarProduto.FlatStyle = FlatStyle.Flat;
-            BtnAdicinarProduto.Location = new Point(6, 50);
+            BtnAdicinarProduto.Image = (Image)resources.GetObject("BtnAdicinarProduto.Image");
+            BtnAdicinarProduto.Location = new Point(474, 21);
             BtnAdicinarProduto.Name = "BtnAdicinarProduto";
-            BtnAdicinarProduto.Size = new Size(75, 23);
+            BtnAdicinarProduto.Size = new Size(30, 30);
             BtnAdicinarProduto.TabIndex = 7;
-            BtnAdicinarProduto.Text = "Adicionar";
             BtnAdicinarProduto.UseVisualStyleBackColor = true;
             BtnAdicinarProduto.Click += BtnAdicinarProduto_Click;
             // 
             // BtnPesquisarCliente
             // 
             BtnPesquisarCliente.FlatStyle = FlatStyle.Flat;
-            BtnPesquisarCliente.Location = new Point(441, 37);
+            BtnPesquisarCliente.Image = (Image)resources.GetObject("BtnPesquisarCliente.Image");
+            BtnPesquisarCliente.Location = new Point(487, 37);
             BtnPesquisarCliente.Name = "BtnPesquisarCliente";
-            BtnPesquisarCliente.Size = new Size(75, 23);
+            BtnPesquisarCliente.Size = new Size(30, 30);
             BtnPesquisarCliente.TabIndex = 10;
-            BtnPesquisarCliente.Text = "Pesquisar";
             BtnPesquisarCliente.UseVisualStyleBackColor = true;
             BtnPesquisarCliente.Click += BtnPesquisarCliente_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 19);
+            label1.Location = new Point(12, 19);
             label1.Name = "label1";
             label1.Size = new Size(44, 15);
             label1.TabIndex = 2;
@@ -202,17 +243,18 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(6, 37);
+            textBox1.Location = new Point(12, 37);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(429, 23);
+            textBox1.Size = new Size(469, 23);
             textBox1.TabIndex = 1;
             // 
             // PnlLateral
             // 
             PnlLateral.BorderStyle = BorderStyle.FixedSingle;
-            PnlLateral.Controls.Add(button10);
-            PnlLateral.Controls.Add(button8);
+            PnlLateral.Controls.Add(BtnSair);
+            PnlLateral.Controls.Add(BtnConfiguracao);
             PnlLateral.Controls.Add(BtnEstoque);
+            PnlLateral.Controls.Add(BtnProduto);
             PnlLateral.Controls.Add(BtnCliente);
             PnlLateral.Controls.Add(BtnCaixa);
             PnlLateral.Dock = DockStyle.Left;
@@ -221,89 +263,71 @@
             PnlLateral.Size = new Size(53, 758);
             PnlLateral.TabIndex = 0;
             // 
-            // button10
+            // BtnSair
             // 
-            button10.Location = new Point(3, 199);
-            button10.Name = "button10";
-            button10.Size = new Size(43, 43);
-            button10.TabIndex = 17;
-            button10.Text = "Ger 5";
-            button10.UseVisualStyleBackColor = true;
+            BtnSair.FlatStyle = FlatStyle.Flat;
+            BtnSair.Image = (Image)resources.GetObject("BtnSair.Image");
+            BtnSair.Location = new Point(3, 708);
+            BtnSair.Name = "BtnSair";
+            BtnSair.Size = new Size(43, 43);
+            BtnSair.TabIndex = 18;
+            BtnSair.UseVisualStyleBackColor = true;
+            BtnSair.Click += BtnSair_Click;
             // 
-            // button8
+            // BtnConfiguracao
             // 
-            button8.Location = new Point(3, 150);
-            button8.Name = "button8";
-            button8.Size = new Size(43, 43);
-            button8.TabIndex = 16;
-            button8.Text = "Ger 4";
-            button8.UseVisualStyleBackColor = true;
+            BtnConfiguracao.FlatStyle = FlatStyle.Flat;
+            BtnConfiguracao.Image = (Image)resources.GetObject("BtnConfiguracao.Image");
+            BtnConfiguracao.Location = new Point(3, 199);
+            BtnConfiguracao.Name = "BtnConfiguracao";
+            BtnConfiguracao.Size = new Size(43, 43);
+            BtnConfiguracao.TabIndex = 17;
+            BtnConfiguracao.UseVisualStyleBackColor = true;
+            BtnConfiguracao.Click += BtnConfiguracao_Click;
             // 
             // BtnEstoque
             // 
-            BtnEstoque.Location = new Point(3, 101);
+            BtnEstoque.FlatStyle = FlatStyle.Flat;
+            BtnEstoque.Image = (Image)resources.GetObject("BtnEstoque.Image");
+            BtnEstoque.Location = new Point(3, 150);
             BtnEstoque.Name = "BtnEstoque";
             BtnEstoque.Size = new Size(43, 43);
-            BtnEstoque.TabIndex = 15;
-            BtnEstoque.Text = "Ger 3";
+            BtnEstoque.TabIndex = 16;
             BtnEstoque.UseVisualStyleBackColor = true;
+            BtnEstoque.Click += BtnEstoque_Click;
+            // 
+            // BtnProduto
+            // 
+            BtnProduto.FlatStyle = FlatStyle.Flat;
+            BtnProduto.Image = (Image)resources.GetObject("BtnProduto.Image");
+            BtnProduto.Location = new Point(3, 101);
+            BtnProduto.Name = "BtnProduto";
+            BtnProduto.Size = new Size(43, 43);
+            BtnProduto.TabIndex = 15;
+            BtnProduto.UseVisualStyleBackColor = true;
+            BtnProduto.Click += BtnProduto_Click;
             // 
             // BtnCliente
             // 
+            BtnCliente.FlatStyle = FlatStyle.Flat;
+            BtnCliente.Image = (Image)resources.GetObject("BtnCliente.Image");
             BtnCliente.Location = new Point(3, 52);
             BtnCliente.Name = "BtnCliente";
             BtnCliente.Size = new Size(43, 43);
             BtnCliente.TabIndex = 14;
-            BtnCliente.Text = "Ger 2";
             BtnCliente.UseVisualStyleBackColor = true;
+            BtnCliente.Click += BtnCliente_Click;
             // 
             // BtnCaixa
             // 
+            BtnCaixa.FlatStyle = FlatStyle.Flat;
+            BtnCaixa.Image = (Image)resources.GetObject("BtnCaixa.Image");
             BtnCaixa.Location = new Point(3, 3);
             BtnCaixa.Name = "BtnCaixa";
             BtnCaixa.Size = new Size(43, 43);
             BtnCaixa.TabIndex = 13;
-            BtnCaixa.Text = "Ger 1";
             BtnCaixa.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.Control;
-            label4.FlatStyle = FlatStyle.Flat;
-            label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.Red;
-            label4.Location = new Point(12, 685);
-            label4.Name = "label4";
-            label4.Size = new Size(270, 37);
-            label4.TabIndex = 23;
-            label4.Text = "Caixa Pendente: Vitor";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.FlatStyle = FlatStyle.Flat;
-            label5.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(255, 128, 0);
-            label5.Location = new Point(28, 709);
-            label5.Name = "label5";
-            label5.Size = new Size(259, 37);
-            label5.TabIndex = 24;
-            label5.Text = "Caixa Fechado: Vitor";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.FlatStyle = FlatStyle.Flat;
-            label6.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.Lime;
-            label6.Location = new Point(61, 731);
-            label6.Name = "label6";
-            label6.Size = new Size(240, 37);
-            label6.TabIndex = 25;
-            label6.Text = "Caixa Aberto: Vitor";
+            BtnCaixa.Click += BtnCaixa_Click;
             // 
             // FrmPrincipal
             // 
@@ -313,6 +337,8 @@
             ClientSize = new Size(584, 758);
             Controls.Add(PnlPrincipal);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela Principal";
@@ -344,11 +370,12 @@
         private Panel PnlLateral;
         private Button BtnCliente;
         private Button BtnCaixa;
-        private Button button8;
         private Button BtnEstoque;
-        private Button button10;
+        private Button BtnProduto;
+        private Button BtnConfiguracao;
         private Label label6;
         private Label label5;
         private Label label4;
+        private Button BtnSair;
     }
 }

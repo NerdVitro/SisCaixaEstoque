@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBaseVazio));
             SuspendLayout();
             // 
             // FrmBaseVazio
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
             Name = "FrmBaseVazio";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmBaseVazio";
             ResumeLayout(false);
         }
 

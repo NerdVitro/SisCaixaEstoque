@@ -9,6 +9,11 @@
       "SisCaixaEstoque/1.0.0": {
         "runtime": {
           "SisCaixaEstoque.dll": {}
+        },
+        "resources": {
+          "pt-BR/SisCaixaEstoque.resources.dll": {
+            "locale": "pt-BR"
+          }
         }
       }
     }
