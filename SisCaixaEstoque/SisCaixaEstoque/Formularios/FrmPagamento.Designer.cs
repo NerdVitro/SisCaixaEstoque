@@ -56,11 +56,12 @@
             // 
             // BtnConsultaFormaPagamento
             // 
+            BtnConsultaFormaPagamento.FlatAppearance.BorderSize = 0;
             BtnConsultaFormaPagamento.FlatStyle = FlatStyle.Flat;
             BtnConsultaFormaPagamento.Image = (Image)resources.GetObject("BtnConsultaFormaPagamento.Image");
-            BtnConsultaFormaPagamento.Location = new Point(363, 95);
+            BtnConsultaFormaPagamento.Location = new Point(406, 95);
             BtnConsultaFormaPagamento.Name = "BtnConsultaFormaPagamento";
-            BtnConsultaFormaPagamento.Size = new Size(30, 30);
+            BtnConsultaFormaPagamento.Size = new Size(23, 23);
             BtnConsultaFormaPagamento.TabIndex = 29;
             BtnConsultaFormaPagamento.UseVisualStyleBackColor = true;
             BtnConsultaFormaPagamento.Click += BtnConsultaFormaPagamento_Click;
@@ -69,14 +70,14 @@
             // 
             TxbFormaPagamento.Location = new Point(12, 95);
             TxbFormaPagamento.Name = "TxbFormaPagamento";
-            TxbFormaPagamento.Size = new Size(345, 23);
+            TxbFormaPagamento.Size = new Size(388, 23);
             TxbFormaPagamento.TabIndex = 26;
             // 
             // BtnAdicionarFormaPagamento
             // 
             BtnAdicionarFormaPagamento.FlatStyle = FlatStyle.Flat;
             BtnAdicionarFormaPagamento.Image = (Image)resources.GetObject("BtnAdicionarFormaPagamento.Image");
-            BtnAdicionarFormaPagamento.Location = new Point(399, 95);
+            BtnAdicionarFormaPagamento.Location = new Point(118, 134);
             BtnAdicionarFormaPagamento.Name = "BtnAdicionarFormaPagamento";
             BtnAdicionarFormaPagamento.Size = new Size(30, 30);
             BtnAdicionarFormaPagamento.TabIndex = 27;

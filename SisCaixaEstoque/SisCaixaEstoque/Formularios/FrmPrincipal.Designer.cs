@@ -66,7 +66,7 @@
             PnlPrincipal.Dock = DockStyle.Fill;
             PnlPrincipal.Location = new Point(0, 0);
             PnlPrincipal.Name = "PnlPrincipal";
-            PnlPrincipal.Size = new Size(584, 758);
+            PnlPrincipal.Size = new Size(580, 758);
             PnlPrincipal.TabIndex = 1;
             // 
             // PnlTrabalho
@@ -82,7 +82,7 @@
             PnlTrabalho.Dock = DockStyle.Fill;
             PnlTrabalho.Location = new Point(53, 0);
             PnlTrabalho.Name = "PnlTrabalho";
-            PnlTrabalho.Size = new Size(531, 758);
+            PnlTrabalho.Size = new Size(527, 758);
             PnlTrabalho.TabIndex = 1;
             // 
             // label6
@@ -194,11 +194,12 @@
             // 
             // BtnPesquisarProduto
             // 
+            BtnPesquisarProduto.FlatAppearance.BorderSize = 0;
             BtnPesquisarProduto.FlatStyle = FlatStyle.Flat;
             BtnPesquisarProduto.Image = (Image)resources.GetObject("BtnPesquisarProduto.Image");
             BtnPesquisarProduto.Location = new Point(434, 21);
             BtnPesquisarProduto.Name = "BtnPesquisarProduto";
-            BtnPesquisarProduto.Size = new Size(30, 30);
+            BtnPesquisarProduto.Size = new Size(23, 23);
             BtnPesquisarProduto.TabIndex = 9;
             BtnPesquisarProduto.UseVisualStyleBackColor = true;
             BtnPesquisarProduto.Click += BtnPesquisarProduto_Click;
@@ -218,16 +219,18 @@
             BtnAdicinarProduto.Name = "BtnAdicinarProduto";
             BtnAdicinarProduto.Size = new Size(30, 30);
             BtnAdicinarProduto.TabIndex = 7;
+            BtnAdicinarProduto.TextImageRelation = TextImageRelation.ImageAboveText;
             BtnAdicinarProduto.UseVisualStyleBackColor = true;
             BtnAdicinarProduto.Click += BtnAdicinarProduto_Click;
             // 
             // BtnPesquisarCliente
             // 
+            BtnPesquisarCliente.FlatAppearance.BorderSize = 0;
             BtnPesquisarCliente.FlatStyle = FlatStyle.Flat;
             BtnPesquisarCliente.Image = (Image)resources.GetObject("BtnPesquisarCliente.Image");
             BtnPesquisarCliente.Location = new Point(487, 37);
             BtnPesquisarCliente.Name = "BtnPesquisarCliente";
-            BtnPesquisarCliente.Size = new Size(30, 30);
+            BtnPesquisarCliente.Size = new Size(23, 23);
             BtnPesquisarCliente.TabIndex = 10;
             BtnPesquisarCliente.UseVisualStyleBackColor = true;
             BtnPesquisarCliente.Click += BtnPesquisarCliente_Click;
@@ -334,8 +337,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(584, 758);
+            ClientSize = new Size(580, 758);
             Controls.Add(PnlPrincipal);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;

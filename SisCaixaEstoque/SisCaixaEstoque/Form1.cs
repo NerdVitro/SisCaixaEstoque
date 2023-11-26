@@ -13,6 +13,14 @@ namespace SisCaixaEstoque
         {
             InitializeComponent();
             _ObjValidacaoLogin = new();
+            TxbLogin.Text = ValidacaoLogin.LerNomeDoArquivoTemporario();
+        }
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TxbLogin.Text))
+            {
+                TxbSenha.Focus();
+            }
         }
 
         private void BtnEntrar_Click(object sender, EventArgs e)
@@ -26,7 +34,8 @@ namespace SisCaixaEstoque
                 }
                 else
                 {
-                    NivelUsuario = _ObjValidacaoLogin.GetNivelAcesso(TxbLogin.Text, TxbSenha.Text);
+                    NivelUsuario = ValidacaoLogin.GetNivelAcesso(TxbLogin.Text, TxbSenha.Text);
+                    ValidacaoLogin.SalvarNomeEmArquivoTemporario(ChbLembrarUsuario.Checked, TxbLogin.Text);
                     Resultado = DialogResult.OK;
                     this.Close();
                 }

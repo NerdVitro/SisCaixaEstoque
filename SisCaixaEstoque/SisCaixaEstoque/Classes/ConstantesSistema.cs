@@ -8,6 +8,7 @@ namespace SisCaixaEstoque.Classes
 {
     static class ConstantesSistema
     {
-        const string DataSource = "MinhaBaseDeDados.db";
+        public const string DataSource = "ArquivoBanco.db";
+        public const string NomeArquivoSalvarUsuario = "nome_usuario.txt";
     }
 }

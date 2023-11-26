@@ -41,16 +41,34 @@ namespace SisCaixaEstoque.Classes
 			}
         }
         
-        public NivelAcesso GetNivelAcesso(string parLogin, string parSenha)
+        public static NivelAcesso GetNivelAcesso(string parLogin, string parSenha)
         {
             try
             {
-                return NivelAcesso.AcessoTotal;
+                return (NivelAcesso)(new BncValidarLogin()).GetNivelAcesso(parLogin, parSenha);
             }
             catch (Exception)
             {
                 throw;
             }
+        }
+
+        public static void SalvarNomeEmArquivoTemporario(bool realizar,string nome)
+        {
+            if (realizar)
+            {
+                string caminhoArquivo = Path.Combine(Path.GetTempPath(), ConstantesSistema.NomeArquivoSalvarUsuario);
+                File.WriteAllText(caminhoArquivo, nome);
+            }
+        }
+        public static string LerNomeDoArquivoTemporario()
+        {
+            string caminhoArquivo = Path.Combine(Path.GetTempPath(), ConstantesSistema.NomeArquivoSalvarUsuario);
+            if (File.Exists(caminhoArquivo))
+            {
+                return File.ReadAllText(caminhoArquivo);
+            }
+            return string.Empty;
         }
 
         public enum NivelAcesso

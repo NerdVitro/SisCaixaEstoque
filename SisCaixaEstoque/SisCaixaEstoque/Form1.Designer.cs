@@ -148,6 +148,7 @@
             LklEsqueceuSenha.TabIndex = 4;
             LklEsqueceuSenha.TabStop = true;
             LklEsqueceuSenha.Text = "Esqueceu a senha?";
+            LklEsqueceuSenha.Visible = false;
             // 
             // label1
             // 
@@ -212,6 +213,7 @@
             MinimizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
+            Shown += Form1_Shown;
             PnlPrincipal.ResumeLayout(false);
             PnlImagem.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

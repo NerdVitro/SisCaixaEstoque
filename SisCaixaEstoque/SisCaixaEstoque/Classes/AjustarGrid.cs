@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace SisCaixaEstoque.Classes
 {
-    public static class AjustarGrid
+    public class AjustarGrid
     {
+        //public void AdicionarColuna()
+        //{
 
+        //}
 
-
-        public static void Ajustar(ref DataGridView parDataGridView)
+        public void Ajustar(ref DataGridView parDataGridView, object parDataSource)
         {
             parDataGridView.AllowUserToDeleteRows = false;
             parDataGridView.AllowUserToOrderColumns = false;
@@ -19,7 +21,9 @@ namespace SisCaixaEstoque.Classes
             parDataGridView.AllowUserToAddRows = false;
             parDataGridView.AllowDrop = false;
 
+            parDataGridView.RowHeadersVisible = false;
 
+            parDataGridView.DataSource = parDataSource;
         }
     }
 }
