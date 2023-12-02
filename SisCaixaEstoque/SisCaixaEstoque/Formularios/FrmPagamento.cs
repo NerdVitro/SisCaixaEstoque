@@ -80,11 +80,11 @@ namespace SisCaixaEstoque.Formularios
             try
             {
 
-                FrmConsultaFormaPagemento consulta = new FrmConsultaFormaPagemento(TxbFormaPagamento.Text);
-                consulta.ShowDialog();
+                //FrmConsultaFormaPagemento consulta = new FrmConsultaFormaPagemento(TxbFormaPagamento.Text);
+                //consulta.ShowDialog();
 
-                TxbFormaPagamento.Text = consulta.NomeFormaPagamento;
-                IDFormaPgamento = consulta.IDFormaPgamento;
+                //TxbFormaPagamento.Text = consulta.NomeFormaPagamento;
+                //IDFormaPgamento = consulta.IDFormaPgamento;
             }
             catch (Exception ex)
             {

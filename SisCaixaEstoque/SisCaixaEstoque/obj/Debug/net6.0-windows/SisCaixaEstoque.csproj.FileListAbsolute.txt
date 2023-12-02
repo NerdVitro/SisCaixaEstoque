@@ -44,3 +44,7 @@ D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\bin\Debu
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.csproj.CopyComplete
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmConsultarBase.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Consultas.FrmConsultarCliente.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmBaseDaBase.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmCadastroBase.resources

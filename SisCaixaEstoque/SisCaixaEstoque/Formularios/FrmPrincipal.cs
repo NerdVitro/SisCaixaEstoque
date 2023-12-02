@@ -1,4 +1,5 @@
 ﻿using SisCaixaEstoque.Classes;
+using SisCaixaEstoque.Formularios.Consultas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -93,7 +94,7 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
-
+                new FrmConsultarCliente().ShowDialog();
             }
             catch (Exception ex)
             {

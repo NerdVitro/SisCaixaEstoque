@@ -12,12 +12,13 @@ namespace SisCaixaEstoque.Banco
     {
         public static void Criar()
         {
-            using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+            try
             {
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
                 conexao.Open();
 
                 // Comando SQL com parâmetros
-                string sql = @"CREATE TABLE USUARIO (
+                string sql = @"CREATE TABLE IF NOT EXISTSUSUARIO (
                                     IDUSUARIO INTEGER PRIMARY KEY AUTOINCREMENT,
                                     NOME TEXT NOT NULL,
                                     SENHA TEXT NOT NULL,
@@ -32,6 +33,10 @@ namespace SisCaixaEstoque.Banco
                     comando.ExecuteNonQuery();
                 }
                 conexao.Close();
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

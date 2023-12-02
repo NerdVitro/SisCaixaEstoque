@@ -7,7 +7,13 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Base\FrmBaseDaBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Base\FrmBaseVazio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Base\FrmCadastroBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Base\FrmConsultarBase.cs">
@@ -19,16 +25,16 @@
     <Compile Update="Formularios\Consultas\FrmConsultarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\FrmCadastroCliente.cs">
+    <Compile Update="Formularios\Cadastros\FrmCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\FrmCadastroEstoque.cs">
+    <Compile Update="Formularios\Cadastros\FrmCadastroEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\FrmCadastroFormaPagamento.cs">
+    <Compile Update="Formularios\Cadastros\FrmCadastroFormaPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\FrmCadastroProduto.cs">
+    <Compile Update="Formularios\Cadastros\FrmCadastroProduto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\FrmCaixa.cs">

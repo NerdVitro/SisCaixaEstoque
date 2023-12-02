@@ -72,6 +72,7 @@
             // 
             // BtnAdicinar
             // 
+            BtnAdicinar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             BtnAdicinar.FlatStyle = FlatStyle.Flat;
             BtnAdicinar.Image = (Image)resources.GetObject("BtnAdicinar.Image");
             BtnAdicinar.Location = new Point(35, 56);
@@ -83,6 +84,7 @@
             // 
             // BtnConsultar
             // 
+            BtnConsultar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             BtnConsultar.FlatAppearance.BorderSize = 0;
             BtnConsultar.FlatStyle = FlatStyle.Flat;
             BtnConsultar.Image = (Image)resources.GetObject("BtnConsultar.Image");
@@ -143,13 +145,12 @@
         }
 
         #endregion
-
-        private Panel PnlTopo;
         private Panel PnlGrid;
         private Button BtnConsultar;
         private Panel PnelLateral;
-        private Panel PnlFiltros;
         private Button BtnAdicinar;
         private DataGridView DgvPagamento;
+        public Panel PnlFiltros;
+        public Panel PnlTopo;
     }
 }

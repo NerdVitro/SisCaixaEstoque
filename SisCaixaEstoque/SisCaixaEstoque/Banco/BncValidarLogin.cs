@@ -9,36 +9,30 @@ namespace SisCaixaEstoque.Banco
         {
 			try
 			{
-                using (SQLiteConnection conexao = new("Data Source="+ ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
 
-                    // Criar o objeto do comando
-                    using (SQLiteCommand comando = new("SELECT name FROM sqlite_master WHERE type='table' AND name='USUARIO'", conexao))
+                // Criar o objeto do comando
+                using (SQLiteCommand comando = new("SELECT name FROM sqlite_master WHERE type='table' AND name='USUARIO'", conexao))
+                {
+                    if (comando.ExecuteScalar() == null)
                     {
-                        if (comando.ExecuteScalar() == null)
+                        if (parLogin == "admin" && parSenha == "123")
                         {
-                            if (parLogin == "admin" && parSenha == "123")
-                            {
-                                BncCriarBanco.Criar();
-                                return true;
-                            }
-                        }
-                        else
-                        {
-                            using (SQLiteCommand comando1 = new("SELECT SENHA FROM USUARIO WHERE NOME = @NOME;", conexao))
-                            {
-                                comando1.Parameters.AddWithValue("@NOME", parLogin);
-                                using SQLiteDataReader leitor = comando1.ExecuteReader();
-                                if (leitor.Read())
-                                    return Convert.ToString(leitor["SENHA"]) == parSenha;
-                            }
+                            BncCriarBanco.Criar();
+                            return true;
                         }
                     }
-
-
-                    conexao.Close();
+                    else
+                    {
+                        using SQLiteCommand comando1 = new("SELECT SENHA FROM USUARIO WHERE NOME = @NOME;", conexao);
+                        comando1.Parameters.AddWithValue("@NOME", parLogin);
+                        using SQLiteDataReader leitor = comando1.ExecuteReader();
+                        if (leitor.Read())
+                            return Convert.ToString(leitor["SENHA"]) == parSenha;
+                    }
                 }
+                conexao.Close();
                 return false;
 			}
 			catch (Exception)

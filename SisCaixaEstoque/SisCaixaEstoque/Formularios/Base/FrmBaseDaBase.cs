@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SisCaixaEstoque.Formularios
+namespace SisCaixaEstoque.Formularios.Base
 {
-    public partial class FrmCadastroCliente : Form
+    public partial class FrmBaseDaBase : Form
     {
-        public FrmCadastroCliente()
+        public FrmBaseDaBase()
         {
             InitializeComponent();
         }

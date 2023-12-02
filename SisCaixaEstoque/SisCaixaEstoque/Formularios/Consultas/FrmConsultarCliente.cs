@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SisCaixaEstoque.Formularios.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SisCaixaEstoque.Formularios.Consultas
 {
-    public partial class FrmConsultarCliente : Form
+    public partial class FrmConsultarCliente : FrmConsultarBase
     {
         public FrmConsultarCliente()
         {
