@@ -31,16 +31,5 @@ namespace SisCaixaEstoque.Formularios
                 MessageBox.Show(ex.Message);
             }
         }
-        public override void Sair()
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
     }
 }

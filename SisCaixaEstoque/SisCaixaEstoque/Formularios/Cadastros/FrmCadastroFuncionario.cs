@@ -1,4 +1,5 @@
-﻿using SisCaixaEstoque.Formularios.Base;
+﻿using SisCaixaEstoque.Banco.Cadastros;
+using SisCaixaEstoque.Formularios.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,47 @@ namespace SisCaixaEstoque.Formularios.Cadastros
         public FrmCadastroFuncionario()
         {
             InitializeComponent();
+        }
+        public bool Validar()
+        {
+            try
+            {
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public override void Salvar()
+        {
+            try
+            {
+                if (Validar())
+                {
+                    BncInserts.SalvarFuncionario(
+                        TxbNomeCompleto.Text,
+                        TxbCPFCNPJ.Text,
+                        TxbEndereco.Text,
+                        TxbEndereco.Text,
+                        TxbEstado.Text,
+                        TxbEmail.Text,
+                        TxbTelefone.Text,
+                        TxbCelular.Text,
+                        TxbWhatsapp.Text
+                        );
+                    if (CkbCriarUsuario.Checked)
+                    {
+                        BncInserts.SalvarUsuario(TxbNomeCompleto.Text.Split(" ")[0]);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

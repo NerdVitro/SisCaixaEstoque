@@ -39,7 +39,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmConfiguracao";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmConfiguracao";
+            Text = "Configuração";
             ResumeLayout(false);
         }
 
