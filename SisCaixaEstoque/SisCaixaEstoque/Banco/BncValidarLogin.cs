@@ -13,7 +13,7 @@ namespace SisCaixaEstoque.Banco
                 conexao.Open();
 
                 // Criar o objeto do comando
-                using (SQLiteCommand comando = new("SELECT name FROM sqlite_master WHERE type='table' AND name='USUARIO'", conexao))
+                using (SQLiteCommand comando = new("SELECT name FROM sqlite_master WHERE type='table' AND name='TBUSUARIO'", conexao))
                 {
                     if (comando.ExecuteScalar() == null)
                     {
@@ -25,7 +25,7 @@ namespace SisCaixaEstoque.Banco
                     }
                     else
                     {
-                        using SQLiteCommand comando1 = new("SELECT SENHA FROM USUARIO WHERE NOME = @NOME;", conexao);
+                        using SQLiteCommand comando1 = new("SELECT SENHA FROM TBUSUARIO WHERE NOME = @NOME;", conexao);
                         comando1.Parameters.AddWithValue("@NOME", parLogin);
                         using SQLiteDataReader leitor = comando1.ExecuteReader();
                         if (leitor.Read())
@@ -47,7 +47,7 @@ namespace SisCaixaEstoque.Banco
                 using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
-                    using (SQLiteCommand comando = new("SELECT NIVEL FROM USUARIO WHERE NOME = @NOME AND SENHA = @SENHA;", conexao))
+                    using (SQLiteCommand comando = new("SELECT NIVEL FROM TBUSUARIO WHERE NOME = @NOME AND SENHA = @SENHA;", conexao))
                     {
                         comando.Parameters.AddWithValue("@NOME", parLogin);
                         comando.Parameters.AddWithValue("@SENHA", parSenha);

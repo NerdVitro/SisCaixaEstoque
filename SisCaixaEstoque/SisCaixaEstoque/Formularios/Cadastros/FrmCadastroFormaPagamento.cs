@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SisCaixaEstoque.Formularios.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SisCaixaEstoque.Formularios
 {
-    public partial class FrmCadastroFormaPagamento : Form
+    public partial class FrmCadastroFormaPagamento : FrmCadastroBase
     {
         public FrmCadastroFormaPagamento()
         {
@@ -20,44 +21,51 @@ namespace SisCaixaEstoque.Formularios
 
         private void TxbValorTaxa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '\b')
+            try
             {
-                return;
-            }
-            else
-            {
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+                if (e.KeyChar == '\b')
                 {
-                    e.Handled = true;
+                    return;
                 }
                 else
                 {
-                    if (e.KeyChar == ',' && ((TextBox)sender).Text.Contains(','))
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
                     {
                         e.Handled = true;
                     }
                     else
                     {
-                        if (((TextBox)sender).Text.Contains(','))
-                        {
-                            if (((TextBox)sender).Text.Split(',')[1].Length >= 2 && !char.IsControl(e.KeyChar))
-                            {
-                                e.Handled = true;
-                            }
-                        }
-                        else if (((TextBox)sender).TextLength == 0 && e.KeyChar == ',')
+                        if (e.KeyChar == ',' && ((TextBox)sender).Text.Contains(','))
                         {
                             e.Handled = true;
                         }
-                        else if (((TextBox)sender).TextLength >= 2)
+                        else
                         {
-                            if (e.KeyChar != ',' && ((TextBox)sender).Text.Contains(','))
+                            if (((TextBox)sender).Text.Contains(','))
+                            {
+                                if (((TextBox)sender).Text.Split(',')[1].Length >= 2 && !char.IsControl(e.KeyChar))
+                                {
+                                    e.Handled = true;
+                                }
+                            }
+                            else if (((TextBox)sender).TextLength == 0 && e.KeyChar == ',')
                             {
                                 e.Handled = true;
+                            }
+                            else if (((TextBox)sender).TextLength >= 2)
+                            {
+                                if (e.KeyChar != ',' && ((TextBox)sender).Text.Contains(','))
+                                {
+                                    e.Handled = true;
+                                }
                             }
                         }
                     }
                 }
+            }
+            catch (Exception)
+            {
+                //throw;
             }
         }
     }

@@ -59,6 +59,7 @@
             // 
             // BtnSair
             // 
+            BtnSair.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BtnSair.FlatStyle = FlatStyle.Flat;
             BtnSair.Image = (Image)resources.GetObject("BtnSair.Image");
             BtnSair.Location = new Point(12, 395);
