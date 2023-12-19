@@ -22,6 +22,12 @@
     <Compile Update="Formularios\Cadastros\FrmCadastroFormaPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Cadastros\FrmCadastroFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Cadastros\FrmCadastroFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Consultas\FrmConsultaFormaPagemento.cs">
       <SubType>Form</SubType>
     </Compile>

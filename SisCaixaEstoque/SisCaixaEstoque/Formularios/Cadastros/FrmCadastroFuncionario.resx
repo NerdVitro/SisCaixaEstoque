@@ -57,30 +57,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BtnSalvar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        5QAAAOUBj+WbPAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGfSURBVFhH7Ze7
-        SsRAGEajha8gvoqIt0btRHtF8I1sfAMrQbBQFGy0sPBSCTYieEEFURAVFG/fmcloNkwyyW6yIOTAgZlk
-        Zv4v2d1ZJoqZlUfyXX7X4L7sl14o7gZeyLPYL/mR6JeVuaxxI1n7RHpDHEsGTpjeH2/y2jbb4la+yj65
-        LjND8NqvbLOFqgJAbggunttmC2UDrMhV2zQkAwAh1iT1TuWANFQV4F4+2aYhHQC8IboZAJIfB7+OrgcA
-        QnCf2pUFWJLLtmnICwDUzA3A0/BU7fIYm0UwwK7k3oLs5UJBGLsombvDhQyCAUblp+T+i3woKGOZw044
-        JLMIBgAW2JRsp75iPhm7IQdlHoUC1EkT4H8EGJHb8k76vnB5shFtyWHpIxhgXLqf4bP0FcmTOcxljTGZ
-        JhhgT3JvzvTK0yPnJWuwqaUJBuh0K3ak/6QcwQBl/4yyYA3WStMEaAI0AX4D1HUwcWQF4Dq1zaGUo9kk
-        nQR1BpiS1DykMyN5FXgp3eGy08Op0x1SXZ8art60NBCCNHUdz5NS40CqeBT9ABlnZWtCPVZ+AAAAAElF
-        TkSuQmCC
-</value>
-  </data>
-  <data name="BtnSair.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAD+SURBVFhH7dQx
-        S0JhFIfx25I0NISb0JytLS269QFscItGxY8g0eJHaNLdwe9Qje7OboFRROTmoKE+574IcaHrOd0DLe8D
-        P3ivyPUveE1isT92iBMF9w7QxxIbhU804FYNcuMOrhRGeIVbTcgAbdb37y0O+PcBFXTDUZXrAHkErbkN
-        kG89DUdTLgPusEY7vbJVeMA95MOHaOW4xRGyFR4wwzfm+MrxgQtkKzzgDPJXOsaxvGDM5Tdwjnc8p1e2
-        XAZIVVie/11uA35m+T9wH1DHSziqch9gvWEc4D7gGnLDUnq1vxuswtGnUywwwaPCG57g2iUeMFDooYxY
-        7JeSZAvIQl+lQ9pO5AAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SisCaixaEstoque.Formularios
+namespace SisCaixaEstoque.Formularios.Cadastros
 {
-    public partial class FrmCadastroProduto : FrmCadastroBase
+    public partial class FrmCadastroFornecedor : FrmCadastroBase
     {
-        public FrmCadastroProduto()
+        public FrmCadastroFornecedor()
         {
             InitializeComponent();
         }

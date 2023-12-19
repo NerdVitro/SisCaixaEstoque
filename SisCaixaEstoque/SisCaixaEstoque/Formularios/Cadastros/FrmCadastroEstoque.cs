@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SisCaixaEstoque.Formularios.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SisCaixaEstoque.Formularios
 {
-    public partial class FrmCadastroEstoque : Form
+    public partial class FrmCadastroEstoque : FrmCadastroBase
     {
         public FrmCadastroEstoque()
         {

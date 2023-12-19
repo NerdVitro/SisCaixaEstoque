@@ -38,6 +38,7 @@
             // 
             // PnlLateral
             // 
+            PnlLateral.BorderStyle = BorderStyle.FixedSingle;
             PnlLateral.Controls.Add(BtnSalvar);
             PnlLateral.Controls.Add(BtnSair);
             PnlLateral.Dock = DockStyle.Left;
@@ -62,7 +63,7 @@
             BtnSair.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BtnSair.FlatStyle = FlatStyle.Flat;
             BtnSair.Image = (Image)resources.GetObject("BtnSair.Image");
-            BtnSair.Location = new Point(12, 395);
+            BtnSair.Location = new Point(12, 393);
             BtnSair.Name = "BtnSair";
             BtnSair.Size = new Size(43, 43);
             BtnSair.TabIndex = 19;
@@ -73,7 +74,9 @@
             // 
             PnlDados.Dock = DockStyle.Fill;
             PnlDados.Location = new Point(67, 0);
+            PnlDados.Margin = new Padding(8);
             PnlDados.Name = "PnlDados";
+            PnlDados.Padding = new Padding(8);
             PnlDados.Size = new Size(733, 450);
             PnlDados.TabIndex = 1;
             // 

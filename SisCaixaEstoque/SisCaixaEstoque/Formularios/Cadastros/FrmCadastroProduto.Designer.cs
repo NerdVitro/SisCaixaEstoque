@@ -29,20 +29,49 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroProduto));
+            label4 = new Label();
+            textBox3 = new TextBox();
+            PnlDados.SuspendLayout();
             SuspendLayout();
+            // 
+            // PnlDados
+            // 
+            PnlDados.Controls.Add(label4);
+            PnlDados.Controls.Add(textBox3);
+            PnlDados.Size = new Size(591, 323);
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(8, 8);
+            label4.Name = "label4";
+            label4.Size = new Size(40, 15);
+            label4.TabIndex = 15;
+            label4.Text = "Nome";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(8, 24);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(571, 23);
+            textBox3.TabIndex = 14;
             // 
             // FrmCadastroProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(658, 323);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmCadastroProduto";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Produto";
+            PnlDados.ResumeLayout(false);
+            PnlDados.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Label label4;
+        private TextBox textBox3;
     }
 }
