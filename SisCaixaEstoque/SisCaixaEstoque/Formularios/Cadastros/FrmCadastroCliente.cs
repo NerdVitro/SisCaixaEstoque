@@ -1,4 +1,5 @@
-﻿using SisCaixaEstoque.Formularios.Base;
+﻿using SisCaixaEstoque.Banco.Cadastros;
+using SisCaixaEstoque.Formularios.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,26 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
+                BncInserts.SalvarCliente(
+                    TbxNomeCompleto.Text,
+                    TbxCpfCnpj.Text,
+                    TbxEndereco.Text,
+                    TbxCidade.Text,
+                    TbxEstado.Text,
+                    TbxEmail.Text,
+                    TbxTelefone.Text,
+                    TbxCelular.Text,
+                    TbxWhats.Text);
 
+                TbxNomeCompleto.Text = "";
+                TbxCpfCnpj.Text = "";
+                TbxEndereco.Text = "";
+                TbxCidade.Text = "";
+                TbxEstado.Text = "";
+                TbxEmail.Text = "";
+                TbxTelefone.Text = "";
+                TbxCelular.Text = "";
+                TbxWhats.Text = "";
             }
             catch (Exception ex)
             {

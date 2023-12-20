@@ -50,3 +50,5 @@ D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debu
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmCadastroBase.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Cadastros.FrmCadastroFornecedor.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Cadastros.FrmCadastroFuncionario.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmGerenciarCadastroBase.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarCliente.resources

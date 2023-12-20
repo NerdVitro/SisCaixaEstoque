@@ -16,5 +16,42 @@ namespace SisCaixaEstoque.Formularios.Base
         {
             InitializeComponent();
         }
+
+        private void BtnAdicionar_Click(object sender, EventArgs e)
+        {
+            Adicionar();
+        }
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            Editar();
+        }
+        private void BtnFiltrar_Click(object sender, EventArgs e)
+        {
+            Filtrar();
+        }
+        private void BtnFechar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public virtual void Adicionar()
+        {
+
+        }
+        public virtual void Editar()
+        {
+
+        }
+        public virtual void Filtrar()
+        {
+
+        }
     }
 }

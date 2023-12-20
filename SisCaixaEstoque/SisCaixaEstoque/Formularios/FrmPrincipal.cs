@@ -1,5 +1,6 @@
 ﻿using SisCaixaEstoque.Classes;
 using SisCaixaEstoque.Formularios.Consultas;
+using SisCaixaEstoque.Formularios.Gerenciadores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -164,8 +165,7 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
-                FrmCadastroCliente Cliente = new();
-                Cliente.ShowDialog();
+                new FrmGerenciarCliente().ShowDialog();
             }
             catch (Exception ex)
             {

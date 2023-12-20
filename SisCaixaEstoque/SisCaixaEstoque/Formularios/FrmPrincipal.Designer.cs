@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             PnlPrincipal = new Panel();
             PnlTrabalho = new Panel();
-            label6 = new Label();
-            label5 = new Label();
             label4 = new Label();
             BtnFinalizar = new Button();
             GrpProduto = new GroupBox();
@@ -71,8 +69,6 @@
             // 
             // PnlTrabalho
             // 
-            PnlTrabalho.Controls.Add(label6);
-            PnlTrabalho.Controls.Add(label5);
             PnlTrabalho.Controls.Add(label4);
             PnlTrabalho.Controls.Add(BtnFinalizar);
             PnlTrabalho.Controls.Add(GrpProduto);
@@ -85,32 +81,6 @@
             PnlTrabalho.Size = new Size(527, 758);
             PnlTrabalho.TabIndex = 1;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.FlatStyle = FlatStyle.Flat;
-            label6.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.Lime;
-            label6.Location = new Point(61, 731);
-            label6.Name = "label6";
-            label6.Size = new Size(240, 37);
-            label6.TabIndex = 25;
-            label6.Text = "Caixa Aberto: Vitor";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.FlatStyle = FlatStyle.Flat;
-            label5.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(255, 128, 0);
-            label5.Location = new Point(28, 709);
-            label5.Name = "label5";
-            label5.Size = new Size(259, 37);
-            label5.TabIndex = 24;
-            label5.Text = "Caixa Fechado: Vitor";
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -118,7 +88,7 @@
             label4.FlatStyle = FlatStyle.Flat;
             label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.Red;
-            label4.Location = new Point(12, 685);
+            label4.Location = new Point(12, 697);
             label4.Name = "label4";
             label4.Size = new Size(270, 37);
             label4.TabIndex = 23;
@@ -175,6 +145,7 @@
             DgvProdutosVenda.Name = "DgvProdutosVenda";
             DgvProdutosVenda.ReadOnly = true;
             DgvProdutosVenda.RowHeadersVisible = false;
+            DgvProdutosVenda.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             DgvProdutosVenda.RowTemplate.Height = 25;
             DgvProdutosVenda.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvProdutosVenda.ShowCellErrors = false;
@@ -377,8 +348,6 @@
         private Button BtnEstoque;
         private Button BtnProduto;
         private Button BtnConfiguracao;
-        private Label label6;
-        private Label label5;
         private Label label4;
         private Button BtnSair;
     }

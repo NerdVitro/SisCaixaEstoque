@@ -12,6 +12,8 @@ namespace SisCaixaEstoque.Formularios.Base
 {
     public partial class FrmCadastroBase : FrmBaseVazio
     {
+        public bool BlxIsInsert = true;
+
         public FrmCadastroBase()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace SisCaixaEstoque.Formularios.Base
         {
             try
             {
-                if (VerificarTextBoxesPreenchidos(PnlDados))
+                if (BlxIsInsert && VerificarTextBoxesPreenchidos(PnlDados))
                 {
                     if (MessageBox.Show("Tem certeza que deseja sair? \nTodos os dados inseridos serão perdidos.", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {

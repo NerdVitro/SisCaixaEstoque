@@ -30,46 +30,46 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroCliente));
             label1 = new Label();
-            TxbValorTaxa = new TextBox();
+            TbxTelefone = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            TbxCelular = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            TbxWhats = new TextBox();
+            TbxNomeCompleto = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            textBox4 = new TextBox();
+            TbxCpfCnpj = new TextBox();
             label6 = new Label();
-            textBox5 = new TextBox();
+            TbxEndereco = new TextBox();
             label7 = new Label();
-            textBox6 = new TextBox();
+            TbxCidade = new TextBox();
             label8 = new Label();
-            textBox7 = new TextBox();
+            TbxEstado = new TextBox();
             label9 = new Label();
-            textBox8 = new TextBox();
+            TbxEmail = new TextBox();
             PnlDados.SuspendLayout();
             SuspendLayout();
             // 
             // PnlDados
             // 
             PnlDados.Controls.Add(label9);
-            PnlDados.Controls.Add(textBox8);
+            PnlDados.Controls.Add(TbxEmail);
             PnlDados.Controls.Add(label8);
-            PnlDados.Controls.Add(textBox7);
+            PnlDados.Controls.Add(TbxEstado);
             PnlDados.Controls.Add(label7);
-            PnlDados.Controls.Add(textBox6);
+            PnlDados.Controls.Add(TbxCidade);
             PnlDados.Controls.Add(label6);
-            PnlDados.Controls.Add(textBox5);
+            PnlDados.Controls.Add(TbxEndereco);
             PnlDados.Controls.Add(label5);
-            PnlDados.Controls.Add(textBox4);
+            PnlDados.Controls.Add(TbxCpfCnpj);
             PnlDados.Controls.Add(label4);
-            PnlDados.Controls.Add(textBox3);
+            PnlDados.Controls.Add(TbxNomeCompleto);
             PnlDados.Controls.Add(label3);
-            PnlDados.Controls.Add(textBox2);
+            PnlDados.Controls.Add(TbxWhats);
             PnlDados.Controls.Add(label2);
-            PnlDados.Controls.Add(textBox1);
+            PnlDados.Controls.Add(TbxCelular);
             PnlDados.Controls.Add(label1);
-            PnlDados.Controls.Add(TxbValorTaxa);
+            PnlDados.Controls.Add(TbxTelefone);
             PnlDados.Size = new Size(591, 323);
             // 
             // label1
@@ -81,14 +81,14 @@
             label1.TabIndex = 7;
             label1.Text = "Telefone";
             // 
-            // TxbValorTaxa
+            // TbxTelefone
             // 
-            TxbValorTaxa.Location = new Point(459, 68);
-            TxbValorTaxa.Name = "TxbValorTaxa";
-            TxbValorTaxa.PlaceholderText = "(00) 0000-0000";
-            TxbValorTaxa.Size = new Size(124, 23);
-            TxbValorTaxa.TabIndex = 6;
-            TxbValorTaxa.TextAlign = HorizontalAlignment.Right;
+            TbxTelefone.Location = new Point(459, 68);
+            TbxTelefone.Name = "TbxTelefone";
+            TbxTelefone.PlaceholderText = "(00) 0000-0000";
+            TbxTelefone.Size = new Size(124, 23);
+            TbxTelefone.TabIndex = 6;
+            TbxTelefone.TextAlign = HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -99,14 +99,14 @@
             label2.TabIndex = 9;
             label2.Text = "Celular";
             // 
-            // textBox1
+            // TbxCelular
             // 
-            textBox1.Location = new Point(458, 109);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "(00) 0000-0000";
-            textBox1.Size = new Size(124, 23);
-            textBox1.TabIndex = 8;
-            textBox1.TextAlign = HorizontalAlignment.Right;
+            TbxCelular.Location = new Point(458, 109);
+            TbxCelular.Name = "TbxCelular";
+            TbxCelular.PlaceholderText = "(00) 0000-0000";
+            TbxCelular.Size = new Size(124, 23);
+            TbxCelular.TabIndex = 8;
+            TbxCelular.TextAlign = HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -117,21 +117,21 @@
             label3.TabIndex = 11;
             label3.Text = "Whatsapp";
             // 
-            // textBox2
+            // TbxWhats
             // 
-            textBox2.Location = new Point(459, 153);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "(00) 0000-0000";
-            textBox2.Size = new Size(124, 23);
-            textBox2.TabIndex = 10;
-            textBox2.TextAlign = HorizontalAlignment.Right;
+            TbxWhats.Location = new Point(459, 153);
+            TbxWhats.Name = "TbxWhats";
+            TbxWhats.PlaceholderText = "(00) 0000-0000";
+            TbxWhats.Size = new Size(124, 23);
+            TbxWhats.TabIndex = 10;
+            TbxWhats.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox3
+            // TbxNomeCompleto
             // 
-            textBox3.Location = new Point(8, 24);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(445, 23);
-            textBox3.TabIndex = 12;
+            TbxNomeCompleto.Location = new Point(8, 24);
+            TbxNomeCompleto.Name = "TbxNomeCompleto";
+            TbxNomeCompleto.Size = new Size(445, 23);
+            TbxNomeCompleto.TabIndex = 12;
             // 
             // label4
             // 
@@ -151,14 +151,14 @@
             label5.TabIndex = 15;
             label5.Text = "CPF/CNPJ";
             // 
-            // textBox4
+            // TbxCpfCnpj
             // 
-            textBox4.Location = new Point(459, 24);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "000.000.000-00";
-            textBox4.Size = new Size(124, 23);
-            textBox4.TabIndex = 14;
-            textBox4.TextAlign = HorizontalAlignment.Right;
+            TbxCpfCnpj.Location = new Point(459, 24);
+            TbxCpfCnpj.Name = "TbxCpfCnpj";
+            TbxCpfCnpj.PlaceholderText = "000.000.000-00";
+            TbxCpfCnpj.Size = new Size(124, 23);
+            TbxCpfCnpj.TabIndex = 14;
+            TbxCpfCnpj.TextAlign = HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -169,12 +169,12 @@
             label6.TabIndex = 17;
             label6.Text = "Endereco";
             // 
-            // textBox5
+            // TbxEndereco
             // 
-            textBox5.Location = new Point(8, 68);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(445, 23);
-            textBox5.TabIndex = 16;
+            TbxEndereco.Location = new Point(8, 68);
+            TbxEndereco.Name = "TbxEndereco";
+            TbxEndereco.Size = new Size(445, 23);
+            TbxEndereco.TabIndex = 16;
             // 
             // label7
             // 
@@ -185,12 +185,12 @@
             label7.TabIndex = 19;
             label7.Text = "Cidade";
             // 
-            // textBox6
+            // TbxCidade
             // 
-            textBox6.Location = new Point(8, 109);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(256, 23);
-            textBox6.TabIndex = 18;
+            TbxCidade.Location = new Point(8, 109);
+            TbxCidade.Name = "TbxCidade";
+            TbxCidade.Size = new Size(256, 23);
+            TbxCidade.TabIndex = 18;
             // 
             // label8
             // 
@@ -201,12 +201,12 @@
             label8.TabIndex = 21;
             label8.Text = "Estado";
             // 
-            // textBox7
+            // TbxEstado
             // 
-            textBox7.Location = new Point(270, 109);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(182, 23);
-            textBox7.TabIndex = 20;
+            TbxEstado.Location = new Point(270, 109);
+            TbxEstado.Name = "TbxEstado";
+            TbxEstado.Size = new Size(182, 23);
+            TbxEstado.TabIndex = 20;
             // 
             // label9
             // 
@@ -217,12 +217,12 @@
             label9.TabIndex = 23;
             label9.Text = "E-mail";
             // 
-            // textBox8
+            // TbxEmail
             // 
-            textBox8.Location = new Point(8, 153);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(445, 23);
-            textBox8.TabIndex = 22;
+            TbxEmail.Location = new Point(8, 153);
+            TbxEmail.Name = "TbxEmail";
+            TbxEmail.Size = new Size(445, 23);
+            TbxEmail.TabIndex = 22;
             // 
             // FrmCadastroCliente
             // 
@@ -240,22 +240,22 @@
         #endregion
 
         private Label label1;
-        private TextBox TxbValorTaxa;
+        private TextBox TbxTelefone;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox TbxCelular;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox TbxWhats;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox TbxNomeCompleto;
         private Label label9;
-        private TextBox textBox8;
+        private TextBox TbxEmail;
         private Label label8;
-        private TextBox textBox7;
+        private TextBox TbxEstado;
         private Label label7;
-        private TextBox textBox6;
+        private TextBox TbxCidade;
         private Label label6;
-        private TextBox textBox5;
+        private TextBox TbxEndereco;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox TbxCpfCnpj;
     }
 }

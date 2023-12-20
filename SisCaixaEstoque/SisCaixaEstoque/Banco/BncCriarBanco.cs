@@ -17,7 +17,6 @@ namespace SisCaixaEstoque.Banco
                 using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
                 conexao.Open();
 
-                // Comando SQL com parâmetros
                 string sql = @"
                     -- Criação da Tabela TBCLIENTE
                     CREATE TABLE IF NOT EXISTS TBCLIENTE (
@@ -103,14 +102,22 @@ namespace SisCaixaEstoque.Banco
                         FOREIGN KEY (IDVENDA) REFERENCES TBVENDA(IDVENDA),
                         FOREIGN KEY (IDPRODUTO) REFERENCES TBPRODUTO(IDPRODUTO)
                     );
-
+                    
+                    -- Criação da Tabela TBTIPOPAGAMENTO
+                    CREATE TABLE IF NOT EXISTS TBTIPOPAGAMENTO (
+                        IDTIPOPAGAMENTO INTEGER PRIMARY KEY,
+                        DSTIPOPAGAMENTO TEXT,
+                        VLTAXA REAL
+                    );
+                    
                     -- Criação da Tabela TBPAGAMENTO
                     CREATE TABLE IF NOT EXISTS TBPAGAMENTO (
                         IDPAGAMENTO INTEGER PRIMARY KEY,
+                        IDTIPOPAGAMENTO INTEGER,
                         IDVENDA INTEGER,
                         VLVALORPAGO REAL,
                         VLVALORTROCO REAL,
-                        TPTIPOPAG TEXT,
+                        FOREIGN KEY (IDTIPOPAGAMENTO) REFERENCES TBTIPOPAGAMENTO(IDTIPOPAGAMENTO)
                         FOREIGN KEY (IDVENDA) REFERENCES TBVENDA(IDVENDA)
                     );
 
@@ -128,13 +135,14 @@ namespace SisCaixaEstoque.Banco
                         FOREIGN KEY (IDPRODUTO) REFERENCES TBPRODUTO(IDPRODUTO)
                     );
 
+                    -- Criação da Tabela TBUSUARIO
                     CREATE TABLE IF NOT EXISTS TBUSUARIO (
-                            IDUSUARIO INTEGER PRIMARY KEY AUTOINCREMENT,
-                            IDFUNCIONARIO INTEGER,
-                            NOME TEXT,
-                            SENHA TEXT,
-                            NIVEL INTEGER CHECK(NIVEL >= 0 AND NIVEL <= 5),
-                            FOREIGN KEY (IDFUNCIONARIO) REFERENCES TBFUNCIONARIO(IDFUNCIONARIO)
+                        IDUSUARIO INTEGER PRIMARY KEY AUTOINCREMENT,
+                        IDFUNCIONARIO INTEGER,
+                        NOME TEXT,
+                        SENHA TEXT,
+                        NIVEL INTEGER CHECK(NIVEL >= 0 AND NIVEL <= 5),
+                        FOREIGN KEY (IDFUNCIONARIO) REFERENCES TBFUNCIONARIO(IDFUNCIONARIO)
                     );
 
                     INSERT INTO TBFUNCIONARIO 

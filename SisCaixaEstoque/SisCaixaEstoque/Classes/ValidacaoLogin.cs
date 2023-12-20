@@ -74,9 +74,9 @@ namespace SisCaixaEstoque.Classes
         public enum NivelAcesso
         {
             NenhumAcesso,
-            AcessoTotal,
             AcessoVenda,
-            AcessoCadastro
+            AcessoCadastro,
+            AcessoTotal
         }
     }
 }
