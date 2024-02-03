@@ -61,5 +61,8 @@
     <Compile Update="Formularios\Gerenciadores\FrmGerenciarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Gerenciadores\FrmGerenciarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

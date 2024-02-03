@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SisCaixaEstoque.Classes;
+using SisCaixaEstoque.Formularios.Gerenciadores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,20 @@ namespace SisCaixaEstoque.Formularios
         public FrmConfiguracao()
         {
             InitializeComponent();
+
+            ToolTipMensagens.SetToolTip(BtnFuncionario, ConstantesNomeAjudaBotao.TelaConfiguracao.BotaoFuncionario);
+        }
+
+        private void BtnFuncionario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new FrmGerenciarFuncionario().ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

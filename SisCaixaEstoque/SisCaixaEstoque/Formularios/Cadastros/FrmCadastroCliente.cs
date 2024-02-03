@@ -1,4 +1,5 @@
 ﻿using SisCaixaEstoque.Banco.Cadastros;
+using SisCaixaEstoque.Banco.Validacoes;
 using SisCaixaEstoque.Formularios.Base;
 using System;
 using System.Collections.Generic;
@@ -19,32 +20,39 @@ namespace SisCaixaEstoque.Formularios
             InitializeComponent();
         }
 
-
-
         public override void Salvar()
         {
             try
             {
-                BncInserts.SalvarCliente(
-                    TbxNomeCompleto.Text,
-                    TbxCpfCnpj.Text,
-                    TbxEndereco.Text,
-                    TbxCidade.Text,
-                    TbxEstado.Text,
-                    TbxEmail.Text,
-                    TbxTelefone.Text,
-                    TbxCelular.Text,
-                    TbxWhats.Text);
+                string ssxRetorno = BncValidacoesCadastros.ValidarCliente(TbxNomeCompleto.Text, TbxCpfCnpj.Text);
+                if (ssxRetorno == string.Empty)
+                {
+                    BncInserts.SalvarCliente(
+                        TbxNomeCompleto.Text,
+                        TbxCpfCnpj.Text,
+                        TbxEndereco.Text,
+                        TbxCidade.Text,
+                        TbxEstado.Text,
+                        TbxEmail.Text,
+                        TbxTelefone.Text,
+                        TbxCelular.Text,
+                        TbxWhats.Text);
 
-                TbxNomeCompleto.Text = "";
-                TbxCpfCnpj.Text = "";
-                TbxEndereco.Text = "";
-                TbxCidade.Text = "";
-                TbxEstado.Text = "";
-                TbxEmail.Text = "";
-                TbxTelefone.Text = "";
-                TbxCelular.Text = "";
-                TbxWhats.Text = "";
+                    TbxNomeCompleto.Text = "";
+                    TbxCpfCnpj.Text = "";
+                    TbxEndereco.Text = "";
+                    TbxCidade.Text = "";
+                    TbxEstado.Text = "";
+                    TbxEmail.Text = "";
+                    TbxTelefone.Text = "";
+                    TbxCelular.Text = "";
+                    TbxWhats.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show(ssxRetorno);
+                }
+
             }
             catch (Exception ex)
             {

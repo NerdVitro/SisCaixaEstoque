@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             PnlPrincipal = new Panel();
             PnlTrabalho = new Panel();
             label4 = new Label();
             BtnFinalizar = new Button();
             GrpProduto = new GroupBox();
-            label3 = new Label();
+            LblTotalVenda = new Label();
             DgvProdutosVenda = new DataGridView();
             label2 = new Label();
             BtnPesquisarProduto = new Button();
@@ -50,6 +51,7 @@
             BtnProduto = new Button();
             BtnCliente = new Button();
             BtnCaixa = new Button();
+            ToolTipMensagens = new ToolTip(components);
             PnlPrincipal.SuspendLayout();
             PnlTrabalho.SuspendLayout();
             GrpProduto.SuspendLayout();
@@ -108,7 +110,7 @@
             // 
             // GrpProduto
             // 
-            GrpProduto.Controls.Add(label3);
+            GrpProduto.Controls.Add(LblTotalVenda);
             GrpProduto.Controls.Add(DgvProdutosVenda);
             GrpProduto.Controls.Add(label2);
             GrpProduto.Controls.Add(BtnPesquisarProduto);
@@ -122,15 +124,15 @@
             GrpProduto.TabStop = false;
             GrpProduto.Text = "Produto";
             // 
-            // label3
+            // LblTotalVenda
             // 
-            label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(241, 555);
-            label3.Name = "label3";
-            label3.Size = new Size(263, 37);
-            label3.TabIndex = 10;
-            label3.Text = "R$ 100,00";
-            label3.TextAlign = ContentAlignment.MiddleRight;
+            LblTotalVenda.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LblTotalVenda.Location = new Point(241, 555);
+            LblTotalVenda.Name = "LblTotalVenda";
+            LblTotalVenda.Size = new Size(263, 37);
+            LblTotalVenda.TabIndex = 10;
+            LblTotalVenda.Text = "R$ 100,00";
+            LblTotalVenda.TextAlign = ContentAlignment.MiddleRight;
             // 
             // DgvProdutosVenda
             // 
@@ -333,7 +335,7 @@
         private Panel PnlTrabalho;
         private Button BtnFinalizar;
         private GroupBox GrpProduto;
-        private Label label3;
+        private Label LblTotalVenda;
         private DataGridView DgvProdutosVenda;
         private Label label2;
         private Button BtnPesquisarProduto;
@@ -350,5 +352,6 @@
         private Button BtnConfiguracao;
         private Label label4;
         private Button BtnSair;
+        private ToolTip ToolTipMensagens;
     }
 }

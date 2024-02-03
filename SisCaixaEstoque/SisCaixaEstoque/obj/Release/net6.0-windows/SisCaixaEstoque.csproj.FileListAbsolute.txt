@@ -44,3 +44,12 @@ D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Rele
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmBaseVazio.pt-BR.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\pt-BR\SisCaixaEstoque.resources.dll
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.csproj.CopyComplete
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmBaseDaBase.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmCadastroBase.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmConsultarBase.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmGerenciarCadastroBase.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Cadastros.FrmCadastroFornecedor.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Cadastros.FrmCadastroFuncionario.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Consultas.FrmConsultarCliente.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarCliente.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarFuncionario.resources

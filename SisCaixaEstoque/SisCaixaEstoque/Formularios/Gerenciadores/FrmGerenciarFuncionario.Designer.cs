@@ -1,6 +1,6 @@
 ﻿namespace SisCaixaEstoque.Formularios.Gerenciadores
 {
-    partial class FrmGerenciarCliente
+    partial class FrmGerenciarFuncionario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            TxbCliente = new TextBox();
+            TxbFuncionario = new TextBox();
             PnlFiltros.SuspendLayout();
             SuspendLayout();
             // 
             // PnlFiltros
             // 
             PnlFiltros.Controls.Add(label1);
-            PnlFiltros.Controls.Add(TxbCliente);
+            PnlFiltros.Controls.Add(TxbFuncionario);
             PnlFiltros.Size = new Size(733, 56);
-            PnlFiltros.Controls.SetChildIndex(TxbCliente, 0);
+            PnlFiltros.Controls.SetChildIndex(TxbFuncionario, 0);
             PnlFiltros.Controls.SetChildIndex(label1, 0);
             // 
             // label1
@@ -46,24 +46,24 @@
             label1.AutoSize = true;
             label1.Location = new Point(8, 8);
             label1.Name = "label1";
-            label1.Size = new Size(44, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Cliente";
+            label1.Size = new Size(70, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Funcionário";
             // 
-            // TxbCliente
+            // TxbFuncionario
             // 
-            TxbCliente.Location = new Point(8, 24);
-            TxbCliente.Name = "TxbCliente";
-            TxbCliente.Size = new Size(618, 23);
-            TxbCliente.TabIndex = 3;
+            TxbFuncionario.Location = new Point(8, 24);
+            TxbFuncionario.Name = "TxbFuncionario";
+            TxbFuncionario.Size = new Size(618, 23);
+            TxbFuncionario.TabIndex = 5;
             // 
-            // FrmGerenciarCliente
+            // FrmGerenciarFuncionario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "FrmGerenciarCliente";
-            Text = "Gerenciador de Clientes";
+            Name = "FrmGerenciarFuncionario";
+            Text = "Gerenciador de Funcionário";
             PnlFiltros.ResumeLayout(false);
             PnlFiltros.PerformLayout();
             ResumeLayout(false);
@@ -72,6 +72,6 @@
         #endregion
 
         private Label label1;
-        private TextBox TxbCliente;
+        private TextBox TxbFuncionario;
     }
 }

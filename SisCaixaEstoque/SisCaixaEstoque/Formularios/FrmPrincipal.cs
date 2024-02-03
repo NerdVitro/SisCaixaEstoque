@@ -32,45 +32,62 @@ namespace SisCaixaEstoque.Formularios
 
         private void SetTelaInicial()
         {
+            try
+            {
+                ToolTipMensagens.SetToolTip(BtnCaixa, ConstantesNomeAjudaBotao.TelaInicial.BotaoCaixa);
+                ToolTipMensagens.SetToolTip(BtnCliente, ConstantesNomeAjudaBotao.TelaInicial.BotaoCliente);
+                ToolTipMensagens.SetToolTip(BtnProduto, ConstantesNomeAjudaBotao.TelaInicial.BotaoProduto);
+                ToolTipMensagens.SetToolTip(BtnEstoque, ConstantesNomeAjudaBotao.TelaInicial.BotaoEstoque);
+                ToolTipMensagens.SetToolTip(BtnConfiguracao, ConstantesNomeAjudaBotao.TelaInicial.BotaoConfiguracao);
+                ToolTipMensagens.SetToolTip(BtnSair, ConstantesNomeAjudaBotao.TelaInicial.BotaoSair);
 
-            // Adiciona uma linha com valores à DataGridView
-            DgvProdutosVenda.Rows.Add("Produto 1", 50.00);
-            DgvProdutosVenda.Rows.Add("Produto 2", 30.00);
-            DgvProdutosVenda.Rows.Add("Produto 3", 25.50);
+                ToolTipMensagens.SetToolTip(BtnFinalizar, ConstantesNomeAjudaBotao.TelaInicial.BotaoFinalizar);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void ConfigurarDgvProdutosVenda()
         {
-            // Criar e configurar as colunas
-            DataGridViewTextBoxColumn colunaNome = new()
+            try
             {
-                HeaderText = "Nome do Produto",
-                Name = "NomeProduto",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-            };
+                // Criar e configurar as colunas
+                DataGridViewTextBoxColumn colunaNome = new()
+                {
+                    HeaderText = "Nome do Produto",
+                    Name = "NomeProduto",
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                };
 
-            DataGridViewTextBoxColumn colunaPreco = new()
+                DataGridViewTextBoxColumn colunaPreco = new()
+                {
+                    HeaderText = "Preço",
+                    Name = "PrecoProduto"
+                };
+                colunaPreco.DefaultCellStyle.Format = "C"; // Formato de moeda
+                colunaPreco.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; // Alinhamento à direita
+
+                DataGridViewButtonColumn colunaRemover = new()
+                {
+                    HeaderText = "Remover",
+                    Text = "X",
+                    UseColumnTextForButtonValue = true,
+                    Width = 70
+                };
+
+                // Adicionar as colunas à DataGridView
+                DgvProdutosVenda.Columns.Add(colunaNome);
+                DgvProdutosVenda.Columns.Add(colunaPreco);
+                DgvProdutosVenda.Columns.Add(colunaRemover);
+
+                // Definir os tamanhos das colunas
+                DgvProdutosVenda.Columns["PrecoProduto"].Width = 100;
+            }
+            catch (Exception ex)
             {
-                HeaderText = "Preço",
-                Name = "PrecoProduto"
-            };
-            colunaPreco.DefaultCellStyle.Format = "C"; // Formato de moeda
-            colunaPreco.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; // Alinhamento à direita
-
-            DataGridViewButtonColumn colunaRemover = new()
-            {
-                HeaderText = "Remover",
-                Text = "X",
-                UseColumnTextForButtonValue = true,
-                Width = 70
-            };
-
-            // Adicionar as colunas à DataGridView
-            DgvProdutosVenda.Columns.Add(colunaNome);
-            DgvProdutosVenda.Columns.Add(colunaPreco);
-            DgvProdutosVenda.Columns.Add(colunaRemover);
-
-            // Definir os tamanhos das colunas
-            DgvProdutosVenda.Columns["PrecoProduto"].Width = 100;
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void DgvProdutosVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -82,6 +99,16 @@ namespace SisCaixaEstoque.Formularios
                     if (MessageBox.Show("Tem certeza que deseja excluir esta linha?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         DgvProdutosVenda.Rows.RemoveAt(e.RowIndex);
+
+                        decimal total = 0;
+                        foreach (DataGridViewRow linha in DgvProdutosVenda.Rows)
+                        {
+                            if (linha.Cells[1].Value != null && decimal.TryParse(linha.Cells[1].Value.ToString(), out decimal valor))
+                            {
+                                total += valor;
+                                LblTotalVenda.Text = $"R$ {total:N2}";
+                            }
+                        }
                     }
                 }
             }
@@ -121,6 +148,17 @@ namespace SisCaixaEstoque.Formularios
                 DgvProdutosVenda.Rows.Add("Produto 1", 50.00);
                 DgvProdutosVenda.Rows.Add("Produto 2", 30.00);
                 DgvProdutosVenda.Rows.Add("Produto 3", 25.50);
+
+
+                decimal total = 0;
+                foreach (DataGridViewRow linha in DgvProdutosVenda.Rows)
+                {
+                    if (linha.Cells[1].Value != null && decimal.TryParse(linha.Cells[1].Value.ToString(), out decimal valor))
+                    {
+                        total += valor;
+                        LblTotalVenda.Text = $"R$ {total:N2}";
+                    }
+                }
             }
             catch (Exception ex)
             {

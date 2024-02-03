@@ -1,4 +1,5 @@
 ﻿using SisCaixaEstoque.Banco.Cadastros;
+using SisCaixaEstoque.Banco.Validacoes;
 using SisCaixaEstoque.Formularios.Base;
 using System;
 using System.Collections.Generic;
@@ -18,23 +19,13 @@ namespace SisCaixaEstoque.Formularios.Cadastros
         {
             InitializeComponent();
         }
-        public bool Validar()
-        {
-            try
-            {
-                return true;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
 
         public override void Salvar()
         {
             try
             {
-                if (Validar())
+                string ssxRetorno = BncValidacoesCadastros.ValidarFuncionario(TxbNomeCompleto.Text, TxbCPFCNPJ.Text);
+                if (ssxRetorno == string.Empty)
                 {
                     BncInserts.SalvarFuncionario(
                         TxbNomeCompleto.Text,
@@ -52,7 +43,10 @@ namespace SisCaixaEstoque.Formularios.Cadastros
                         BncInserts.SalvarUsuario(TxbNomeCompleto.Text.Split(" ")[0]);
                     }
                 }
-
+                else
+                {
+                    MessageBox.Show(ssxRetorno);
+                }
             }
             catch (Exception ex)
             {
