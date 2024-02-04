@@ -267,7 +267,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                             DataTableRetorno.Rows.Add(
                                 Convert.ToInt32(leitor["IDTIPOPAGAMENTO"])
                                 , Convert.ToString(leitor["DSTIPOPAGAMENTO"])
-                                , Convert.ToDecimal(leitor["VLTAXA"])
+                                , (Convert.ToDecimal(leitor["VLTAXA"]) / 100)
                                 );
                         }
                     }

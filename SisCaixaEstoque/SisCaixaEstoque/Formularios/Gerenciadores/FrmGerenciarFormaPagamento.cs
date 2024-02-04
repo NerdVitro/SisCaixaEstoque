@@ -50,7 +50,7 @@ namespace SisCaixaEstoque.Formularios.Gerenciadores
             {
                 DataGridViewComum objGridView = new(ref DgvDados);
                 objGridView.AdicionaColuna(new GridViewColunas("Descrição", "DSTIPOPAGAMENTO", DataGridViewAutoSizeColumnMode.Fill, 100, true, DataGridViewContentAlignment.MiddleLeft, false, ""));
-                objGridView.AdicionaColuna(new GridViewColunas("Taxa", "VLTAXA", DataGridViewAutoSizeColumnMode.Fill, 300, true, DataGridViewContentAlignment.MiddleLeft, false, ""));
+                objGridView.AdicionaColuna(new GridViewColunas("Taxa", "VLTAXA", DataGridViewAutoSizeColumnMode.Fill, 300, true, DataGridViewContentAlignment.MiddleLeft, false, "P2"));
                 objGridView.AdicionaColuna(new GridViewColunas("IDTIPOPAGAMENTO", "IDTIPOPAGAMENTO", 0, false));
                 objGridView.Finalizar(BncSelects.BuscarTipoPagamento("WHERE FOR.DSTIPOPAGAMENTO LIKE '%" + TxbDescricao.Text + "%'"), true);
             }

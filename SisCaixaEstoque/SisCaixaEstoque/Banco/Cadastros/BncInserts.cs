@@ -277,8 +277,8 @@ namespace SisCaixaEstoque.Banco.Cadastros
                                         @VLTAXA)";
 
                 using SQLiteCommand comando = new(sql, conexao);
-                comando.Parameters.AddWithValue("@IDVENDA", parDSTIPOPAGAMENTO);
-                comando.Parameters.AddWithValue("@IDTIPOPAGAMENTO", parVLTAXA);
+                comando.Parameters.AddWithValue("@DSTIPOPAGAMENTO", parDSTIPOPAGAMENTO);
+                comando.Parameters.AddWithValue("@VLTAXA", parVLTAXA);
                 comando.ExecuteNonQuery();
             }
             catch (Exception)

@@ -18,26 +18,34 @@ namespace SisCaixaEstoque.Formularios
         public FrmCadastroFormaPagamento()
         {
             InitializeComponent();
-            TxbValorTaxa.MaxLength = 5;
+            try
+            {
+                TxbValorTaxa.MaxLength = 5;
 
-            CbbTipoPagamento.Items.Add("Dinheiro");
-            CbbTipoPagamento.Items.Add("Cartão Crédito");
-            CbbTipoPagamento.Items.Add("Cartão Débito");
-            CbbTipoPagamento.Items.Add("Crediário");
+                CbbTipoPagamento.Items.Add("Dinheiro");
+                CbbTipoPagamento.Items.Add("Cartão Crédito");
+                CbbTipoPagamento.Items.Add("Cartão Débito");
+                CbbTipoPagamento.Items.Add("Crediário");
 
-            CbbTipoPagamento.SelectedIndex = 0;
+                CbbTipoPagamento.SelectedIndex = 0;
+                TxbValorTaxa.Text = "0,00";
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public override void Salvar()
         {
             try
             {
-                string ssxRetorno = BncValidacoesCadastros.ValidarTipoPagamento(CbbTipoPagamento.SelectedText);
+                string ssxRetorno = BncValidacoesCadastros.ValidarTipoPagamento(CbbTipoPagamento.SelectedItem.ToString());
                 if (ssxRetorno == string.Empty)
                 {
-                    BncInserts.SalvarTipoPagamento(CbbTipoPagamento.SelectedText, Convert.ToDecimal(TxbValorTaxa.Text));
+                    BncInserts.SalvarTipoPagamento(CbbTipoPagamento.SelectedItem.ToString(), Convert.ToDecimal(TxbValorTaxa.Text));
                     CbbTipoPagamento.SelectedIndex = 0;
-                    TxbValorTaxa.Text = "";
+                    TxbValorTaxa.Text = "0,00";
                 }
                 else
                 {
