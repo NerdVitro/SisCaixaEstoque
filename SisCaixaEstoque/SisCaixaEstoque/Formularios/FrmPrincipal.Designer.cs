@@ -52,6 +52,7 @@
             BtnCliente = new Button();
             BtnCaixa = new Button();
             ToolTipMensagens = new ToolTip(components);
+            BtnRelatorios = new Button();
             PnlPrincipal.SuspendLayout();
             PnlTrabalho.SuspendLayout();
             GrpProduto.SuspendLayout();
@@ -227,6 +228,7 @@
             // PnlLateral
             // 
             PnlLateral.BorderStyle = BorderStyle.FixedSingle;
+            PnlLateral.Controls.Add(BtnRelatorios);
             PnlLateral.Controls.Add(BtnSair);
             PnlLateral.Controls.Add(BtnConfiguracao);
             PnlLateral.Controls.Add(BtnEstoque);
@@ -254,7 +256,7 @@
             // 
             BtnConfiguracao.FlatStyle = FlatStyle.Flat;
             BtnConfiguracao.Image = (Image)resources.GetObject("BtnConfiguracao.Image");
-            BtnConfiguracao.Location = new Point(3, 199);
+            BtnConfiguracao.Location = new Point(3, 248);
             BtnConfiguracao.Name = "BtnConfiguracao";
             BtnConfiguracao.Size = new Size(43, 43);
             BtnConfiguracao.TabIndex = 17;
@@ -305,6 +307,17 @@
             BtnCaixa.UseVisualStyleBackColor = true;
             BtnCaixa.Click += BtnCaixa_Click;
             // 
+            // BtnRelatorios
+            // 
+            BtnRelatorios.FlatStyle = FlatStyle.Flat;
+            BtnRelatorios.Image = (Image)resources.GetObject("BtnRelatorios.Image");
+            BtnRelatorios.Location = new Point(3, 199);
+            BtnRelatorios.Name = "BtnRelatorios";
+            BtnRelatorios.Size = new Size(43, 43);
+            BtnRelatorios.TabIndex = 19;
+            BtnRelatorios.UseVisualStyleBackColor = true;
+            BtnRelatorios.Click += BtnRelatorios_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -353,5 +366,6 @@
         private Label label4;
         private Button BtnSair;
         private ToolTip ToolTipMensagens;
+        private Button BtnRelatorios;
     }
 }

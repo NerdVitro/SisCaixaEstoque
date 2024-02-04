@@ -12,13 +12,11 @@ namespace SisCaixaEstoque.Banco.Cadastros
     {
         public static void SalvarCliente(string parNomeCompleto, string parCPFCNPJ, string parEndereco, string parCidade, string parEstado, string parEmail, string parTelefone, string parCelular, string parWhatsapp)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBCLIENTE (
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBCLIENTE (
                                     DSNOMECOMPLETO,
                                     VLCPFCNPJ,
                                     DSENDERECO,
@@ -39,18 +37,17 @@ namespace SisCaixaEstoque.Banco.Cadastros
                                     @VLCELULAR,
                                     @VLWHATS)";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@DSNOMECOMPLETO", parNomeCompleto);
-                    comando.Parameters.AddWithValue("@VLCPFCNPJ", parCPFCNPJ);
-                    comando.Parameters.AddWithValue("@DSENDERECO", parEndereco);
-                    comando.Parameters.AddWithValue("@DSCIDADE", parCidade);
-                    comando.Parameters.AddWithValue("@DSESTADO", parEstado);
-                    comando.Parameters.AddWithValue("@DSEMAIL", parEmail);
-                    comando.Parameters.AddWithValue("@VLTELEFONE", parTelefone);
-                    comando.Parameters.AddWithValue("@VLCELULAR", parCelular);
-                    comando.Parameters.AddWithValue("@VLWHATS", parWhatsapp);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@DSNOMECOMPLETO", parNomeCompleto);
+                comando.Parameters.AddWithValue("@VLCPFCNPJ", parCPFCNPJ);
+                comando.Parameters.AddWithValue("@DSENDERECO", parEndereco);
+                comando.Parameters.AddWithValue("@DSCIDADE", parCidade);
+                comando.Parameters.AddWithValue("@DSESTADO", parEstado);
+                comando.Parameters.AddWithValue("@DSEMAIL", parEmail);
+                comando.Parameters.AddWithValue("@VLTELEFONE", parTelefone);
+                comando.Parameters.AddWithValue("@VLCELULAR", parCelular);
+                comando.Parameters.AddWithValue("@VLWHATS", parWhatsapp);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -59,13 +56,11 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarFornecedor(string parNomeCompleto, string parNomeFanasia, string parCNPJ, string parEndereco, string parCidade, string parEstado, string parEmail, string parTelefone, string parCelular)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBFORNECEDOR (
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBFORNECEDOR (
                                         DSNOMECOMPLETO,
                                         DSNOMEFANTASIA,
                                         VLCNPJ,
@@ -86,18 +81,17 @@ namespace SisCaixaEstoque.Banco.Cadastros
                                         @VLTELEFONE,
                                         @VLCELULAR)";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@DSNOMECOMPLETO", parNomeCompleto);
-                    comando.Parameters.AddWithValue("@DSNOMEFANTASIA", parNomeFanasia);
-                    comando.Parameters.AddWithValue("@VLCNPJ", parCNPJ);
-                    comando.Parameters.AddWithValue("@DSENDERECO", parEndereco);
-                    comando.Parameters.AddWithValue("@DSCIDADE", parCidade);
-                    comando.Parameters.AddWithValue("@DSESTADO", parEstado);
-                    comando.Parameters.AddWithValue("@DSEMAIL", parEmail);
-                    comando.Parameters.AddWithValue("@VLTELEFONE", parTelefone);
-                    comando.Parameters.AddWithValue("@VLCELULAR", parCelular);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@DSNOMECOMPLETO", parNomeCompleto);
+                comando.Parameters.AddWithValue("@DSNOMEFANTASIA", parNomeFanasia);
+                comando.Parameters.AddWithValue("@VLCNPJ", parCNPJ);
+                comando.Parameters.AddWithValue("@DSENDERECO", parEndereco);
+                comando.Parameters.AddWithValue("@DSCIDADE", parCidade);
+                comando.Parameters.AddWithValue("@DSESTADO", parEstado);
+                comando.Parameters.AddWithValue("@DSEMAIL", parEmail);
+                comando.Parameters.AddWithValue("@VLTELEFONE", parTelefone);
+                comando.Parameters.AddWithValue("@VLCELULAR", parCelular);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -106,13 +100,11 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarFuncionario(string parNomeCompleto, string parCPFCNPJ, string parEndereco, string parCidade, string parEstado, string parEmail, string parTelefone, string parCelular, string parWhatsapp)
         {
-            SQLiteConnection conexao = null;
             try
 			{
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBFUNCIONARIO 
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBFUNCIONARIO 
                                         (DSNOMECOMPLETO, 
                                         VLCPFCNPJ, 
                                         DSENDERECO, 
@@ -133,18 +125,17 @@ namespace SisCaixaEstoque.Banco.Cadastros
                                         @VLCELULAR, 
                                         @VLWHATS);";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@DSNOMECOMPLETO", parNomeCompleto);
-                    comando.Parameters.AddWithValue("@VLCPFCNPJ", parCPFCNPJ);
-                    comando.Parameters.AddWithValue("@DSENDERECO", parEndereco);
-                    comando.Parameters.AddWithValue("@DSCIDADE", parCidade);
-                    comando.Parameters.AddWithValue("@DSESTADO", parEstado);
-                    comando.Parameters.AddWithValue("@DSEMAIL", parEmail);
-                    comando.Parameters.AddWithValue("@VLTELEFONE", parTelefone);
-                    comando.Parameters.AddWithValue("@VLCELULAR", parCelular);
-                    comando.Parameters.AddWithValue("@VLWHATS", parWhatsapp);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@DSNOMECOMPLETO", parNomeCompleto);
+                comando.Parameters.AddWithValue("@VLCPFCNPJ", parCPFCNPJ);
+                comando.Parameters.AddWithValue("@DSENDERECO", parEndereco);
+                comando.Parameters.AddWithValue("@DSCIDADE", parCidade);
+                comando.Parameters.AddWithValue("@DSESTADO", parEstado);
+                comando.Parameters.AddWithValue("@DSEMAIL", parEmail);
+                comando.Parameters.AddWithValue("@VLTELEFONE", parTelefone);
+                comando.Parameters.AddWithValue("@VLCELULAR", parCelular);
+                comando.Parameters.AddWithValue("@VLWHATS", parWhatsapp);
+                comando.ExecuteNonQuery();
             }
 			catch (Exception)
 			{
@@ -153,21 +144,18 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarProduto(string parNomeProduto)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBPRODUTO (
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBPRODUTO (
                                         DSNOMEPRODUTO)
                                     VALUES (
                                         @DSNOMEPRODUTO)";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@DSNOMEPRODUTO", parNomeProduto);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@DSNOMEPRODUTO", parNomeProduto);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -176,13 +164,11 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarVenda(int parIDCLIENTE, decimal parVLVALORVENDA, string parDSANOTACAO)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBVENDA (
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBVENDA (
                                         IDCLIENTE,
                                         VLVALORVENDA,
                                         DSANOTACAO)
@@ -191,12 +177,11 @@ namespace SisCaixaEstoque.Banco.Cadastros
                                         @VLVALORVENDA,
                                         @DSANOTACAO)";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@IDCLIENTE", parIDCLIENTE);
-                    comando.Parameters.AddWithValue("@VLVALORVENDA", parVLVALORVENDA);
-                    comando.Parameters.AddWithValue("@DSANOTACAO", parDSANOTACAO);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@IDCLIENTE", parIDCLIENTE);
+                comando.Parameters.AddWithValue("@VLVALORVENDA", parVLVALORVENDA);
+                comando.Parameters.AddWithValue("@DSANOTACAO", parDSANOTACAO);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -205,13 +190,11 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarCaixa(int parIDFUNCIONARIO, decimal parVLVALORCOMECO, decimal parVLVALORFINAL, string parSTSTATUS)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBCAIXA (
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBCAIXA (
                                         IDFUNCIONARIO,
                                         VLVALORCOMECO,
                                         VLVALORFINAL,
@@ -222,13 +205,12 @@ namespace SisCaixaEstoque.Banco.Cadastros
                                         @VLVALORFINAL,
                                         @STSTATUS)";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@IDFUNCIONARIO", parIDFUNCIONARIO);
-                    comando.Parameters.AddWithValue("@VLVALORCOMECO", parVLVALORCOMECO);
-                    comando.Parameters.AddWithValue("@VLVALORFINAL", parVLVALORFINAL);
-                    comando.Parameters.AddWithValue("@STSTATUS", parSTSTATUS);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@IDFUNCIONARIO", parIDFUNCIONARIO);
+                comando.Parameters.AddWithValue("@VLVALORCOMECO", parVLVALORCOMECO);
+                comando.Parameters.AddWithValue("@VLVALORFINAL", parVLVALORFINAL);
+                comando.Parameters.AddWithValue("@STSTATUS", parSTSTATUS);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -237,24 +219,21 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarCaixa(int parIDCAIXA, int parIDVENDA)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBMOVCAIXA (
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBMOVCAIXA (
                                         IDCAIXA,
                                         IDVENDA)
                                     VALUES (
                                         @IDCAIXA,
                                         @IDVENDA)";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@IDCAIXA", parIDCAIXA);
-                    comando.Parameters.AddWithValue("@IDVENDA", parIDVENDA);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@IDCAIXA", parIDCAIXA);
+                comando.Parameters.AddWithValue("@IDVENDA", parIDVENDA);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -263,24 +242,21 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarCarrinhoProduto(int parIDVENDA, int parIDPRODUTO)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBCARVENDA (
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBCARVENDA (
                                         IDVENDA,
                                         IDPRODUTO)
                                     VALUES (
                                         @IDVENDA,
                                         @IDPRODUTO)";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@IDVENDA", parIDVENDA);
-                    comando.Parameters.AddWithValue("@IDPRODUTO", parIDPRODUTO);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@IDVENDA", parIDVENDA);
+                comando.Parameters.AddWithValue("@IDPRODUTO", parIDPRODUTO);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -289,24 +265,21 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarTipoPagamento(string parDSTIPOPAGAMENTO, decimal parVLTAXA)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBTIPOPAGAMENTO (
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBTIPOPAGAMENTO (
                                         DSTIPOPAGAMENTO,
                                         VLTAXA)
                                     VALUES (
                                         @DSTIPOPAGAMENTO,
                                         @VLTAXA)";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@IDVENDA", parDSTIPOPAGAMENTO);
-                    comando.Parameters.AddWithValue("@IDTIPOPAGAMENTO", parVLTAXA);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@IDVENDA", parDSTIPOPAGAMENTO);
+                comando.Parameters.AddWithValue("@IDTIPOPAGAMENTO", parVLTAXA);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -315,13 +288,11 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarPagamento(int parIDVENDA, int parIDTIPOPAGAMENTO, decimal parVLVALORPAGO, decimal parVLVALORTROCO, string parTPTIPOPAG)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBPAGAMENTO (
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBPAGAMENTO (
                                         IDVENDA,
                                         IDTIPOPAGAMENTO,
                                         VLVALORPAGO,
@@ -334,14 +305,13 @@ namespace SisCaixaEstoque.Banco.Cadastros
                                         @VLVALORTROCO,
                                         @TPTIPOPAG)";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@IDVENDA", parIDVENDA);
-                    comando.Parameters.AddWithValue("@IDTIPOPAGAMENTO", parIDTIPOPAGAMENTO);
-                    comando.Parameters.AddWithValue("@VLVALORPAGO", parVLVALORPAGO);
-                    comando.Parameters.AddWithValue("@VLVALORTROCO", parVLVALORTROCO);
-                    comando.Parameters.AddWithValue("@TPTIPOPAG", parTPTIPOPAG);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@IDVENDA", parIDVENDA);
+                comando.Parameters.AddWithValue("@IDTIPOPAGAMENTO", parIDTIPOPAGAMENTO);
+                comando.Parameters.AddWithValue("@VLVALORPAGO", parVLVALORPAGO);
+                comando.Parameters.AddWithValue("@VLVALORTROCO", parVLVALORTROCO);
+                comando.Parameters.AddWithValue("@TPTIPOPAG", parTPTIPOPAG);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -350,13 +320,11 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarEstoque(int parIDPRODUTO, int parIDFORNECEDOR, int parCDCODPRODUTO, int parDSLOTE, decimal parVLVALORCOMPRA, decimal parVLVALORVENDA, decimal parVLQUANTIDADE)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBESTOQUE (
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBESTOQUE (
                                         IDPRODUTO,
                                         IDFORNECEDOR,
                                         CDCODPRODUTO,
@@ -373,16 +341,15 @@ namespace SisCaixaEstoque.Banco.Cadastros
                                         @VLVALORVENDA,
                                         @VLQUANTIDADE)";
 
-                    using SQLiteCommand comando = new(sql, conexao);
-                    comando.Parameters.AddWithValue("@IDPRODUTO", parIDPRODUTO);
-                    comando.Parameters.AddWithValue("@IDFORNECEDOR", parIDFORNECEDOR);
-                    comando.Parameters.AddWithValue("@CDCODPRODUTO", parCDCODPRODUTO);
-                    comando.Parameters.AddWithValue("@DSLOTE", parDSLOTE);
-                    comando.Parameters.AddWithValue("@VLVALORCOMPRA", parVLVALORCOMPRA);
-                    comando.Parameters.AddWithValue("@VLVALORVENDA", parVLVALORVENDA);
-                    comando.Parameters.AddWithValue("@VLQUANTIDADE", parVLQUANTIDADE);
-                    comando.ExecuteNonQuery();
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@IDPRODUTO", parIDPRODUTO);
+                comando.Parameters.AddWithValue("@IDFORNECEDOR", parIDFORNECEDOR);
+                comando.Parameters.AddWithValue("@CDCODPRODUTO", parCDCODPRODUTO);
+                comando.Parameters.AddWithValue("@DSLOTE", parDSLOTE);
+                comando.Parameters.AddWithValue("@VLVALORCOMPRA", parVLVALORCOMPRA);
+                comando.Parameters.AddWithValue("@VLVALORVENDA", parVLVALORVENDA);
+                comando.Parameters.AddWithValue("@VLQUANTIDADE", parVLQUANTIDADE);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {
@@ -391,13 +358,11 @@ namespace SisCaixaEstoque.Banco.Cadastros
         }
         public static void SalvarUsuario(string parNome)
         {
-            SQLiteConnection conexao = null;
             try
             {
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
-                {
-                    conexao.Open();
-                    string sql = @"INSERT INTO TBUSUARIO 
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+                string sql = @"INSERT INTO TBUSUARIO 
                                         (NOME, 
                                         SENHA,
                                         NIVEL)
@@ -406,14 +371,9 @@ namespace SisCaixaEstoque.Banco.Cadastros
                                         '1234',
                                         1);";
 
-
-
-                    using (SQLiteCommand comando = new(sql, conexao))
-                    {
-                        comando.Parameters.AddWithValue("@NOME", parNome);
-                        comando.ExecuteNonQuery();
-                    }
-                }
+                using SQLiteCommand comando = new(sql, conexao);
+                comando.Parameters.AddWithValue("@NOME", parNome);
+                comando.ExecuteNonQuery();
             }
             catch (Exception)
             {

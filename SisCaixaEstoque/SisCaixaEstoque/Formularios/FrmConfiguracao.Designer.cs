@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfiguracao));
             BtnFuncionario = new Button();
             ToolTipMensagens = new ToolTip(components);
+            BtnFormaPagamento = new Button();
             SuspendLayout();
             // 
             // BtnFuncionario
@@ -45,11 +46,23 @@
             BtnFuncionario.UseVisualStyleBackColor = true;
             BtnFuncionario.Click += BtnFuncionario_Click;
             // 
+            // BtnFormaPagamento
+            // 
+            BtnFormaPagamento.FlatStyle = FlatStyle.Flat;
+            BtnFormaPagamento.Image = (Image)resources.GetObject("BtnFormaPagamento.Image");
+            BtnFormaPagamento.Location = new Point(88, 12);
+            BtnFormaPagamento.Name = "BtnFormaPagamento";
+            BtnFormaPagamento.Size = new Size(57, 56);
+            BtnFormaPagamento.TabIndex = 19;
+            BtnFormaPagamento.UseVisualStyleBackColor = true;
+            BtnFormaPagamento.Click += BtnFormaPagamento_Click;
+            // 
             // FrmConfiguracao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(BtnFormaPagamento);
             Controls.Add(BtnFuncionario);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmConfiguracao";
@@ -62,5 +75,6 @@
 
         private Button BtnFuncionario;
         private ToolTip ToolTipMensagens;
+        private Button BtnFormaPagamento;
     }
 }

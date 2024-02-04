@@ -188,8 +188,6 @@
         }
 
         #endregion
-
-        private Panel PnlLateral;
         private Button BtnAdicionar;
         private Button BtnSair;
         private Button BtnFechar;
@@ -199,5 +197,6 @@
         private Button BtnFiltrar;
         public Panel PnlFiltros;
         public DataGridView DgvDados;
+        public Panel PnlLateral;
     }
 }

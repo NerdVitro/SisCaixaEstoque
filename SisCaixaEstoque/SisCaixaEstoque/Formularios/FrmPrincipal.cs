@@ -214,7 +214,7 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
-                FrmCadastroProduto Produto = new();
+                FrmGerenciarProduto Produto = new();
                 Produto.ShowDialog();
             }
             catch (Exception ex)
@@ -228,6 +228,18 @@ namespace SisCaixaEstoque.Formularios
             {
                 FrmCadastroEstoque Estoque = new();
                 Estoque.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void BtnRelatorios_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //FrmConfiguracao Configuracao = new();
+                //Configuracao.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -258,5 +270,6 @@ namespace SisCaixaEstoque.Formularios
                 MessageBox.Show(ex.Message);
             }
         }
+        
     }
 }

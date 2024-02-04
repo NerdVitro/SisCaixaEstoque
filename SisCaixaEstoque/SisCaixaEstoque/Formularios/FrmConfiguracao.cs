@@ -32,5 +32,17 @@ namespace SisCaixaEstoque.Formularios
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void BtnFormaPagamento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new FrmGerenciarFormaPagamento().ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

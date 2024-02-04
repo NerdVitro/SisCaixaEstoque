@@ -91,5 +91,63 @@ namespace SisCaixaEstoque.Banco.Validacoes
                 throw;
             }
         }
+        public static string ValidarProduto(string parProduto)
+        {
+            try
+            {
+                string ssxRetornoValidacao = string.Empty;
+
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                {
+                    conexao.Open();
+                    string sql = $@"SELECT PRO.IDPRODUTO FROM TBPRODUTO AS PRO WHERE PRO.DSNOMEPRODUTO = @DSNOMEPRODUTO";
+
+                    using SQLiteCommand comando = new(sql, conexao);
+                    comando.Parameters.AddWithValue("@DSNOMEPRODUTO", parProduto);
+
+                    using SQLiteDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.HasRows && leitor.Read())
+                    {
+                        ssxRetornoValidacao += "Produto já cadastrado";
+                    }
+                }
+
+                return ssxRetornoValidacao;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static string ValidarTipoPagamento(string parTipoPagamento)
+        {
+            try
+            {
+                string ssxRetornoValidacao = string.Empty;
+
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                {
+                    conexao.Open();
+                    string sql = $@"SELECT FOR.IDTIPOPAGAMENTO FROM TBTIPOPAGAMENTO AS FOR WHERE FOR.DSTIPOPAGAMENTO = @DSTIPOPAGAMENTO";
+
+                    using SQLiteCommand comando = new(sql, conexao);
+                    comando.Parameters.AddWithValue("@DSTIPOPAGAMENTO", parTipoPagamento);
+
+                    using SQLiteDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.HasRows && leitor.Read())
+                    {
+                        ssxRetornoValidacao += "Tipo de pagamento já cadastrado";
+                    }
+                }
+
+                return ssxRetornoValidacao;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

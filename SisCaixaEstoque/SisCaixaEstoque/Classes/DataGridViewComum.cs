@@ -10,14 +10,11 @@ namespace SisCaixaEstoque.Classes
 {
     public class DataGridViewComum
     {
-        //DataTable dataTable;
-        DataGridView dataGridView;
-        List<GridViewColunas> objLstColunas;
+        readonly DataGridView dataGridView;
+        List<GridViewColunas>? objLstColunas;
 
-        //public GridViewColunas(ref DataGridView parDataGridView, ref DataTable parDataTable)
         public DataGridViewComum(ref DataGridView parDataGridView)
         {
-            //dataTable = parDataTable;
             dataGridView = parDataGridView;
             dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
             Inicializar();
@@ -32,11 +29,16 @@ namespace SisCaixaEstoque.Classes
 
         public void AdicionaColuna(GridViewColunas parColuna)
         {
+            objLstColunas ??= new List<GridViewColunas>();
             objLstColunas.Add(parColuna);
         }
         
         public void Finalizar(Object listaObjetos)
         {
+            if (objLstColunas is null)
+            {
+                throw new(nameof(objLstColunas));
+            }
             GridViewColunas objColuna;
             dataGridView.DataSource = listaObjetos;
             Configurar();
@@ -47,9 +49,10 @@ namespace SisCaixaEstoque.Classes
 
                 if (!objColuna.ColunaSelecao)
                 {
-                    DataGridViewTextBoxColumn coluna = new DataGridViewTextBoxColumn();
-
-                    coluna.HeaderText = objColuna.Titulo;
+                    DataGridViewTextBoxColumn coluna = new()
+                    {
+                        HeaderText = objColuna.Titulo
+                    };
                     coluna.HeaderCell.Style.Alignment = objColuna.Alinhamento;
                     coluna.Name = objColuna.NomeCampo;
                     coluna.Visible = objColuna.ColunaVisivel;
@@ -67,7 +70,7 @@ namespace SisCaixaEstoque.Classes
                 }
                 else
                 {
-                    DataGridViewCheckBoxColumn coluna = new DataGridViewCheckBoxColumn(false)
+                    DataGridViewCheckBoxColumn coluna = new(false)
                     {
                         HeaderText = objColuna.Titulo,
                         Name = objColuna.NomeCampo,
@@ -97,11 +100,14 @@ namespace SisCaixaEstoque.Classes
         }
         public void Finalizar(Object listaObjetos, bool CentralizarTitulos = false)
         {
+            if (objLstColunas is null)
+            {
+                throw new(nameof(objLstColunas));
+            }
             GridViewColunas objColuna;
             dataGridView.DataSource = listaObjetos;
             Configurar();
 
-            //Utilizado para não pintar o header da coluna em seleção
             dataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = dataGridView.ColumnHeadersDefaultCellStyle.BackColor;
 
             for (int iixTable = 0; iixTable < objLstColunas.Count; iixTable++)
@@ -224,11 +230,6 @@ namespace SisCaixaEstoque.Classes
                     }
                 }
             }
-
-            //foreach (DataGridViewColumn column in dataGridView.Columns)
-            //{
-            //    column.SortMode = DataGridViewColumnSortMode.Automatic;
-            //}
         }
 
         private void Configurar()
@@ -245,18 +246,18 @@ namespace SisCaixaEstoque.Classes
     }
     public class GridViewColunas
     {
-        private string _Titulo;
-        private string _NomeCampo;
-        private int _Tamanho; 
-        private DataGridViewContentAlignment _Alinhamento;  
-        private Boolean _ColunaSelecao;
-        private string _Mascara;  
-        private Color _CorFonte;
-        private Color _CorFundo;
-        private bool _ColunaVisivel;
-        private bool _ReadOnly;
-        private DataGridViewAutoSizeColumnMode _AutoSizeMode;
-        private int _MinimunSizeWidth;
+        private string? _Titulo;
+        private string? _NomeCampo;
+        private int? _Tamanho; 
+        private DataGridViewContentAlignment? _Alinhamento;  
+        private bool? _ColunaSelecao;
+        private string? _Mascara;  
+        private Color? _CorFonte;
+        private Color? _CorFundo;
+        private bool? _ColunaVisivel;
+        private bool? _ReadOnly;
+        private DataGridViewAutoSizeColumnMode? _AutoSizeMode;
+        private int? _MinimunSizeWidth;
         //private int _MaximunSizeWidth;
 
         public GridViewColunas(string parTitulo,
@@ -334,17 +335,17 @@ namespace SisCaixaEstoque.Classes
             this.AutoSizeMode = parAutoSizeMode;
             this.MinimunSizeWidth = parMinimunSizeWidth;
         }
-        public string Titulo { get => _Titulo; set => _Titulo = value; }
-        public string NomeCampo { get => _NomeCampo; set => _NomeCampo = value; }
-        public int Tamanho { get => _Tamanho; set => _Tamanho = value; }
-        public DataGridViewContentAlignment Alinhamento { get => _Alinhamento; set => _Alinhamento = value; }
-        public bool ColunaSelecao { get => _ColunaSelecao; set => _ColunaSelecao = value; }
-        public string Mascara { get => _Mascara; set => _Mascara = value; }
-        public Color CorFonte { get => _CorFonte; set => _CorFonte = value; }
-        public Color CorFundo { get => _CorFundo; set => _CorFundo = value; }
-        public bool ColunaVisivel { get => _ColunaVisivel; set => _ColunaVisivel = value; }
-        public bool ReadOnly { get => _ReadOnly; set => _ReadOnly = value; }
-        public DataGridViewAutoSizeColumnMode AutoSizeMode { get => _AutoSizeMode; set => _AutoSizeMode = value; }
-        public int MinimunSizeWidth { get => _MinimunSizeWidth; set => _MinimunSizeWidth = value; }
+        public string Titulo { get => _Titulo?? ""; set => _Titulo = value; }
+        public string NomeCampo { get => _NomeCampo ?? ""; set => _NomeCampo = value; }
+        public int Tamanho { get => _Tamanho ?? 0; set => _Tamanho = value; }
+        public DataGridViewContentAlignment Alinhamento { get => _Alinhamento ?? new DataGridViewContentAlignment(); set => _Alinhamento = value; }
+        public bool ColunaSelecao { get => _ColunaSelecao ?? false; set => _ColunaSelecao = value; }
+        public string Mascara { get => _Mascara ?? ""; set => _Mascara = value; }
+        public Color CorFonte { get => _CorFonte ?? new Color(); set => _CorFonte = value; }
+        public Color CorFundo { get => _CorFundo ?? new Color(); set => _CorFundo = value; }
+        public bool ColunaVisivel { get => _ColunaVisivel ?? false; set => _ColunaVisivel = value; }
+        public bool ReadOnly { get => _ReadOnly ?? false; set => _ReadOnly = value; }
+        public DataGridViewAutoSizeColumnMode AutoSizeMode { get => _AutoSizeMode ?? new DataGridViewAutoSizeColumnMode(); set => _AutoSizeMode = value; }
+        public int MinimunSizeWidth { get => _MinimunSizeWidth ?? 0; set => _MinimunSizeWidth = value; }
     }
 }

@@ -5,7 +5,7 @@ namespace SisCaixaEstoque.Banco
 {
     public class BncValidarLogin
     {
-        public bool ValidarLogin(string parLogin, string parSenha)
+        public static bool ValidarLogin(string parLogin, string parSenha)
         {
 			try
 			{
@@ -40,23 +40,22 @@ namespace SisCaixaEstoque.Banco
 				throw;
 			}
         }
-        public int GetNivelAcesso(string parLogin, string parSenha)
+        public static int GetNivelAcesso(string parLogin, string parSenha)
         {
             try
             {
-                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+                conexao.Open();
+
+                using (SQLiteCommand comando = new("SELECT NIVEL FROM TBUSUARIO WHERE NOME = @NOME AND SENHA = @SENHA;", conexao))
                 {
-                    conexao.Open();
-                    using (SQLiteCommand comando = new("SELECT NIVEL FROM TBUSUARIO WHERE NOME = @NOME AND SENHA = @SENHA;", conexao))
-                    {
-                        comando.Parameters.AddWithValue("@NOME", parLogin);
-                        comando.Parameters.AddWithValue("@SENHA", parSenha);
-                        using SQLiteDataReader leitor = comando.ExecuteReader();
-                        if (leitor.Read())
-                            return Convert.ToInt32(leitor["NIVEL"]);
-                    }
-                    conexao.Close();
+                    comando.Parameters.AddWithValue("@NOME", parLogin);
+                    comando.Parameters.AddWithValue("@SENHA", parSenha);
+                    using SQLiteDataReader leitor = comando.ExecuteReader();
+                    if (leitor.Read())
+                        return Convert.ToInt32(leitor["NIVEL"]);
                 }
+                conexao.Close();
                 return 0;
             }
             catch (Exception)

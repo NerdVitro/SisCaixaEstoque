@@ -28,7 +28,7 @@ namespace SisCaixaEstoque.Classes
                 }
                 if (string.IsNullOrEmpty(Mensagem))
                 {
-                    if (!(new BncValidarLogin()).ValidarLogin(parLogin, parSenha))
+                    if (!BncValidarLogin.ValidarLogin(parLogin, parSenha))
                     {
                         Mensagem += "Login ou Senha Incorreto";
                     }
@@ -45,7 +45,7 @@ namespace SisCaixaEstoque.Classes
         {
             try
             {
-                return (NivelAcesso)(new BncValidarLogin()).GetNivelAcesso(parLogin, parSenha);
+                return (NivelAcesso)BncValidarLogin.GetNivelAcesso(parLogin, parSenha);
             }
             catch (Exception)
             {

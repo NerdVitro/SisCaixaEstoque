@@ -61,7 +61,13 @@
     <Compile Update="Formularios\Gerenciadores\FrmGerenciarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Gerenciadores\FrmGerenciarFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Gerenciadores\FrmGerenciarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Gerenciadores\FrmGerenciarProduto.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

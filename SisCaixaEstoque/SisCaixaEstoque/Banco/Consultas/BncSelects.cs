@@ -13,7 +13,6 @@ namespace SisCaixaEstoque.Banco.Consultas
     {
         public static DataTable BuscarCliente(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
@@ -28,7 +27,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 DataTableRetorno.Columns.Add("VLCELULAR", typeof(string));
                 DataTableRetorno.Columns.Add("VLWHATS", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
@@ -77,7 +76,6 @@ namespace SisCaixaEstoque.Banco.Consultas
         }
         public static DataTable BuscarFornecedor(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
@@ -92,7 +90,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 DataTableRetorno.Columns.Add("VLTELEFONE", typeof(string));
                 DataTableRetorno.Columns.Add("VLCELULAR", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
@@ -141,7 +139,6 @@ namespace SisCaixaEstoque.Banco.Consultas
         }
         public static DataTable BuscarFuncionario(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
@@ -156,7 +153,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 DataTableRetorno.Columns.Add("VLCELULAR", typeof(string));
                 DataTableRetorno.Columns.Add("VLWHATS", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
@@ -205,14 +202,13 @@ namespace SisCaixaEstoque.Banco.Consultas
         }
         public static DataTable BuscarProduto(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
                 DataTableRetorno.Columns.Add("IDPRODUTO", typeof(int));
                 DataTableRetorno.Columns.Add("DSNOMEPRODUTO", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
@@ -242,9 +238,50 @@ namespace SisCaixaEstoque.Banco.Consultas
                 throw;
             }
         }
+        public static DataTable BuscarTipoPagamento(string parWhere)
+        {
+            try
+            {
+                DataTable DataTableRetorno = new();
+                DataTableRetorno.Columns.Add("IDTIPOPAGAMENTO", typeof(int));
+                DataTableRetorno.Columns.Add("DSTIPOPAGAMENTO", typeof(string));
+                DataTableRetorno.Columns.Add("VLTAXA", typeof(Decimal));
+
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                {
+                    conexao.Open();
+                    string sql = $@"SELECT 
+                                        FOR.IDTIPOPAGAMENTO
+                                        ,FOR.DSTIPOPAGAMENTO
+                                        ,FOR.VLTAXA
+                                    FROM TBTIPOPAGAMENTO AS FOR
+                                    {parWhere}";
+
+                    using SQLiteCommand comando = new(sql, conexao);
+                    using SQLiteDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.HasRows)
+                    {
+                        while (leitor.Read())
+                        {
+                            DataTableRetorno.Rows.Add(
+                                Convert.ToInt32(leitor["IDTIPOPAGAMENTO"])
+                                , Convert.ToString(leitor["DSTIPOPAGAMENTO"])
+                                , Convert.ToDecimal(leitor["VLTAXA"])
+                                );
+                        }
+                    }
+                }
+
+                return DataTableRetorno;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public static DataTable BuscarVenda(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
@@ -254,7 +291,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 DataTableRetorno.Columns.Add("DSANOTACAO", typeof(string));
                 DataTableRetorno.Columns.Add("DSNOMECOMPLETO", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
@@ -294,7 +331,6 @@ namespace SisCaixaEstoque.Banco.Consultas
         }
         public static DataTable BuscarCaixa(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
@@ -305,7 +341,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 DataTableRetorno.Columns.Add("STSTATUS", typeof(string));
                 DataTableRetorno.Columns.Add("DSNOMECOMPLETO", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
@@ -347,7 +383,6 @@ namespace SisCaixaEstoque.Banco.Consultas
         }
         public static DataTable BuscarMovmentacaoCaixa(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
@@ -357,7 +392,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 DataTableRetorno.Columns.Add("FUNCIONARIO", typeof(string));
                 DataTableRetorno.Columns.Add("CLIENTE", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
@@ -400,7 +435,6 @@ namespace SisCaixaEstoque.Banco.Consultas
         }
         public static DataTable BuscarCarrinhoVenda(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
@@ -410,7 +444,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 DataTableRetorno.Columns.Add("CLIENTE", typeof(string));
                 DataTableRetorno.Columns.Add("DSNOMEPRODUTO", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
@@ -452,7 +486,6 @@ namespace SisCaixaEstoque.Banco.Consultas
         }
         public static DataTable BuscarPagamento(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
@@ -463,7 +496,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 DataTableRetorno.Columns.Add("VLVALORTROCO", typeof(decimal));
                 DataTableRetorno.Columns.Add("DSTIPOPAGAMENTO", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
@@ -507,7 +540,6 @@ namespace SisCaixaEstoque.Banco.Consultas
         }
         public static DataTable BuscarEstoque(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
@@ -522,7 +554,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 DataTableRetorno.Columns.Add("DSNOMECOMPLETO", typeof(string));
                 DataTableRetorno.Columns.Add("DSNOMEPRODUTO", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
@@ -573,7 +605,6 @@ namespace SisCaixaEstoque.Banco.Consultas
         }
         public static DataTable BuscarUsuario(string parWhere)
         {
-            SQLiteConnection conexao = null;
             try
             {
                 DataTable DataTableRetorno = new();
@@ -585,7 +616,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 DataTableRetorno.Columns.Add("DSNOMECOMPLETO", typeof(string));
                 DataTableRetorno.Columns.Add("DSNOMEPRODUTO", typeof(string));
 
-                using (conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
                 {
                     conexao.Open();
                     string sql = $@"SELECT 

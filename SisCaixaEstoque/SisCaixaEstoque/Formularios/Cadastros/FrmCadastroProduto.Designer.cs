@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroProduto));
             label4 = new Label();
-            textBox3 = new TextBox();
+            TxbNome = new TextBox();
             PnlDados.SuspendLayout();
             SuspendLayout();
             // 
             // PnlDados
             // 
             PnlDados.Controls.Add(label4);
-            PnlDados.Controls.Add(textBox3);
+            PnlDados.Controls.Add(TxbNome);
             PnlDados.Size = new Size(591, 323);
             // 
             // label4
@@ -49,12 +49,12 @@
             label4.TabIndex = 15;
             label4.Text = "Nome";
             // 
-            // textBox3
+            // TxbNome
             // 
-            textBox3.Location = new Point(8, 24);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(571, 23);
-            textBox3.TabIndex = 14;
+            TxbNome.Location = new Point(8, 24);
+            TxbNome.Name = "TxbNome";
+            TxbNome.Size = new Size(571, 23);
+            TxbNome.TabIndex = 14;
             // 
             // FrmCadastroProduto
             // 
@@ -72,6 +72,6 @@
         #endregion
 
         private Label label4;
-        private TextBox textBox3;
+        private TextBox TxbNome;
     }
 }
