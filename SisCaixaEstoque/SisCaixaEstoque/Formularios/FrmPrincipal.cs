@@ -30,6 +30,8 @@ namespace SisCaixaEstoque.Formularios
             SetTelaInicial();
         }
 
+        public int IDCliente = 0;
+
         private void SetTelaInicial()
         {
             try
@@ -122,7 +124,11 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
-                new FrmConsultarCliente().ShowDialog();
+                FrmConsultarCliente consulta = new();
+
+                consulta.ShowDialog();
+                IDCliente = consulta.ID;
+                TxbCliente.Text = consulta.DESCRICAO;
             }
             catch (Exception ex)
             {
@@ -270,6 +276,6 @@ namespace SisCaixaEstoque.Formularios
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
     }
 }

@@ -80,11 +80,11 @@ namespace SisCaixaEstoque.Formularios
             try
             {
 
-                //FrmConsultaFormaPagemento consulta = new FrmConsultaFormaPagemento(TxbFormaPagamento.Text);
-                //consulta.ShowDialog();
+                FrmConsultaFormaPagemento consulta = new();
+                consulta.ShowDialog();
 
-                //TxbFormaPagamento.Text = consulta.NomeFormaPagamento;
-                //IDFormaPgamento = consulta.IDFormaPgamento;
+                TxbFormaPagamento.Text = consulta.DESCRICAO;
+                IDFormaPgamento = consulta.ID;
             }
             catch (Exception ex)
             {
@@ -101,6 +101,16 @@ namespace SisCaixaEstoque.Formularios
                     TxbFormaPagamento.Text = "";
                     IDFormaPgamento = 0;
                     TxbValorPago.Text = "";
+
+                    decimal total = 0;
+                    foreach (DataGridViewRow linha in DgvPagamento.Rows)
+                    {
+                        if (linha.Cells[2].Value != null && decimal.TryParse(linha.Cells[2].Value.ToString(), out decimal valor))
+                        {
+                            total += valor;
+                            LblTotalPago.Text = $"R$ {total:N2}";
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -180,6 +190,15 @@ namespace SisCaixaEstoque.Formularios
                     if (MessageBox.Show("Tem certeza que deseja excluir esta linha?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         DgvPagamento.Rows.RemoveAt(e.RowIndex);
+                        decimal total = 0;
+                        foreach (DataGridViewRow linha in DgvPagamento.Rows)
+                        {
+                            if (linha.Cells[2].Value != null && decimal.TryParse(linha.Cells[2].Value.ToString(), out decimal valor))
+                            {
+                                total += valor;
+                                LblTotalPago.Text = $"R$ {total:N2}";
+                            }
+                        }
                     }
                 }
             }

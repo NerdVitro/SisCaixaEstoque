@@ -34,11 +34,12 @@
             TxbFormaPagamento = new TextBox();
             BtnAdicionarFormaPagamento = new Button();
             label1 = new Label();
-            label3 = new Label();
+            LblValorCompra = new Label();
             label2 = new Label();
             DgvPagamento = new DataGridView();
             TxbValorPago = new TextBox();
             label4 = new Label();
+            LblTotalPago = new Label();
             ((System.ComponentModel.ISupportInitialize)DgvPagamento).BeginInit();
             SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             // 
             // TxbFormaPagamento
             // 
+            TxbFormaPagamento.Enabled = false;
             TxbFormaPagamento.Location = new Point(12, 95);
             TxbFormaPagamento.Name = "TxbFormaPagamento";
             TxbFormaPagamento.Size = new Size(388, 23);
@@ -93,15 +95,15 @@
             label1.TabIndex = 24;
             label1.Text = "Forma Pagamento";
             // 
-            // label3
+            // LblValorCompra
             // 
-            label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(166, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(263, 37);
-            label3.TabIndex = 23;
-            label3.Text = "R$ 100,00";
-            label3.TextAlign = ContentAlignment.MiddleRight;
+            LblValorCompra.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LblValorCompra.Location = new Point(193, 9);
+            LblValorCompra.Name = "LblValorCompra";
+            LblValorCompra.Size = new Size(236, 37);
+            LblValorCompra.TabIndex = 23;
+            LblValorCompra.Text = "R$ 100,00";
+            LblValorCompra.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -109,9 +111,9 @@
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(12, 9);
             label2.Name = "label2";
-            label2.Size = new Size(148, 37);
+            label2.Size = new Size(186, 37);
             label2.TabIndex = 22;
-            label2.Text = "Valor Total:";
+            label2.Text = "Valor Compra:";
             // 
             // DgvPagamento
             // 
@@ -152,11 +154,22 @@
             label4.TabIndex = 33;
             label4.Text = "Valor Pago";
             // 
+            // LblTotalPago
+            // 
+            LblTotalPago.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LblTotalPago.Location = new Point(12, 479);
+            LblTotalPago.Name = "LblTotalPago";
+            LblTotalPago.Size = new Size(274, 37);
+            LblTotalPago.TabIndex = 35;
+            LblTotalPago.Text = "R$ 100,00";
+            LblTotalPago.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // FrmPagamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(442, 547);
+            Controls.Add(LblTotalPago);
             Controls.Add(label4);
             Controls.Add(TxbValorPago);
             Controls.Add(DgvPagamento);
@@ -165,7 +178,7 @@
             Controls.Add(TxbFormaPagamento);
             Controls.Add(BtnAdicionarFormaPagamento);
             Controls.Add(label1);
-            Controls.Add(label3);
+            Controls.Add(LblValorCompra);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -185,10 +198,11 @@
         private TextBox TxbFormaPagamento;
         private Button BtnAdicionarFormaPagamento;
         private Label label1;
-        private Label label3;
+        private Label LblValorCompra;
         private Label label2;
         private DataGridView DgvPagamento;
         private TextBox TxbValorPago;
         private Label label4;
+        private Label LblTotalPago;
     }
 }

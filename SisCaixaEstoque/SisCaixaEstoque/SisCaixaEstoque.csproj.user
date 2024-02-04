@@ -34,9 +34,6 @@
     <Compile Update="Formularios\Consultas\FrmConsultaFormaPagemento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Consultas\FrmConsultarCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Formularios\Cadastros\FrmCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -44,6 +41,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Cadastros\FrmCadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Consultas\FrmConsultarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\FrmCaixa.cs">

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            TxbNome = new TextBox();
             Lbl = new Label();
             PnlFiltros.SuspendLayout();
             PnlTopo.SuspendLayout();
@@ -37,19 +37,19 @@
             // PnlFiltros
             // 
             PnlFiltros.Controls.Add(Lbl);
-            PnlFiltros.Controls.Add(textBox1);
+            PnlFiltros.Controls.Add(TxbNome);
             PnlFiltros.Size = new Size(520, 55);
             // 
             // PnlTopo
             // 
             PnlTopo.Size = new Size(597, 55);
             // 
-            // textBox1
+            // TxbNome
             // 
-            textBox1.Location = new Point(8, 24);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(506, 23);
-            textBox1.TabIndex = 0;
+            TxbNome.Location = new Point(8, 24);
+            TxbNome.Name = "TxbNome";
+            TxbNome.Size = new Size(506, 23);
+            TxbNome.TabIndex = 0;
             // 
             // Lbl
             // 
@@ -75,7 +75,7 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox TxbNome;
         private Label Lbl;
     }
 }

@@ -28,12 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmConsultaFormaPagemento";
+            Lbl = new Label();
+            TxbNome = new TextBox();
+            PnlFiltros.SuspendLayout();
+            PnlTopo.SuspendLayout();
+            SuspendLayout();
+            // 
+            // PnlFiltros
+            // 
+            PnlFiltros.Controls.Add(Lbl);
+            PnlFiltros.Controls.Add(TxbNome);
+            PnlFiltros.Size = new Size(520, 55);
+            // 
+            // PnlTopo
+            // 
+            PnlTopo.Size = new Size(597, 55);
+            // 
+            // Lbl
+            // 
+            Lbl.AutoSize = true;
+            Lbl.Location = new Point(8, 8);
+            Lbl.Name = "Lbl";
+            Lbl.Size = new Size(58, 15);
+            Lbl.TabIndex = 3;
+            Lbl.Text = "Descricao";
+            // 
+            // TxbNome
+            // 
+            TxbNome.Location = new Point(8, 24);
+            TxbNome.Name = "TxbNome";
+            TxbNome.Size = new Size(506, 23);
+            TxbNome.TabIndex = 2;
+            // 
+            // FrmConsultaFormaPagemento
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(597, 531);
+            Name = "FrmConsultaFormaPagemento";
+            Text = "Consulta de Forma de Pagamento";
+            PnlFiltros.ResumeLayout(false);
+            PnlFiltros.PerformLayout();
+            PnlTopo.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Label Lbl;
+        private TextBox TxbNome;
     }
 }

@@ -43,8 +43,9 @@
             BtnAdicinarProduto = new Button();
             BtnPesquisarCliente = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
+            TxbCliente = new TextBox();
             PnlLateral = new Panel();
+            BtnRelatorios = new Button();
             BtnSair = new Button();
             BtnConfiguracao = new Button();
             BtnEstoque = new Button();
@@ -52,7 +53,6 @@
             BtnCliente = new Button();
             BtnCaixa = new Button();
             ToolTipMensagens = new ToolTip(components);
-            BtnRelatorios = new Button();
             PnlPrincipal.SuspendLayout();
             PnlTrabalho.SuspendLayout();
             GrpProduto.SuspendLayout();
@@ -77,7 +77,7 @@
             PnlTrabalho.Controls.Add(GrpProduto);
             PnlTrabalho.Controls.Add(BtnPesquisarCliente);
             PnlTrabalho.Controls.Add(label1);
-            PnlTrabalho.Controls.Add(textBox1);
+            PnlTrabalho.Controls.Add(TxbCliente);
             PnlTrabalho.Dock = DockStyle.Fill;
             PnlTrabalho.Location = new Point(53, 0);
             PnlTrabalho.Name = "PnlTrabalho";
@@ -180,6 +180,7 @@
             // 
             // textBox2
             // 
+            textBox2.Enabled = false;
             textBox2.Location = new Point(6, 21);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(422, 23);
@@ -218,12 +219,13 @@
             label1.TabIndex = 2;
             label1.Text = "Cliente";
             // 
-            // textBox1
+            // TxbCliente
             // 
-            textBox1.Location = new Point(12, 37);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(469, 23);
-            textBox1.TabIndex = 1;
+            TxbCliente.Enabled = false;
+            TxbCliente.Location = new Point(12, 37);
+            TxbCliente.Name = "TxbCliente";
+            TxbCliente.Size = new Size(469, 23);
+            TxbCliente.TabIndex = 1;
             // 
             // PnlLateral
             // 
@@ -240,6 +242,17 @@
             PnlLateral.Name = "PnlLateral";
             PnlLateral.Size = new Size(53, 758);
             PnlLateral.TabIndex = 0;
+            // 
+            // BtnRelatorios
+            // 
+            BtnRelatorios.FlatStyle = FlatStyle.Flat;
+            BtnRelatorios.Image = (Image)resources.GetObject("BtnRelatorios.Image");
+            BtnRelatorios.Location = new Point(3, 199);
+            BtnRelatorios.Name = "BtnRelatorios";
+            BtnRelatorios.Size = new Size(43, 43);
+            BtnRelatorios.TabIndex = 19;
+            BtnRelatorios.UseVisualStyleBackColor = true;
+            BtnRelatorios.Click += BtnRelatorios_Click;
             // 
             // BtnSair
             // 
@@ -307,17 +320,6 @@
             BtnCaixa.UseVisualStyleBackColor = true;
             BtnCaixa.Click += BtnCaixa_Click;
             // 
-            // BtnRelatorios
-            // 
-            BtnRelatorios.FlatStyle = FlatStyle.Flat;
-            BtnRelatorios.Image = (Image)resources.GetObject("BtnRelatorios.Image");
-            BtnRelatorios.Location = new Point(3, 199);
-            BtnRelatorios.Name = "BtnRelatorios";
-            BtnRelatorios.Size = new Size(43, 43);
-            BtnRelatorios.TabIndex = 19;
-            BtnRelatorios.UseVisualStyleBackColor = true;
-            BtnRelatorios.Click += BtnRelatorios_Click;
-            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -356,7 +358,7 @@
         private Button BtnAdicinarProduto;
         private Button BtnPesquisarCliente;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox TxbCliente;
         private Panel PnlLateral;
         private Button BtnCliente;
         private Button BtnCaixa;

@@ -35,11 +35,11 @@
             BtnAdicinar = new Button();
             BtnConsultar = new Button();
             PnlGrid = new Panel();
-            DgvPagamento = new DataGridView();
+            DgvDados = new DataGridView();
             PnlTopo.SuspendLayout();
             PnelLateral.SuspendLayout();
             PnlGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DgvPagamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgvDados).BeginInit();
             SuspendLayout();
             // 
             // PnlTopo
@@ -97,7 +97,7 @@
             // 
             // PnlGrid
             // 
-            PnlGrid.Controls.Add(DgvPagamento);
+            PnlGrid.Controls.Add(DgvDados);
             PnlGrid.Dock = DockStyle.Fill;
             PnlGrid.Location = new Point(0, 92);
             PnlGrid.Name = "PnlGrid";
@@ -105,25 +105,26 @@
             PnlGrid.Size = new Size(518, 358);
             PnlGrid.TabIndex = 1;
             // 
-            // DgvPagamento
+            // DgvDados
             // 
-            DgvPagamento.AllowUserToAddRows = false;
-            DgvPagamento.AllowUserToDeleteRows = false;
-            DgvPagamento.AllowUserToResizeColumns = false;
-            DgvPagamento.AllowUserToResizeRows = false;
-            DgvPagamento.BackgroundColor = SystemColors.ButtonFace;
-            DgvPagamento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvPagamento.Dock = DockStyle.Fill;
-            DgvPagamento.Location = new Point(8, 8);
-            DgvPagamento.MultiSelect = false;
-            DgvPagamento.Name = "DgvPagamento";
-            DgvPagamento.ReadOnly = true;
-            DgvPagamento.RowHeadersVisible = false;
-            DgvPagamento.RowTemplate.Height = 25;
-            DgvPagamento.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DgvPagamento.ShowCellErrors = false;
-            DgvPagamento.Size = new Size(502, 342);
-            DgvPagamento.TabIndex = 33;
+            DgvDados.AllowUserToAddRows = false;
+            DgvDados.AllowUserToDeleteRows = false;
+            DgvDados.AllowUserToResizeColumns = false;
+            DgvDados.AllowUserToResizeRows = false;
+            DgvDados.BackgroundColor = SystemColors.ButtonFace;
+            DgvDados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvDados.Dock = DockStyle.Fill;
+            DgvDados.Location = new Point(8, 8);
+            DgvDados.MultiSelect = false;
+            DgvDados.Name = "DgvDados";
+            DgvDados.ReadOnly = true;
+            DgvDados.RowHeadersVisible = false;
+            DgvDados.RowTemplate.Height = 25;
+            DgvDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvDados.ShowCellErrors = false;
+            DgvDados.Size = new Size(502, 342);
+            DgvDados.TabIndex = 33;
+            DgvDados.CellContentClick += DgvDados_CellContentClick;
             // 
             // FrmConsultarBase
             // 
@@ -140,7 +141,7 @@
             PnlTopo.ResumeLayout(false);
             PnelLateral.ResumeLayout(false);
             PnlGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)DgvPagamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgvDados).EndInit();
             ResumeLayout(false);
         }
 
@@ -149,8 +150,8 @@
         private Button BtnConsultar;
         private Panel PnelLateral;
         private Button BtnAdicinar;
-        private DataGridView DgvPagamento;
         public Panel PnlFiltros;
         public Panel PnlTopo;
+        public DataGridView DgvDados;
     }
 }
