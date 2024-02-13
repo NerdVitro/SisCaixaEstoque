@@ -55,3 +55,4 @@ D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debu
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarFuncionario.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarProduto.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarFormaPagamento.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciadFornecedor.resources

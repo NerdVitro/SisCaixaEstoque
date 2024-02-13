@@ -232,7 +232,7 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
-                FrmCadastroEstoque Estoque = new();
+                FrmGerenciarEstoque Estoque = new();
                 Estoque.ShowDialog();
             }
             catch (Exception ex)

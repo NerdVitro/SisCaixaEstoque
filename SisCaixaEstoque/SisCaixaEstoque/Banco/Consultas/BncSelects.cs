@@ -94,7 +94,7 @@ namespace SisCaixaEstoque.Banco.Consultas
                 {
                     conexao.Open();
                     string sql = $@"SELECT 
-                                        FORN.IDFORNECEDOR,
+                                        FORN.IDFORNECEDOR
                                         ,FORN.DSNOMECOMPLETO
                                         ,FORN.DSNOMEFANTASIA
                                         ,FORN.VLCNPJ

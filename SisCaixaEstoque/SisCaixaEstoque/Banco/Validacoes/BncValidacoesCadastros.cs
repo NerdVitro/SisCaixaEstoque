@@ -91,6 +91,58 @@ namespace SisCaixaEstoque.Banco.Validacoes
                 throw;
             }
         }
+
+        public static string ValidarFornecedor(string parNomeCompleto, string parNomeFantasia, string parCPFCNPJ)
+        {
+            try
+            {
+                string ssxRetornoValidacao = string.Empty;
+
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                {
+                    conexao.Open();
+                    string sql = $@"SELECT FORN.IDFORNECEDOR FROM TBFORNECEDOR AS FORN WHERE FORN.DSNOMECOMPLETO = @DSNOMECOMPLETO";
+
+                    using SQLiteCommand comando = new(sql, conexao);
+                    comando.Parameters.AddWithValue("@DSNOMECOMPLETO", parNomeCompleto);
+
+                    using SQLiteDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.HasRows && leitor.Read())
+                    {
+                        ssxRetornoValidacao += "Nome já cadastrado";
+                    }
+
+                    sql = $@"SELECT FORN.IDFORNECEDOR FROM TBFORNECEDOR AS FORN WHERE FORN.DSNOMEFANTASIA = @DSNOMEFANTASIA";
+                    using SQLiteCommand comando2 = new(sql, conexao);
+                    comando2.Parameters.AddWithValue("@DSNOMEFANTASIA", parCPFCNPJ);
+
+                    using SQLiteDataReader leitor2 = comando2.ExecuteReader();
+
+                    if (leitor2.HasRows && leitor2.Read())
+                    {
+                        ssxRetornoValidacao += "\nNome Fantasia já cadastrado";
+                    }
+
+                    sql = $@"SELECT FORN.IDFORNECEDOR FROM TBFORNECEDOR AS FORN WHERE FORN.VLCNPJ = @VLCNPJ";
+                    using SQLiteCommand comando3 = new(sql, conexao);
+                    comando3.Parameters.AddWithValue("@VLCNPJ", parCPFCNPJ);
+
+                    using SQLiteDataReader leitor3 = comando2.ExecuteReader();
+
+                    if (leitor3.HasRows && leitor3.Read())
+                    {
+                        ssxRetornoValidacao += "\nCNPJ já cadastrado";
+                    }
+                }
+
+                return ssxRetornoValidacao;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public static string ValidarProduto(string parProduto)
         {
             try

@@ -31,7 +31,7 @@ namespace SisCaixaEstoque.Formularios.Cadastros
                         TxbNomeCompleto.Text,
                         TxbCPFCNPJ.Text,
                         TxbEndereco.Text,
-                        TxbEndereco.Text,
+                        TxbCidade.Text,
                         TxbEstado.Text,
                         TxbEmail.Text,
                         TxbTelefone.Text,
@@ -42,6 +42,16 @@ namespace SisCaixaEstoque.Formularios.Cadastros
                     {
                         BncInserts.SalvarUsuario(TxbNomeCompleto.Text.Split(" ")[0]);
                     }
+
+                    TxbNomeCompleto.Text = "";
+                    TxbCPFCNPJ.Text = "";
+                    TxbEndereco.Text = "";
+                    TxbCidade.Text = "";
+                    TxbEstado.Text = "";
+                    TxbEmail.Text = "";
+                    TxbTelefone.Text = "";
+                    TxbCelular.Text = "";
+                    TxbWhatsapp.Text = "";
                 }
                 else
                 {

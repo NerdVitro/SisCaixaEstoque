@@ -29,46 +29,46 @@
         private void InitializeComponent()
         {
             label9 = new Label();
-            textBox8 = new TextBox();
+            TxbEmail = new TextBox();
             label8 = new Label();
-            textBox7 = new TextBox();
+            TxbEstado = new TextBox();
             label7 = new Label();
-            textBox6 = new TextBox();
+            TxbCidade = new TextBox();
             label6 = new Label();
-            textBox5 = new TextBox();
+            TxbEndereco = new TextBox();
             label5 = new Label();
-            textBox4 = new TextBox();
+            TxbCPFCNPJ = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            TxbNomeCompleto = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            TxbCelular = new TextBox();
             label1 = new Label();
-            TxbValorTaxa = new TextBox();
+            TxbTelefone = new TextBox();
             label10 = new Label();
-            textBox9 = new TextBox();
+            TxbNomeFantasia = new TextBox();
             PnlDados.SuspendLayout();
             SuspendLayout();
             // 
             // PnlDados
             // 
             PnlDados.Controls.Add(label10);
-            PnlDados.Controls.Add(textBox9);
+            PnlDados.Controls.Add(TxbNomeFantasia);
             PnlDados.Controls.Add(label9);
-            PnlDados.Controls.Add(textBox8);
+            PnlDados.Controls.Add(TxbEmail);
             PnlDados.Controls.Add(label8);
-            PnlDados.Controls.Add(textBox7);
+            PnlDados.Controls.Add(TxbEstado);
             PnlDados.Controls.Add(label7);
-            PnlDados.Controls.Add(textBox6);
+            PnlDados.Controls.Add(TxbCidade);
             PnlDados.Controls.Add(label6);
-            PnlDados.Controls.Add(textBox5);
+            PnlDados.Controls.Add(TxbEndereco);
             PnlDados.Controls.Add(label5);
-            PnlDados.Controls.Add(textBox4);
+            PnlDados.Controls.Add(TxbCPFCNPJ);
             PnlDados.Controls.Add(label4);
-            PnlDados.Controls.Add(textBox3);
+            PnlDados.Controls.Add(TxbNomeCompleto);
             PnlDados.Controls.Add(label2);
-            PnlDados.Controls.Add(textBox1);
+            PnlDados.Controls.Add(TxbCelular);
             PnlDados.Controls.Add(label1);
-            PnlDados.Controls.Add(TxbValorTaxa);
+            PnlDados.Controls.Add(TxbTelefone);
             PnlDados.Size = new Size(591, 323);
             // 
             // label9
@@ -80,12 +80,12 @@
             label9.TabIndex = 41;
             label9.Text = "E-mail";
             // 
-            // textBox8
+            // TxbEmail
             // 
-            textBox8.Location = new Point(8, 198);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(445, 23);
-            textBox8.TabIndex = 40;
+            TxbEmail.Location = new Point(8, 198);
+            TxbEmail.Name = "TxbEmail";
+            TxbEmail.Size = new Size(445, 23);
+            TxbEmail.TabIndex = 40;
             // 
             // label8
             // 
@@ -96,12 +96,12 @@
             label8.TabIndex = 39;
             label8.Text = "Estado";
             // 
-            // textBox7
+            // TxbEstado
             // 
-            textBox7.Location = new Point(270, 154);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(182, 23);
-            textBox7.TabIndex = 38;
+            TxbEstado.Location = new Point(270, 154);
+            TxbEstado.Name = "TxbEstado";
+            TxbEstado.Size = new Size(182, 23);
+            TxbEstado.TabIndex = 38;
             // 
             // label7
             // 
@@ -112,12 +112,12 @@
             label7.TabIndex = 37;
             label7.Text = "Cidade";
             // 
-            // textBox6
+            // TxbCidade
             // 
-            textBox6.Location = new Point(8, 154);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(256, 23);
-            textBox6.TabIndex = 36;
+            TxbCidade.Location = new Point(8, 154);
+            TxbCidade.Name = "TxbCidade";
+            TxbCidade.Size = new Size(256, 23);
+            TxbCidade.TabIndex = 36;
             // 
             // label6
             // 
@@ -128,12 +128,12 @@
             label6.TabIndex = 35;
             label6.Text = "Endereco";
             // 
-            // textBox5
+            // TxbEndereco
             // 
-            textBox5.Location = new Point(8, 112);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(445, 23);
-            textBox5.TabIndex = 34;
+            TxbEndereco.Location = new Point(8, 112);
+            TxbEndereco.Name = "TxbEndereco";
+            TxbEndereco.Size = new Size(445, 23);
+            TxbEndereco.TabIndex = 34;
             // 
             // label5
             // 
@@ -144,14 +144,14 @@
             label5.TabIndex = 33;
             label5.Text = "CNPJ";
             // 
-            // textBox4
+            // TxbCPFCNPJ
             // 
-            textBox4.Location = new Point(459, 23);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "000.000.000-00";
-            textBox4.Size = new Size(124, 23);
-            textBox4.TabIndex = 32;
-            textBox4.TextAlign = HorizontalAlignment.Right;
+            TxbCPFCNPJ.Location = new Point(459, 23);
+            TxbCPFCNPJ.Name = "TxbCPFCNPJ";
+            TxbCPFCNPJ.PlaceholderText = "00.000.000/0000-00";
+            TxbCPFCNPJ.Size = new Size(124, 23);
+            TxbCPFCNPJ.TabIndex = 32;
+            TxbCPFCNPJ.TextAlign = HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -162,12 +162,12 @@
             label4.TabIndex = 31;
             label4.Text = "Nome Completo";
             // 
-            // textBox3
+            // TxbNomeCompleto
             // 
-            textBox3.Location = new Point(8, 24);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(445, 23);
-            textBox3.TabIndex = 30;
+            TxbNomeCompleto.Location = new Point(8, 24);
+            TxbNomeCompleto.Name = "TxbNomeCompleto";
+            TxbNomeCompleto.Size = new Size(445, 23);
+            TxbNomeCompleto.TabIndex = 30;
             // 
             // label2
             // 
@@ -178,14 +178,14 @@
             label2.TabIndex = 27;
             label2.Text = "Celular";
             // 
-            // textBox1
+            // TxbCelular
             // 
-            textBox1.Location = new Point(459, 112);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "(00) 0000-0000";
-            textBox1.Size = new Size(124, 23);
-            textBox1.TabIndex = 26;
-            textBox1.TextAlign = HorizontalAlignment.Right;
+            TxbCelular.Location = new Point(459, 112);
+            TxbCelular.Name = "TxbCelular";
+            TxbCelular.PlaceholderText = "(00) 0000-0000";
+            TxbCelular.Size = new Size(124, 23);
+            TxbCelular.TabIndex = 26;
+            TxbCelular.TextAlign = HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -196,14 +196,14 @@
             label1.TabIndex = 25;
             label1.Text = "Telefone";
             // 
-            // TxbValorTaxa
+            // TxbTelefone
             // 
-            TxbValorTaxa.Location = new Point(459, 68);
-            TxbValorTaxa.Name = "TxbValorTaxa";
-            TxbValorTaxa.PlaceholderText = "(00) 0000-0000";
-            TxbValorTaxa.Size = new Size(124, 23);
-            TxbValorTaxa.TabIndex = 24;
-            TxbValorTaxa.TextAlign = HorizontalAlignment.Right;
+            TxbTelefone.Location = new Point(459, 68);
+            TxbTelefone.Name = "TxbTelefone";
+            TxbTelefone.PlaceholderText = "(00) 0000-0000";
+            TxbTelefone.Size = new Size(124, 23);
+            TxbTelefone.TabIndex = 24;
+            TxbTelefone.TextAlign = HorizontalAlignment.Right;
             // 
             // label10
             // 
@@ -214,12 +214,12 @@
             label10.TabIndex = 43;
             label10.Text = "Nome Fantasia";
             // 
-            // textBox9
+            // TxbNomeFantasia
             // 
-            textBox9.Location = new Point(8, 68);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(445, 23);
-            textBox9.TabIndex = 42;
+            TxbNomeFantasia.Location = new Point(8, 68);
+            TxbNomeFantasia.Name = "TxbNomeFantasia";
+            TxbNomeFantasia.Size = new Size(445, 23);
+            TxbNomeFantasia.TabIndex = 42;
             // 
             // FrmCadastroFornecedor
             // 
@@ -236,22 +236,22 @@
         #endregion
 
         private Label label9;
-        private TextBox textBox8;
+        private TextBox TxbEmail;
         private Label label8;
-        private TextBox textBox7;
+        private TextBox TxbEstado;
         private Label label7;
-        private TextBox textBox6;
+        private TextBox TxbCidade;
         private Label label6;
-        private TextBox textBox5;
+        private TextBox TxbEndereco;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox TxbCPFCNPJ;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox TxbNomeCompleto;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox TxbCelular;
         private Label label1;
-        private TextBox TxbValorTaxa;
+        private TextBox TxbTelefone;
         private Label label10;
-        private TextBox textBox9;
+        private TextBox TxbNomeFantasia;
     }
 }

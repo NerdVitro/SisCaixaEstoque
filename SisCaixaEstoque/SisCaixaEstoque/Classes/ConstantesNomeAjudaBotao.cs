@@ -23,6 +23,8 @@ namespace SisCaixaEstoque.Classes
         public readonly struct TelaConfiguracao
         {
             public static string BotaoFuncionario { get; } = "Abrir tela \nFuncionário";
+            public static string BtnFormaPagamento { get; } = "Abrir tela \nForma Pagamento";
+            public static string BtnFornecedor { get; } = "Abrir tela \nnFornecedor";
         }
     }
 }

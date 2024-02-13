@@ -58,6 +58,9 @@
     <Compile Update="Formularios\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Gerenciadores\FrmGerenciadFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Gerenciadores\FrmGerenciarCliente.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -33,6 +33,7 @@
             BtnFuncionario = new Button();
             ToolTipMensagens = new ToolTip(components);
             BtnFormaPagamento = new Button();
+            BtnFornecedor = new Button();
             SuspendLayout();
             // 
             // BtnFuncionario
@@ -57,11 +58,23 @@
             BtnFormaPagamento.UseVisualStyleBackColor = true;
             BtnFormaPagamento.Click += BtnFormaPagamento_Click;
             // 
+            // BtnFornecedor
+            // 
+            BtnFornecedor.FlatStyle = FlatStyle.Flat;
+            BtnFornecedor.Image = (Image)resources.GetObject("BtnFornecedor.Image");
+            BtnFornecedor.Location = new Point(161, 12);
+            BtnFornecedor.Name = "BtnFornecedor";
+            BtnFornecedor.Size = new Size(57, 56);
+            BtnFornecedor.TabIndex = 20;
+            BtnFornecedor.UseVisualStyleBackColor = true;
+            BtnFornecedor.Click += BtnFornecedor_Click;
+            // 
             // FrmConfiguracao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(420, 297);
+            Controls.Add(BtnFornecedor);
             Controls.Add(BtnFormaPagamento);
             Controls.Add(BtnFuncionario);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -76,5 +89,6 @@
         private Button BtnFuncionario;
         private ToolTip ToolTipMensagens;
         private Button BtnFormaPagamento;
+        private Button BtnFornecedor;
     }
 }

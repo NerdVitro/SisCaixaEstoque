@@ -19,6 +19,8 @@ namespace SisCaixaEstoque.Formularios
             InitializeComponent();
 
             ToolTipMensagens.SetToolTip(BtnFuncionario, ConstantesNomeAjudaBotao.TelaConfiguracao.BotaoFuncionario);
+            ToolTipMensagens.SetToolTip(BtnFormaPagamento, ConstantesNomeAjudaBotao.TelaConfiguracao.BtnFormaPagamento);
+            ToolTipMensagens.SetToolTip(BtnFormaPagamento, ConstantesNomeAjudaBotao.TelaConfiguracao.BtnFornecedor);
         }
 
         private void BtnFuncionario_Click(object sender, EventArgs e)
@@ -38,6 +40,18 @@ namespace SisCaixaEstoque.Formularios
             try
             {
                 new FrmGerenciarFormaPagamento().ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BtnFornecedor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new FrmGerenciarFornecedor().ShowDialog();
             }
             catch (Exception ex)
             {
