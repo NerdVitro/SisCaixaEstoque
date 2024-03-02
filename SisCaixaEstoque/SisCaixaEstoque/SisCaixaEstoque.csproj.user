@@ -46,6 +46,12 @@
     <Compile Update="Formularios\Consultas\FrmConsultarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Consultas\FrmConsultarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Consultas\FrmConsultarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\FrmCaixa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,10 +64,13 @@
     <Compile Update="Formularios\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Gerenciadores\FrmGerenciadFornecedor.cs">
+    <Compile Update="Formularios\Gerenciadores\FrmGerenciarFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Gerenciadores\FrmGerenciarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Gerenciadores\FrmGerenciarEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Gerenciadores\FrmGerenciarFormaPagamento.cs">

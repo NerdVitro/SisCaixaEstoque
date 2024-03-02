@@ -53,3 +53,9 @@ D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Rele
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Consultas.FrmConsultarCliente.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarCliente.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarFuncionario.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Consultas.FrmConsultarFornecedor.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Consultas.FrmConsultarProduto.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarEstoque.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarFormaPagamento.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarFornecedor.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarProduto.resources
