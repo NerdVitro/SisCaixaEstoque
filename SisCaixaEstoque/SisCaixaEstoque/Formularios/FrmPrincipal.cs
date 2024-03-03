@@ -1,7 +1,11 @@
-﻿using SisCaixaEstoque.Classes;
+﻿using SisCaixaEstoque.Banco.Cadastros;
+using SisCaixaEstoque.Banco.Consultas;
+using SisCaixaEstoque.Classes;
+using SisCaixaEstoque.Classes.BusinessObjects;
 using SisCaixaEstoque.Formularios.Consultas;
 using SisCaixaEstoque.Formularios.Gerenciadores;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +19,12 @@ namespace SisCaixaEstoque.Formularios
 {
     public partial class FrmPrincipal : Form
     {
-
         public ValidacaoLogin.NivelAcesso NivelUsuario;
+        public int IDCliente = 0;
+        public int IDPRODUTO = 0;
+        public decimal VLVALORVENDA = 0;
+        public int VLQUANTIDADE = 0;
+
         public FrmPrincipal(ValidacaoLogin.NivelAcesso parNivelUsuario)
         {
             NivelUsuario = parNivelUsuario;
@@ -29,9 +37,23 @@ namespace SisCaixaEstoque.Formularios
             ConfigurarDgvProdutosVenda();
             SetTelaInicial();
         }
-
-        public int IDCliente = 0;
-
+        private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                if (DgvProdutosVenda.Rows.Count > 0)
+                {
+                    foreach (DataGridViewRow linha in DgvProdutosVenda.Rows)
+                    {
+                        BncUpdate.UpdateAlterarEstoque(Convert.ToInt32(linha.Cells["IDPRODUTO"].Value), Convert.ToInt32(linha.Cells["VLQUANTIDADE"].Value), true);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void SetTelaInicial()
         {
             try
@@ -44,6 +66,10 @@ namespace SisCaixaEstoque.Formularios
                 ToolTipMensagens.SetToolTip(BtnSair, ConstantesNomeAjudaBotao.TelaInicial.BotaoSair);
 
                 ToolTipMensagens.SetToolTip(BtnFinalizar, ConstantesNomeAjudaBotao.TelaInicial.BotaoFinalizar);
+
+                TxbQuantidade.MaxLength = 3;
+                TxbQuantidade.Enabled = false;
+                LblTotalVenda.Text = $"R$ {0:N2}";
             }
             catch (Exception ex)
             {
@@ -64,11 +90,36 @@ namespace SisCaixaEstoque.Formularios
 
                 DataGridViewTextBoxColumn colunaPreco = new()
                 {
-                    HeaderText = "Preço",
-                    Name = "PrecoProduto"
+                    HeaderText = "Preço Unit.",
+                    Name = "PrecoProduto",
+                    Width = 100,
                 };
                 colunaPreco.DefaultCellStyle.Format = "C"; // Formato de moeda
                 colunaPreco.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; // Alinhamento à direita
+
+                DataGridViewTextBoxColumn colunaPrecoTotal = new()
+                {
+                    HeaderText = "Preço Total",
+                    Name = "PrecoProdutoTotal",
+                    Width = 100,
+                };
+                colunaPrecoTotal.DefaultCellStyle.Format = "C"; // Formato de moeda
+                colunaPrecoTotal.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; // Alinhamento à direita
+
+                DataGridViewTextBoxColumn colunaIDPRODUTO = new()
+                {
+                    HeaderText = "IDPRODUTO",
+                    Name = "IDPRODUTO",
+                    Visible = false
+                };
+
+                DataGridViewTextBoxColumn colunaQuantidade = new()
+                {
+                    HeaderText = "Quant.",
+                    Name = "VLQUANTIDADE",
+                    Width = 50,
+                };
+                colunaQuantidade.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; // Alinhamento à direita
 
                 DataGridViewButtonColumn colunaRemover = new()
                 {
@@ -80,39 +131,11 @@ namespace SisCaixaEstoque.Formularios
 
                 // Adicionar as colunas à DataGridView
                 DgvProdutosVenda.Columns.Add(colunaNome);
+                DgvProdutosVenda.Columns.Add(colunaQuantidade);
                 DgvProdutosVenda.Columns.Add(colunaPreco);
+                DgvProdutosVenda.Columns.Add(colunaPrecoTotal);
+                DgvProdutosVenda.Columns.Add(colunaIDPRODUTO);
                 DgvProdutosVenda.Columns.Add(colunaRemover);
-
-                // Definir os tamanhos das colunas
-                DgvProdutosVenda.Columns["PrecoProduto"].Width = 100;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void DgvProdutosVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex == 2)
-                {
-                    if (MessageBox.Show("Tem certeza que deseja excluir esta linha?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        DgvProdutosVenda.Rows.RemoveAt(e.RowIndex);
-
-                        decimal total = 0;
-                        foreach (DataGridViewRow linha in DgvProdutosVenda.Rows)
-                        {
-                            if (linha.Cells[1].Value != null && decimal.TryParse(linha.Cells[1].Value.ToString(), out decimal valor))
-                            {
-                                total += valor;
-                                LblTotalVenda.Text = $"R$ {total:N2}";
-                            }
-                        }
-                    }
-                }
             }
             catch (Exception ex)
             {
@@ -139,7 +162,15 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
+                FrmConsultarProdutoVenda consulta = new();
 
+                consulta.ShowDialog();
+                IDPRODUTO = consulta.ID;
+                VLVALORVENDA = consulta.VLVALORVENDA;
+                VLQUANTIDADE = consulta.VLQUANTIDADE;
+                TxbProduto.Text = consulta.DESCRICAO;
+                TxbQuantidade.Enabled = true;
+                TxbQuantidade.Focus();
             }
             catch (Exception ex)
             {
@@ -150,20 +181,45 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
-                // Adiciona uma linha com valores à DataGridView
-                DgvProdutosVenda.Rows.Add("Produto 1", 50.00);
-                DgvProdutosVenda.Rows.Add("Produto 2", 30.00);
-                DgvProdutosVenda.Rows.Add("Produto 3", 25.50);
-
-
-                decimal total = 0;
-                foreach (DataGridViewRow linha in DgvProdutosVenda.Rows)
+                if (IDPRODUTO != 0 && TxbQuantidade.Text != "")
                 {
-                    if (linha.Cells[1].Value != null && decimal.TryParse(linha.Cells[1].Value.ToString(), out decimal valor))
+                    if (Convert.ToInt32(TxbQuantidade.Text) > VLQUANTIDADE)
                     {
-                        total += valor;
-                        LblTotalVenda.Text = $"R$ {total:N2}";
+                        MessageBox.Show("Informe a quantidade menor que " + VLQUANTIDADE);
+                        TxbQuantidade.Focus();
+                        return;
                     }
+                    BncUpdate.UpdateAlterarEstoque(IDPRODUTO, Convert.ToInt32(TxbQuantidade.Text), false);
+
+                    // Adiciona uma linha com valores à DataGridView
+                    DgvProdutosVenda.Rows.Add(TxbProduto.Text, Convert.ToInt32(TxbQuantidade.Text), VLVALORVENDA, VLVALORVENDA * Convert.ToInt32(TxbQuantidade.Text), IDPRODUTO);
+
+                    decimal total = 0;
+                    foreach (DataGridViewRow linha in DgvProdutosVenda.Rows)
+                    {
+                        if (linha.Cells["PrecoProdutoTotal"].Value != null && decimal.TryParse(linha.Cells["PrecoProdutoTotal"].Value.ToString(), out decimal valor))
+                        {
+                            total += valor;
+                        }
+                    }
+                    LblTotalVenda.Text = $"R$ {total:N2}";
+
+                    IDPRODUTO = 0;
+                    VLVALORVENDA = 0;
+                    TxbProduto.Text = "";
+                    TxbQuantidade.Text = "";
+                    DgvProdutosVenda.Refresh();
+                    TxbQuantidade.Enabled = false;
+                }
+                else if (IDPRODUTO == 0)
+                {
+                    MessageBox.Show("Informe o Produto");
+                    BtnPesquisarProduto.Focus();
+                }
+                else if (TxbQuantidade.Text == "")
+                {
+                    MessageBox.Show("Informe a Quantidade");
+                    TxbQuantidade.Focus();
                 }
             }
             catch (Exception ex)
@@ -175,15 +231,39 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
-                FrmPagamento pagaemtno = new();
-                pagaemtno.ShowDialog();
-                if (pagaemtno.Result == DialogResult.OK)
+                if (DgvProdutosVenda.Rows.Count > 0)
                 {
-                    //SetTelaInicial();
-                    if (DgvProdutosVenda.Rows.Count > 0)
+                    List<CarrinhoComprasBO> carrinhoComprasBO = new();
+
+
+                    foreach (DataGridViewRow linha in DgvProdutosVenda.Rows)
                     {
-                        DgvProdutosVenda.Rows.Clear();
+                        carrinhoComprasBO.Add(
+                                new CarrinhoComprasBO()
+                                {
+                                    NomeProduto = Convert.ToString(linha.Cells["NomeProduto"].Value),
+                                    IDPRODUTO = Convert.ToInt32(linha.Cells["IDPRODUTO"].Value),
+                                    VLQUANTIDADE = Convert.ToDecimal(linha.Cells["VLQUANTIDADE"].Value),
+                                    PrecoProduto = Convert.ToDecimal(linha.Cells["PrecoProduto"].Value),
+                                    PrecoProdutoTotal = Convert.ToDecimal(linha.Cells["PrecoProdutoTotal"].Value),
+                                }
+                            );
                     }
+
+                    FrmPagamento pagaemtno = new FrmPagamento(Convert.ToDecimal(LblTotalVenda.Text.Replace("R$ ","")),0, carrinhoComprasBO);
+                    pagaemtno.ShowDialog();
+                    if (pagaemtno.Result == DialogResult.OK)
+                    {
+                        //SetTelaInicial();
+                        if (DgvProdutosVenda.Rows.Count > 0)
+                        {
+                            DgvProdutosVenda.Rows.Clear();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum item no carrinho prar finalizar");
                 }
             }
             catch (Exception ex)
@@ -191,6 +271,43 @@ namespace SisCaixaEstoque.Formularios
                 MessageBox.Show(ex.Message);
             }
         }
+        private void TxbQuantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+        private void RemoverRegistro(DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex == 5)
+                {
+                    if (MessageBox.Show("Tem certeza que deseja excluir esta linha?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        BncUpdate.UpdateAlterarEstoque(Convert.ToInt32(DgvProdutosVenda.Rows[e.RowIndex].Cells["IDPRODUTO"].Value), Convert.ToInt32(DgvProdutosVenda.Rows[e.RowIndex].Cells["VLQUANTIDADE"].Value), true);
+                        DgvProdutosVenda.Rows.RemoveAt(e.RowIndex);
+
+                        decimal total = 0;
+                        foreach (DataGridViewRow linha in DgvProdutosVenda.Rows)
+                        {
+                            if (linha.Cells["PrecoProdutoTotal"].Value != null && decimal.TryParse(linha.Cells["PrecoProdutoTotal"].Value.ToString(), out decimal valor))
+                            {
+                                total += valor;
+                            }
+                        }
+                        LblTotalVenda.Text = $"R$ {total:N2}";
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         // Botões laterais
         private void BtnCaixa_Click(object sender, EventArgs e)
@@ -277,5 +394,16 @@ namespace SisCaixaEstoque.Formularios
             }
         }
 
+        private void DgvProdutosVenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                RemoverRegistro(e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

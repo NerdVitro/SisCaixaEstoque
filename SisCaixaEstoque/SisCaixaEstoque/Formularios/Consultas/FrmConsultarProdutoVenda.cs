@@ -13,10 +13,13 @@ using System.Windows.Forms;
 
 namespace SisCaixaEstoque.Formularios.Consultas
 {
-    public partial class FrmConsultarProduto : FrmConsultarBase
+    public partial class FrmConsultarProdutoVenda : FrmConsultarBase
     {
+        public decimal VLVALORVENDA { get; set; }
+        public int VLQUANTIDADE { get; set; }
 
-        public FrmConsultarProduto()
+
+        public FrmConsultarProdutoVenda()
         {
             InitializeComponent();
         }
@@ -27,6 +30,7 @@ namespace SisCaixaEstoque.Formularios.Consultas
             {
                 DataGridViewComum objGridView = new(ref DgvDados);
                 objGridView.AdicionaColuna(new GridViewColunas("Nome", "DSNOMEPRODUTO", DataGridViewAutoSizeColumnMode.Fill, 100, true, DataGridViewContentAlignment.MiddleLeft, false, ""));
+                objGridView.AdicionaColuna(new GridViewColunas("Valor", "VLVALORVENDA", DataGridViewAutoSizeColumnMode.NotSet, 50, true, DataGridViewContentAlignment.MiddleLeft, false, ""));
                 objGridView.AdicionaColuna(new GridViewColunas("Quanti.", "VLQUANTIDADE", DataGridViewAutoSizeColumnMode.NotSet, 50, true, DataGridViewContentAlignment.MiddleLeft, false, ""));
                 objGridView.AdicionaColuna(new GridViewColunas("IDPRODUTO", "IDPRODUTO", 0, false));
 
@@ -37,7 +41,7 @@ namespace SisCaixaEstoque.Formularios.Consultas
                     UseColumnTextForButtonValue = true,
                     Width = 70
                 };
-                objGridView.Finalizar(BncSelects.BuscarProduto("WHERE PRO.DSNOMEPRODUTO LIKE '%" + TxbNome.Text + "%'"), true);
+                objGridView.Finalizar(BncSelects.BuscarProdutoVenda("WHERE PRO.DSNOMEPRODUTO LIKE '%" + TxbNome.Text + "%'"), true);
 
                 DgvDados.Columns.Add(colunaRemover);
             }
@@ -62,7 +66,16 @@ namespace SisCaixaEstoque.Formularios.Consultas
         {
             try
             {
-                SelecionarItemByID(e, "IDPRODUTO", "DSNOMEPRODUTO");
+                if (e.ColumnIndex == DgvDados.Columns["IDPRODUTO"].Index + 1)
+                {
+                    ID = Convert.ToInt32(DgvDados.Rows[e.RowIndex].Cells["IDPRODUTO"].Value);
+#pragma warning disable CS8601 // Possível atribuição de referência nula.
+                    DESCRICAO = Convert.ToString(DgvDados.Rows[e.RowIndex].Cells["DSNOMEPRODUTO"].Value);
+#pragma warning restore CS8601 // Possível atribuição de referência nula.
+                    VLVALORVENDA = Convert.ToDecimal(DgvDados.Rows[e.RowIndex].Cells["VLVALORVENDA"].Value);
+                    VLQUANTIDADE = Convert.ToInt32(DgvDados.Rows[e.RowIndex].Cells["VLQUANTIDADE"].Value);
+                    Close();
+                }
             }
             catch (Exception)
             {

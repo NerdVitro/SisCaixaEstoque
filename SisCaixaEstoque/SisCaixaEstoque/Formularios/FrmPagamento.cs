@@ -1,4 +1,7 @@
-﻿using SisCaixaEstoque.Formularios.Base;
+﻿using SisCaixaEstoque.Banco.Consultas;
+using SisCaixaEstoque.Classes;
+using SisCaixaEstoque.Classes.BusinessObjects;
+using SisCaixaEstoque.Formularios.Base;
 using SisCaixaEstoque.Formularios.Consultas;
 using System;
 using System.Collections.Generic;
@@ -14,26 +17,59 @@ namespace SisCaixaEstoque.Formularios
 {
     public partial class FrmPagamento : FrmBaseVazio
     {
+        public decimal ValorVenda { get; set; }
+        public int IDCAIXA { get; set; }
+
+
+
         public DialogResult Result = DialogResult.Cancel;
         private int IDFormaPgamento;
 
-        public FrmPagamento()
+        public FrmPagamento(decimal valorVenda, int iDCAIXA, List<CarrinhoComprasBO> parCarrinho)
         {
+            ValorVenda = valorVenda;
+            IDCAIXA = iDCAIXA;
+
             InitializeComponent();
-            ConfigurarDgvPagamento();
+            ConfigurarDgvPagamento(parCarrinho);
             SetTelaInicial();
         }
 
         private void SetTelaInicial()
         {
+            try
+            {
+                LblValorCompra.Text = $"R$ {ValorVenda:N2}";
 
-            // Adiciona uma linha com valores à DataGridView
-            DgvPagamento.Rows.Add(1, "Cartão de Crédito", 50.00);
-            DgvPagamento.Rows.Add(2, "Cartão de Débito", 30.00);
-            DgvPagamento.Rows.Add(3, "Dinheiro", 25.50);
+
+                // Adiciona uma linha com valores à DataGridView
+                DgvPagamento.Rows.Add(1, "Cartão de Crédito", 50.00);
+                DgvPagamento.Rows.Add(2, "Cartão de Débito", 30.00);
+                DgvPagamento.Rows.Add(3, "Dinheiro", 25.50);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
-        private void ConfigurarDgvPagamento()
+        private void ConfigurarDgvPagamento(List<CarrinhoComprasBO> parCarrinho)
         {
+            try
+            {
+                DataGridViewComum objGridView = new(ref DgvProdutosVenda);
+                objGridView.AdicionaColuna(new GridViewColunas("Nome", "NomeProduto", DataGridViewAutoSizeColumnMode.Fill, 100, true, DataGridViewContentAlignment.MiddleLeft, false, ""));
+                objGridView.AdicionaColuna(new GridViewColunas("Quanti.", "VLQUANTIDADE", DataGridViewAutoSizeColumnMode.NotSet, 50, true, DataGridViewContentAlignment.MiddleRight, false, ""));
+                objGridView.AdicionaColuna(new GridViewColunas("Preço Unit.", "PrecoProduto", DataGridViewAutoSizeColumnMode.NotSet, 100, true, DataGridViewContentAlignment.MiddleRight, false, "C"));
+                objGridView.AdicionaColuna(new GridViewColunas("Preço Total", "PrecoProdutoTotal", DataGridViewAutoSizeColumnMode.NotSet, 100, true, DataGridViewContentAlignment.MiddleRight, false, "C"));
+                objGridView.AdicionaColuna(new GridViewColunas("IDPRODUTO", "IDPRODUTO", 0, false));
+                objGridView.Finalizar(parCarrinho, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
             DataGridViewTextBoxColumn IdFormaPagamento = new()
             {
                 HeaderText = "ID",

@@ -128,7 +128,7 @@ namespace SisCaixaEstoque.Banco.Validacoes
                     using SQLiteCommand comando3 = new(sql, conexao);
                     comando3.Parameters.AddWithValue("@VLCNPJ", parCPFCNPJ);
 
-                    using SQLiteDataReader leitor3 = comando2.ExecuteReader();
+                    using SQLiteDataReader leitor3 = comando3.ExecuteReader();
 
                     if (leitor3.HasRows && leitor3.Read())
                     {

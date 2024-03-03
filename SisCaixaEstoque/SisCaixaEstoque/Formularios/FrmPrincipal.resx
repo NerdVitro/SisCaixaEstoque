@@ -95,7 +95,7 @@
   <data name="BtnRelatorios.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6AAAAOgBhtX2rwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGRSURBVFhH7de/
+        4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGRSURBVFhH7de/
         K0VhHMfxq/wYTPIjs0wMJCk/Ronyq2QyyGK1KEkZTAaDZOFPkJEUBmQgo4xkIpHBQBa8P+e4ddN5nPM8
         X4u6n3rVc+5w76dznnOf58llSBeu8IFPD68YgTm3GERJdJU9D3iGqUQV9CUhUYE+3GNYH4SkGk/x0Dsq
         UIcW3GEUqSnDPPZwgCNYCyitUInUO7GIffSjF2odWuAGk9D3yCzeoPnkzCm642EUzYHQAgPYge5k3hnO
@@ -210,6 +210,9 @@
   </data>
   <metadata name="ToolTipMensagens.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>16, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>52</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

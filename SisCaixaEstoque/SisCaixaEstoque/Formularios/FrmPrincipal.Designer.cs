@@ -35,11 +35,13 @@
             label4 = new Label();
             BtnFinalizar = new Button();
             GrpProduto = new GroupBox();
+            label3 = new Label();
+            TxbQuantidade = new TextBox();
             LblTotalVenda = new Label();
             DgvProdutosVenda = new DataGridView();
             label2 = new Label();
             BtnPesquisarProduto = new Button();
-            textBox2 = new TextBox();
+            TxbProduto = new TextBox();
             BtnAdicinarProduto = new Button();
             BtnPesquisarCliente = new Button();
             label1 = new Label();
@@ -111,11 +113,13 @@
             // 
             // GrpProduto
             // 
+            GrpProduto.Controls.Add(label3);
+            GrpProduto.Controls.Add(TxbQuantidade);
             GrpProduto.Controls.Add(LblTotalVenda);
             GrpProduto.Controls.Add(DgvProdutosVenda);
             GrpProduto.Controls.Add(label2);
             GrpProduto.Controls.Add(BtnPesquisarProduto);
-            GrpProduto.Controls.Add(textBox2);
+            GrpProduto.Controls.Add(TxbProduto);
             GrpProduto.Controls.Add(BtnAdicinarProduto);
             GrpProduto.ForeColor = Color.Black;
             GrpProduto.Location = new Point(6, 76);
@@ -124,6 +128,24 @@
             GrpProduto.TabIndex = 11;
             GrpProduto.TabStop = false;
             GrpProduto.Text = "Produto";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(326, 54);
+            label3.Name = "label3";
+            label3.Size = new Size(132, 15);
+            label3.TabIndex = 12;
+            label3.Text = "Quantidade do Produto";
+            // 
+            // TxbQuantidade
+            // 
+            TxbQuantidade.Location = new Point(326, 75);
+            TxbQuantidade.Name = "TxbQuantidade";
+            TxbQuantidade.Size = new Size(132, 23);
+            TxbQuantidade.TabIndex = 11;
+            TxbQuantidade.TextAlign = HorizontalAlignment.Right;
+            TxbQuantidade.KeyPress += TxbQuantidade_KeyPress;
             // 
             // LblTotalVenda
             // 
@@ -143,7 +165,7 @@
             DgvProdutosVenda.AllowUserToResizeRows = false;
             DgvProdutosVenda.BackgroundColor = SystemColors.ButtonFace;
             DgvProdutosVenda.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvProdutosVenda.Location = new Point(6, 79);
+            DgvProdutosVenda.Location = new Point(6, 109);
             DgvProdutosVenda.MultiSelect = false;
             DgvProdutosVenda.Name = "DgvProdutosVenda";
             DgvProdutosVenda.ReadOnly = true;
@@ -152,7 +174,7 @@
             DgvProdutosVenda.RowTemplate.Height = 25;
             DgvProdutosVenda.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DgvProdutosVenda.ShowCellErrors = false;
-            DgvProdutosVenda.Size = new Size(498, 473);
+            DgvProdutosVenda.Size = new Size(498, 443);
             DgvProdutosVenda.TabIndex = 0;
             DgvProdutosVenda.CellContentClick += DgvProdutosVenda_CellContentClick;
             // 
@@ -171,26 +193,26 @@
             BtnPesquisarProduto.FlatAppearance.BorderSize = 0;
             BtnPesquisarProduto.FlatStyle = FlatStyle.Flat;
             BtnPesquisarProduto.Image = (Image)resources.GetObject("BtnPesquisarProduto.Image");
-            BtnPesquisarProduto.Location = new Point(434, 21);
+            BtnPesquisarProduto.Location = new Point(481, 21);
             BtnPesquisarProduto.Name = "BtnPesquisarProduto";
             BtnPesquisarProduto.Size = new Size(23, 23);
             BtnPesquisarProduto.TabIndex = 9;
             BtnPesquisarProduto.UseVisualStyleBackColor = true;
             BtnPesquisarProduto.Click += BtnPesquisarProduto_Click;
             // 
-            // textBox2
+            // TxbProduto
             // 
-            textBox2.Enabled = false;
-            textBox2.Location = new Point(6, 21);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(422, 23);
-            textBox2.TabIndex = 5;
+            TxbProduto.Enabled = false;
+            TxbProduto.Location = new Point(6, 21);
+            TxbProduto.Name = "TxbProduto";
+            TxbProduto.Size = new Size(469, 23);
+            TxbProduto.TabIndex = 5;
             // 
             // BtnAdicinarProduto
             // 
             BtnAdicinarProduto.FlatStyle = FlatStyle.Flat;
             BtnAdicinarProduto.Image = (Image)resources.GetObject("BtnAdicinarProduto.Image");
-            BtnAdicinarProduto.Location = new Point(474, 21);
+            BtnAdicinarProduto.Location = new Point(474, 68);
             BtnAdicinarProduto.Name = "BtnAdicinarProduto";
             BtnAdicinarProduto.Size = new Size(30, 30);
             BtnAdicinarProduto.TabIndex = 7;
@@ -334,6 +356,7 @@
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela Principal";
+            FormClosed += FrmPrincipal_FormClosed;
             PnlPrincipal.ResumeLayout(false);
             PnlTrabalho.ResumeLayout(false);
             PnlTrabalho.PerformLayout();
@@ -354,7 +377,7 @@
         private DataGridView DgvProdutosVenda;
         private Label label2;
         private Button BtnPesquisarProduto;
-        private TextBox textBox2;
+        private TextBox TxbProduto;
         private Button BtnAdicinarProduto;
         private Button BtnPesquisarCliente;
         private Label label1;
@@ -369,5 +392,7 @@
         private Button BtnSair;
         private ToolTip ToolTipMensagens;
         private Button BtnRelatorios;
+        private TextBox TxbQuantidade;
+        private Label label3;
     }
 }

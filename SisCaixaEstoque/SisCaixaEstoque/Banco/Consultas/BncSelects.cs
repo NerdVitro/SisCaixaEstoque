@@ -238,6 +238,54 @@ namespace SisCaixaEstoque.Banco.Consultas
                 throw;
             }
         }
+        public static DataTable BuscarProdutoVenda(string parWhere)
+        {
+            try
+            {
+                DataTable DataTableRetorno = new();
+                DataTableRetorno.Columns.Add("IDPRODUTO", typeof(int));
+                DataTableRetorno.Columns.Add("DSNOMEPRODUTO", typeof(string));
+                DataTableRetorno.Columns.Add("VLQUANTIDADE", typeof(decimal));
+                DataTableRetorno.Columns.Add("VLVALORVENDA", typeof(decimal));
+
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                {
+                    conexao.Open();
+                    string sql = $@"SELECT 
+                                        PRO.IDPRODUTO
+                                        ,PRO.DSNOMEPRODUTO
+                                        ,EST.VLQUANTIDADE
+                                        ,EST.VLVALORVENDA 
+                                    FROM TBPRODUTO AS PRO
+                                    INNER JOIN TBESTOQUE AS EST ON EST.IDPRODUTO = PRO.IDPRODUTO 
+                                    {parWhere} ";
+
+                    sql += (sql.ToUpper().Contains("WHERE") ? "AND" : "WHERE") + " EST.VLQUANTIDADE > 0 ";
+
+                    using SQLiteCommand comando = new(sql, conexao);
+                    using SQLiteDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.HasRows)
+                    {
+                        while (leitor.Read())
+                        {
+                            DataTableRetorno.Rows.Add(
+                                Convert.ToInt32(leitor["IDPRODUTO"])
+                                , Convert.ToString(leitor["DSNOMEPRODUTO"])
+                                , Convert.ToDecimal(leitor["VLQUANTIDADE"])
+                                , Convert.ToDecimal(leitor["VLVALORVENDA"])
+                                );
+                        }
+                    }
+                }
+
+                return DataTableRetorno;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public static DataTable BuscarTipoPagamento(string parWhere)
         {
             try

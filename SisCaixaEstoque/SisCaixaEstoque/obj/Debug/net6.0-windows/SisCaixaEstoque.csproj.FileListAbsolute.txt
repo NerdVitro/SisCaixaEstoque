@@ -59,3 +59,4 @@ D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debu
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Consultas.FrmConsultarProduto.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarEstoque.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarFornecedor.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Debug\net6.0-windows\SisCaixaEstoque.Formularios.Consultas.FrmConsultarProdutoVenda.resources

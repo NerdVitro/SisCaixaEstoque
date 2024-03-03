@@ -40,14 +40,18 @@
             TxbValorPago = new TextBox();
             label4 = new Label();
             LblTotalPago = new Label();
+            groupBox1 = new GroupBox();
+            DgvProdutosVenda = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)DgvPagamento).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DgvProdutosVenda).BeginInit();
             SuspendLayout();
             // 
             // BtnFinalizar
             // 
             BtnFinalizar.FlatStyle = FlatStyle.Flat;
             BtnFinalizar.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            BtnFinalizar.Location = new Point(292, 467);
+            BtnFinalizar.Location = new Point(823, 467);
             BtnFinalizar.Name = "BtnFinalizar";
             BtnFinalizar.Size = new Size(137, 61);
             BtnFinalizar.TabIndex = 30;
@@ -60,7 +64,7 @@
             BtnConsultaFormaPagamento.FlatAppearance.BorderSize = 0;
             BtnConsultaFormaPagamento.FlatStyle = FlatStyle.Flat;
             BtnConsultaFormaPagamento.Image = (Image)resources.GetObject("BtnConsultaFormaPagamento.Image");
-            BtnConsultaFormaPagamento.Location = new Point(406, 95);
+            BtnConsultaFormaPagamento.Location = new Point(937, 95);
             BtnConsultaFormaPagamento.Name = "BtnConsultaFormaPagamento";
             BtnConsultaFormaPagamento.Size = new Size(23, 23);
             BtnConsultaFormaPagamento.TabIndex = 29;
@@ -70,7 +74,7 @@
             // TxbFormaPagamento
             // 
             TxbFormaPagamento.Enabled = false;
-            TxbFormaPagamento.Location = new Point(12, 95);
+            TxbFormaPagamento.Location = new Point(543, 95);
             TxbFormaPagamento.Name = "TxbFormaPagamento";
             TxbFormaPagamento.Size = new Size(388, 23);
             TxbFormaPagamento.TabIndex = 26;
@@ -79,7 +83,7 @@
             // 
             BtnAdicionarFormaPagamento.FlatStyle = FlatStyle.Flat;
             BtnAdicionarFormaPagamento.Image = (Image)resources.GetObject("BtnAdicionarFormaPagamento.Image");
-            BtnAdicionarFormaPagamento.Location = new Point(118, 134);
+            BtnAdicionarFormaPagamento.Location = new Point(649, 134);
             BtnAdicionarFormaPagamento.Name = "BtnAdicionarFormaPagamento";
             BtnAdicionarFormaPagamento.Size = new Size(30, 30);
             BtnAdicionarFormaPagamento.TabIndex = 27;
@@ -89,7 +93,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 77);
+            label1.Location = new Point(543, 77);
             label1.Name = "label1";
             label1.Size = new Size(105, 15);
             label1.TabIndex = 24;
@@ -98,7 +102,7 @@
             // LblValorCompra
             // 
             LblValorCompra.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LblValorCompra.Location = new Point(193, 9);
+            LblValorCompra.Location = new Point(724, 9);
             LblValorCompra.Name = "LblValorCompra";
             LblValorCompra.Size = new Size(236, 37);
             LblValorCompra.TabIndex = 23;
@@ -109,7 +113,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 9);
+            label2.Location = new Point(543, 9);
             label2.Name = "label2";
             label2.Size = new Size(186, 37);
             label2.TabIndex = 22;
@@ -123,7 +127,7 @@
             DgvPagamento.AllowUserToResizeRows = false;
             DgvPagamento.BackgroundColor = SystemColors.ButtonFace;
             DgvPagamento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvPagamento.Location = new Point(12, 175);
+            DgvPagamento.Location = new Point(543, 175);
             DgvPagamento.MultiSelect = false;
             DgvPagamento.Name = "DgvPagamento";
             DgvPagamento.ReadOnly = true;
@@ -137,7 +141,7 @@
             // 
             // TxbValorPago
             // 
-            TxbValorPago.Location = new Point(12, 139);
+            TxbValorPago.Location = new Point(543, 139);
             TxbValorPago.Name = "TxbValorPago";
             TxbValorPago.PlaceholderText = "00,00";
             TxbValorPago.Size = new Size(100, 23);
@@ -148,7 +152,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 122);
+            label4.Location = new Point(543, 122);
             label4.Name = "label4";
             label4.Size = new Size(63, 15);
             label4.TabIndex = 33;
@@ -157,18 +161,50 @@
             // LblTotalPago
             // 
             LblTotalPago.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LblTotalPago.Location = new Point(12, 479);
+            LblTotalPago.Location = new Point(543, 479);
             LblTotalPago.Name = "LblTotalPago";
             LblTotalPago.Size = new Size(274, 37);
             LblTotalPago.TabIndex = 35;
             LblTotalPago.Text = "R$ 100,00";
             LblTotalPago.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // groupBox1
+            // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Controls.Add(DgvProdutosVenda);
+            groupBox1.Location = new Point(12, 9);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(510, 531);
+            groupBox1.TabIndex = 37;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Carrinho de compras";
+            // 
+            // DgvProdutosVenda
+            // 
+            DgvProdutosVenda.AllowUserToAddRows = false;
+            DgvProdutosVenda.AllowUserToDeleteRows = false;
+            DgvProdutosVenda.AllowUserToResizeColumns = false;
+            DgvProdutosVenda.AllowUserToResizeRows = false;
+            DgvProdutosVenda.BackgroundColor = SystemColors.ButtonFace;
+            DgvProdutosVenda.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvProdutosVenda.Location = new Point(6, 22);
+            DgvProdutosVenda.MultiSelect = false;
+            DgvProdutosVenda.Name = "DgvProdutosVenda";
+            DgvProdutosVenda.ReadOnly = true;
+            DgvProdutosVenda.RowHeadersVisible = false;
+            DgvProdutosVenda.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            DgvProdutosVenda.RowTemplate.Height = 25;
+            DgvProdutosVenda.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DgvProdutosVenda.ShowCellErrors = false;
+            DgvProdutosVenda.Size = new Size(498, 503);
+            DgvProdutosVenda.TabIndex = 1;
+            // 
             // FrmPagamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(442, 547);
+            ClientSize = new Size(970, 555);
+            Controls.Add(groupBox1);
             Controls.Add(LblTotalPago);
             Controls.Add(label4);
             Controls.Add(TxbValorPago);
@@ -187,6 +223,8 @@
             Name = "FrmPagamento";
             Text = "Tela de Pagamento";
             ((System.ComponentModel.ISupportInitialize)DgvPagamento).EndInit();
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DgvProdutosVenda).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -204,5 +242,7 @@
         private TextBox TxbValorPago;
         private Label label4;
         private Label LblTotalPago;
+        private GroupBox groupBox1;
+        private DataGridView DgvProdutosVenda;
     }
 }
