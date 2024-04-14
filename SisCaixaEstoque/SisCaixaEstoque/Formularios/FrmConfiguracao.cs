@@ -1,4 +1,5 @@
 ﻿using SisCaixaEstoque.Classes;
+using SisCaixaEstoque.Formularios.Base;
 using SisCaixaEstoque.Formularios.Gerenciadores;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace SisCaixaEstoque.Formularios
 {
-    public partial class FrmConfiguracao : Form
+    public partial class FrmConfiguracao : FrmBaseVazio
     {
         public FrmConfiguracao()
         {

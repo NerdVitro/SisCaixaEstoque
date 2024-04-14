@@ -42,6 +42,10 @@
             LblTotalPago = new Label();
             groupBox1 = new GroupBox();
             DgvProdutosVenda = new DataGridView();
+            TxbValorTroco = new TextBox();
+            label3 = new Label();
+            label5 = new Label();
+            textBox2 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)DgvPagamento).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvProdutosVenda).BeginInit();
@@ -83,7 +87,7 @@
             // 
             BtnAdicionarFormaPagamento.FlatStyle = FlatStyle.Flat;
             BtnAdicionarFormaPagamento.Image = (Image)resources.GetObject("BtnAdicionarFormaPagamento.Image");
-            BtnAdicionarFormaPagamento.Location = new Point(649, 134);
+            BtnAdicionarFormaPagamento.Location = new Point(930, 134);
             BtnAdicionarFormaPagamento.Name = "BtnAdicionarFormaPagamento";
             BtnAdicionarFormaPagamento.Size = new Size(30, 30);
             BtnAdicionarFormaPagamento.TabIndex = 27;
@@ -199,11 +203,53 @@
             DgvProdutosVenda.Size = new Size(498, 503);
             DgvProdutosVenda.TabIndex = 1;
             // 
+            // TxbValorTroco
+            // 
+            TxbValorTroco.Location = new Point(649, 139);
+            TxbValorTroco.Name = "TxbValorTroco";
+            TxbValorTroco.PlaceholderText = "00,00";
+            TxbValorTroco.Size = new Size(100, 23);
+            TxbValorTroco.TabIndex = 38;
+            TxbValorTroco.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(649, 121);
+            label3.Name = "label3";
+            label3.Size = new Size(65, 15);
+            label3.TabIndex = 39;
+            label3.Text = "Valor Troco";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(765, 121);
+            label5.Name = "label5";
+            label5.Size = new Size(86, 15);
+            label5.TabIndex = 41;
+            label5.Text = "Valor Desconto";
+            label5.Visible = false;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(765, 139);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "00,00";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 40;
+            textBox2.TextAlign = HorizontalAlignment.Right;
+            textBox2.Visible = false;
+            // 
             // FrmPagamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(970, 555);
+            Controls.Add(label5);
+            Controls.Add(textBox2);
+            Controls.Add(label3);
+            Controls.Add(TxbValorTroco);
             Controls.Add(groupBox1);
             Controls.Add(LblTotalPago);
             Controls.Add(label4);
@@ -244,5 +290,9 @@
         private Label LblTotalPago;
         private GroupBox groupBox1;
         private DataGridView DgvProdutosVenda;
+        private TextBox TxbValorTroco;
+        private Label label3;
+        private Label label5;
+        private TextBox textBox2;
     }
 }

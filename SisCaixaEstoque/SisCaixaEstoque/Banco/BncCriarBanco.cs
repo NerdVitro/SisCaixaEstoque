@@ -72,6 +72,7 @@ namespace SisCaixaEstoque.Banco
                         IDCLIENTE INTEGER,
                         VLVALORVENDA REAL,
                         DSANOTACAO TEXT,
+                        DATAVENDA DATE,
                         FOREIGN KEY (IDCLIENTE) REFERENCES TBCLIENTE(IDCLIENTE)
                     );
 
@@ -99,6 +100,9 @@ namespace SisCaixaEstoque.Banco
                         IDCARRINHO INTEGER PRIMARY KEY,
                         IDVENDA INTEGER,
                         IDPRODUTO INTEGER,
+                        VLQUANTIDADE INTEGER,
+                        VLVALORUNIT REAL,
+                        VLVALORTOTAL REAL,
                         FOREIGN KEY (IDVENDA) REFERENCES TBVENDA(IDVENDA),
                         FOREIGN KEY (IDPRODUTO) REFERENCES TBPRODUTO(IDPRODUTO)
                     );

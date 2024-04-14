@@ -1,6 +1,7 @@
 ﻿using SisCaixaEstoque.Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -374,6 +375,69 @@ namespace SisCaixaEstoque.Banco.Cadastros
                 using SQLiteCommand comando = new(sql, conexao);
                 comando.Parameters.AddWithValue("@NOME", parNome);
                 comando.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static void SalvarVenda(int parIDCliente, decimal parValorVenda, DataTable parDadosCarrinhho, DataTable parDadadosFormasPagamento)
+        {
+            try
+            {
+                using SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";");
+
+                conexao.Open();
+                SQLiteTransaction transacao = conexao.BeginTransaction();
+
+                try
+                {
+                    string sqlVenda = @"INSERT INTO TBVENDA ( IDCLIENTE, VLVALORVENDA, DSANOTACAO, DATAVENDA) VALUES (@IDCLIENTE, @VLVALORVENDA, @DSANOTACAO, DATETIME('now')); SELECT last_insert_rowid(); ";
+                    string sqlPagamento = @"INSERT INTO TBPAGAMENTO (IDVENDA, IDTIPOPAGAMENTO, VLVALORPAGO, VLVALORTROCO) VALUES (@IDVENDA, @IDTIPOPAGAMENTO, @VLVALORPAGO, @VLVALORTROCO)";
+                    string sqlCarrinhoVenda = @"INSERT INTO TBCARVENDA (IDVENDA, IDPRODUTO, VLQUANTIDADE, VLVALORUNIT, VLVALORTOTAL) VALUES (@IDVENDA, @IDPRODUTO, @VLQUANTIDADE, @VLVALORUNIT, @VLVALORTOTAL)";
+
+
+                    SQLiteCommand comando = new(sqlVenda, transacao.Connection);
+                    comando.Parameters.Clear();
+                    comando.Parameters.AddWithValue("@IDCLIENTE", parIDCliente);
+                    comando.Parameters.AddWithValue("@VLVALORVENDA", parValorVenda);
+                    comando.Parameters.AddWithValue("@DSANOTACAO", "");
+
+                    int iixIDInserido = Convert.ToInt32(comando.ExecuteScalar());
+
+                    foreach(DataRow item in parDadadosFormasPagamento.Rows)
+                    {
+                        comando = new(sqlPagamento, transacao.Connection);
+                        comando.Parameters.Clear();
+                        comando.Parameters.AddWithValue("@IDVENDA", iixIDInserido);
+                        comando.Parameters.AddWithValue("@IDTIPOPAGAMENTO", Convert.ToInt32(item["ID"]));
+                        comando.Parameters.AddWithValue("@VLVALORPAGO", Convert.ToDecimal(item["Valor"]));
+                        comando.Parameters.AddWithValue("@VLVALORTROCO", Convert.ToDecimal(item["Troco"]));
+
+                        comando.ExecuteScalar();
+                    }
+
+                    foreach (DataRow item in parDadosCarrinhho.Rows)
+                    {
+                        comando = new(sqlCarrinhoVenda, transacao.Connection);
+                        comando.Parameters.Clear();
+                        comando.Parameters.AddWithValue("@IDVENDA", iixIDInserido);
+                        comando.Parameters.AddWithValue("@IDPRODUTO", Convert.ToInt32(item["IDPRODUTO"]));
+                        comando.Parameters.AddWithValue("@VLQUANTIDADE", Convert.ToInt32(item["VLQUANTIDADE"]));
+                        comando.Parameters.AddWithValue("@VLVALORUNIT", Convert.ToInt32(item["PrecoProduto"]));
+                        comando.Parameters.AddWithValue("@VLVALORTOTAL", Convert.ToInt32(item["PrecoProdutoTotal"]));
+
+                        comando.ExecuteScalar();
+                    }
+
+                    transacao.Commit();
+                    comando.Dispose();
+                }
+                catch (Exception)
+                {
+                    transacao.Rollback();
+                    throw;
+                }
             }
             catch (Exception)
             {

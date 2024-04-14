@@ -4,6 +4,7 @@ using SisCaixaEstoque.Classes;
 using SisCaixaEstoque.Classes.BusinessObjects;
 using SisCaixaEstoque.Formularios.Consultas;
 using SisCaixaEstoque.Formularios.Gerenciadores;
+using SisCaixaEstoque.Formularios.Relatorios;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -250,7 +251,7 @@ namespace SisCaixaEstoque.Formularios
                             );
                     }
 
-                    FrmPagamento pagaemtno = new FrmPagamento(Convert.ToDecimal(LblTotalVenda.Text.Replace("R$ ","")),0, carrinhoComprasBO);
+                    FrmPagamento pagaemtno = new(IDCliente, Convert.ToDecimal(LblTotalVenda.Text.Replace("R$ ","")),0, carrinhoComprasBO);
                     pagaemtno.ShowDialog();
                     if (pagaemtno.Result == DialogResult.OK)
                     {
@@ -361,8 +362,8 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
-                //FrmConfiguracao Configuracao = new();
-                //Configuracao.ShowDialog();
+                FrmRelatorios Relatorio = new();
+                Relatorio.ShowDialog();
             }
             catch (Exception ex)
             {

@@ -33,7 +33,6 @@
             BtnEditar = new Button();
             BtnFechar = new Button();
             BtnAdicionar = new Button();
-            BtnSair = new Button();
             PnlDados = new Panel();
             DgvDados = new DataGridView();
             PnlFiltros = new Panel();
@@ -52,7 +51,6 @@
             PnlLateral.Controls.Add(BtnEditar);
             PnlLateral.Controls.Add(BtnFechar);
             PnlLateral.Controls.Add(BtnAdicionar);
-            PnlLateral.Controls.Add(BtnSair);
             PnlLateral.Dock = DockStyle.Left;
             PnlLateral.Location = new Point(0, 0);
             PnlLateral.Name = "PnlLateral";
@@ -92,17 +90,6 @@
             BtnAdicionar.TabIndex = 20;
             BtnAdicionar.UseVisualStyleBackColor = true;
             BtnAdicionar.Click += BtnAdicionar_Click;
-            // 
-            // BtnSair
-            // 
-            BtnSair.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            BtnSair.FlatStyle = FlatStyle.Flat;
-            BtnSair.Image = (Image)resources.GetObject("BtnSair.Image");
-            BtnSair.Location = new Point(12, 741);
-            BtnSair.Name = "BtnSair";
-            BtnSair.Size = new Size(43, 43);
-            BtnSair.TabIndex = 19;
-            BtnSair.UseVisualStyleBackColor = true;
             // 
             // PnlDados
             // 
@@ -189,7 +176,6 @@
 
         #endregion
         private Button BtnAdicionar;
-        private Button BtnSair;
         private Button BtnFechar;
         private Button BtnEditar;
         private Panel PnlDados;

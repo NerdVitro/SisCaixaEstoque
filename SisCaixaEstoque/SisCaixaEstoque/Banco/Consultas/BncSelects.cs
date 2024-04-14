@@ -704,5 +704,71 @@ namespace SisCaixaEstoque.Banco.Consultas
                 throw;
             }
         }
+
+        public static DataTable BuscarDadosRelatorioVendas(string parWhere)
+        {
+            try
+            {
+                DataTable DataTableRetorno = new();
+                DataTableRetorno.Columns.Add("DATAVENDA", typeof(DateTime));
+                DataTableRetorno.Columns.Add("IDVENDA", typeof(int));
+                DataTableRetorno.Columns.Add("DSNOMECOMPLETO", typeof(string));
+                DataTableRetorno.Columns.Add("DSNOMEPRODUTO", typeof(string));
+                DataTableRetorno.Columns.Add("VLQUANTIDADE", typeof(int));
+                DataTableRetorno.Columns.Add("VLVALORUNIT", typeof(decimal));
+                DataTableRetorno.Columns.Add("VLVALORVENDA", typeof(decimal));
+                DataTableRetorno.Columns.Add("DSTIPOPAGAMENTO", typeof(string));
+
+
+                using (SQLiteConnection conexao = new("Data Source=" + ConstantesSistema.DataSource + ";"))
+                {
+                    conexao.Open();
+                    string sql = $@"SELECT 
+                                        VEN.DATAVENDA,
+                                        VEN.IDVENDA,
+                                        CLI.DSNOMECOMPLETO,
+                                        PRO.DSNOMEPRODUTO,
+                                        CAR.VLQUANTIDADE,
+                                        CAR.VLVALORUNIT,
+                                        VEN.VLVALORVENDA,
+                                        (SELECT TPOPAG.DSTIPOPAGAMENTO
+                                         FROM TBPAGAMENTO AS PAG 
+                                         INNER JOIN TBTIPOPAGAMENTO AS TPOPAG ON TPOPAG.IDTIPOPAGAMENTO = PAG.IDTIPOPAGAMENTO 
+                                         WHERE PAG.IDVENDA = VEN.IDVENDA 
+                                         LIMIT 1) AS DSTIPOPAGAMENTO
+                                    FROM TBVENDA AS VEN
+                                    LEFT JOIN TBCLIENTE AS CLI ON CLI.IDCLIENTE = VEN.IDCLIENTE 
+                                    INNER JOIN TBCARVENDA AS CAR ON CAR.IDVENDA = VEN.IDVENDA 
+                                    INNER JOIN TBPRODUTO AS PRO ON PRO.IDPRODUTO  = CAR.IDPRODUTO
+                                    {parWhere}";
+
+                    using SQLiteCommand comando = new(sql, conexao);
+                    using SQLiteDataReader leitor = comando.ExecuteReader();
+
+                    if (leitor.HasRows)
+                    {
+                        while (leitor.Read())
+                        {
+                            DataTableRetorno.Rows.Add(
+                                Convert.ToDateTime(leitor["DATAVENDA"])
+                                , Convert.ToInt32(leitor["IDVENDA"])
+                                , leitor["DSNOMECOMPLETO"] == DBNull.Value ? "" : Convert.ToString(leitor["DSNOMECOMPLETO"])
+                                , Convert.ToString(leitor["DSNOMEPRODUTO"])
+                                , Convert.ToInt32(leitor["VLQUANTIDADE"])
+                                , Convert.ToDecimal(leitor["VLVALORUNIT"])
+                                , Convert.ToDecimal(leitor["VLVALORVENDA"])
+                                , Convert.ToString(leitor["DSTIPOPAGAMENTO"])
+                                );
+                        }
+                    }
+                }
+
+                return DataTableRetorno;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

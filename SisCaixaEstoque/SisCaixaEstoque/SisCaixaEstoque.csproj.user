@@ -22,6 +22,9 @@
     <Compile Update="Formularios\Base\FrmGerenciarCadastroBase.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Base\FrmRelatorioBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Cadastros\FrmCadastroFormaPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +86,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Formularios\Gerenciadores\FrmGerenciarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Relatorios\FrmRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Relatorios\FrmRelatorioVendas.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

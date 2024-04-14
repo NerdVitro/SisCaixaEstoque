@@ -35,6 +35,8 @@
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ForeColor = Color.Black;
             Name = "FrmBaseVazio";
             ResumeLayout(false);
         }

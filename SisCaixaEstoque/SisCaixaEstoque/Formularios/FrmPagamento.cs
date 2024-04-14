@@ -1,4 +1,5 @@
-﻿using SisCaixaEstoque.Banco.Consultas;
+﻿using SisCaixaEstoque.Banco.Cadastros;
+using SisCaixaEstoque.Banco.Consultas;
 using SisCaixaEstoque.Classes;
 using SisCaixaEstoque.Classes.BusinessObjects;
 using SisCaixaEstoque.Formularios.Base;
@@ -19,16 +20,19 @@ namespace SisCaixaEstoque.Formularios
     {
         public decimal ValorVenda { get; set; }
         public int IDCAIXA { get; set; }
+        public int IDCliente { get; set; }
 
 
 
         public DialogResult Result = DialogResult.Cancel;
         private int IDFormaPgamento;
 
-        public FrmPagamento(decimal valorVenda, int iDCAIXA, List<CarrinhoComprasBO> parCarrinho)
+        public FrmPagamento(int parIDCliente, decimal valorVenda, int iDCAIXA, List<CarrinhoComprasBO> parCarrinho)
         {
+            IDCliente = parIDCliente;
             ValorVenda = valorVenda;
             IDCAIXA = iDCAIXA;
+
 
             InitializeComponent();
             ConfigurarDgvPagamento(parCarrinho);
@@ -40,6 +44,7 @@ namespace SisCaixaEstoque.Formularios
             try
             {
                 LblValorCompra.Text = $"R$ {ValorVenda:N2}";
+                TxbValorPago.Text = $"{ValorVenda:N2}";
 
 
                 // Adiciona uma linha com valores à DataGridView
@@ -80,18 +85,26 @@ namespace SisCaixaEstoque.Formularios
 
             DataGridViewTextBoxColumn colunaNome = new()
             {
-                HeaderText = "Nome do Produto",
-                Name = "NomeProduto",
+                HeaderText = "Forma Pagamento",
+                Name = "FormaPagamento",
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             };
 
             DataGridViewTextBoxColumn colunaPreco = new()
             {
-                HeaderText = "Preço",
-                Name = "PrecoProduto"
+                HeaderText = "Valor",
+                Name = "Valor"
             };
             colunaPreco.DefaultCellStyle.Format = "C"; // Formato de moeda
             colunaPreco.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; // Alinhamento à direita
+
+            DataGridViewTextBoxColumn colunaTroco = new()
+            {
+                HeaderText = "Troco",
+                Name = "Troco"
+            };
+            colunaTroco.DefaultCellStyle.Format = "C"; // Formato de moeda
+            colunaTroco.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; // Alinhamento à direita
 
             DataGridViewButtonColumn colunaRemover = new()
             {
@@ -105,10 +118,12 @@ namespace SisCaixaEstoque.Formularios
             DgvPagamento.Columns.Add(IdFormaPagamento);
             DgvPagamento.Columns.Add(colunaNome);
             DgvPagamento.Columns.Add(colunaPreco);
+            DgvPagamento.Columns.Add(colunaTroco);
             DgvPagamento.Columns.Add(colunaRemover);
 
             // Definir os tamanhos das colunas
-            DgvPagamento.Columns["PrecoProduto"].Width = 100;
+            DgvPagamento.Columns["Valor"].Width = 100;
+            DgvPagamento.Columns["Troco"].Width = 100;
         }
 
         private void BtnConsultaFormaPagamento_Click(object sender, EventArgs e)
@@ -121,6 +136,7 @@ namespace SisCaixaEstoque.Formularios
 
                 TxbFormaPagamento.Text = consulta.DESCRICAO;
                 IDFormaPgamento = consulta.ID;
+                TxbValorPago.Focus();
             }
             catch (Exception ex)
             {
@@ -133,17 +149,21 @@ namespace SisCaixaEstoque.Formularios
             {
                 if (!string.IsNullOrEmpty(TxbFormaPagamento.Text) && !string.IsNullOrEmpty(TxbValorPago.Text))
                 {
-                    DgvPagamento.Rows.Add(IDFormaPgamento, TxbFormaPagamento.Text, Convert.ToDecimal(TxbValorPago.Text));
+                    decimal dcxTroco = string.IsNullOrEmpty(TxbValorTroco.Text) ? 0 : Convert.ToDecimal(TxbValorTroco.Text);
+
+                    DgvPagamento.Rows.Add(IDFormaPgamento, TxbFormaPagamento.Text, Convert.ToDecimal(TxbValorPago.Text), dcxTroco);
                     TxbFormaPagamento.Text = "";
                     IDFormaPgamento = 0;
                     TxbValorPago.Text = "";
+                    TxbValorTroco.Text = "";
 
                     decimal total = 0;
                     foreach (DataGridViewRow linha in DgvPagamento.Rows)
                     {
                         if (linha.Cells[2].Value != null && decimal.TryParse(linha.Cells[2].Value.ToString(), out decimal valor))
                         {
-                            total += valor;
+                            decimal.TryParse(linha.Cells[3].Value.ToString(), out decimal troco);
+                            total += (valor - troco);
                             LblTotalPago.Text = $"R$ {total:N2}";
                         }
                     }
@@ -159,6 +179,40 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
+                DataTable dadosCarrinho = new();
+                dadosCarrinho.Columns.Add("NomeProduto", typeof(string));
+                dadosCarrinho.Columns.Add("VLQUANTIDADE", typeof(decimal));
+                dadosCarrinho.Columns.Add("PrecoProduto", typeof(string));
+                dadosCarrinho.Columns.Add("PrecoProdutoTotal", typeof(string));
+                dadosCarrinho.Columns.Add("IDPRODUTO", typeof(int));
+                foreach (DataGridViewRow linha in DgvProdutosVenda.Rows)
+                {
+                    dadosCarrinho.Rows.Add(
+                            Convert.ToString(linha.Cells["NomeProduto"].Value),
+                            Convert.ToDecimal(linha.Cells["VLQUANTIDADE"].Value),
+                            Convert.ToDecimal(linha.Cells["PrecoProduto"].Value),
+                            Convert.ToDecimal(linha.Cells["PrecoProdutoTotal"].Value),
+                            Convert.ToInt32(linha.Cells["IDPRODUTO"].Value)
+                        );
+                }
+
+                DataTable dadosFormasPagamento = new();
+                dadosFormasPagamento.Columns.Add("ID", typeof(int));
+                dadosFormasPagamento.Columns.Add("FormaPagamento", typeof(string));
+                dadosFormasPagamento.Columns.Add("Valor", typeof(string));
+                dadosFormasPagamento.Columns.Add("Troco", typeof(string));
+                foreach (DataGridViewRow linha in DgvPagamento.Rows)
+                {
+                    dadosFormasPagamento.Rows.Add(
+                            Convert.ToInt32(linha.Cells["ID"].Value),
+                            Convert.ToString(linha.Cells["FormaPagamento"].Value),
+                            Convert.ToDecimal(linha.Cells["Valor"].Value),
+                            Convert.ToDecimal(linha.Cells["Troco"].Value)
+                        );
+                }
+
+                BncInserts.SalvarVenda(IDCliente, ValorVenda, dadosCarrinho, dadosFormasPagamento);
+
                 Result = DialogResult.OK;
                 this.Close();
             }
@@ -221,7 +275,7 @@ namespace SisCaixaEstoque.Formularios
         {
             try
             {
-                if (e.RowIndex >= 0 && e.ColumnIndex == 3)
+                if (e.RowIndex >= 0 && e.ColumnIndex == 4)
                 {
                     if (MessageBox.Show("Tem certeza que deseja excluir esta linha?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
