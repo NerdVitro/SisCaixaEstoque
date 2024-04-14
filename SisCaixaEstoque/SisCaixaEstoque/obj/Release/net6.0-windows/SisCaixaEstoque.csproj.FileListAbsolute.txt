@@ -43,7 +43,6 @@ D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Rele
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Properties.Resources.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmBaseVazio.pt-BR.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\pt-BR\SisCaixaEstoque.resources.dll
-D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.csproj.CopyComplete
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmBaseDaBase.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmCadastroBase.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmConsultarBase.resources
@@ -59,3 +58,15 @@ D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Rele
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarFormaPagamento.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarFornecedor.resources
 D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Gerenciadores.FrmGerenciarProduto.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\bin\Release\net6.0-windows\ClosedXML.dll
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\bin\Release\net6.0-windows\DocumentFormat.OpenXml.dll
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\bin\Release\net6.0-windows\ExcelNumberFormat.dll
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\bin\Release\net6.0-windows\Irony.dll
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\bin\Release\net6.0-windows\SixLabors.Fonts.dll
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\bin\Release\net6.0-windows\XLParser.dll
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Base.FrmRelatorioBase.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Consultas.FrmConsultarProdutoVenda.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Relatorios.FrmRelatorios.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.Formularios.Relatorios.FrmRelatorioVendas.resources
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixaEstoque.sourcelink.json
+D:\Repositórios GitHub\SisCaixaEstoque\SisCaixaEstoque\SisCaixaEstoque\obj\Release\net6.0-windows\SisCaixa.48A7C823.Up2Date
