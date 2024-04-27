@@ -30,7 +30,7 @@ namespace SisCaixaEstoque.Classes.BusinessObjects
         }
         public CarrinhoComprasBO()
         {
-
+            _NomeProduto = "";
         }
     }
 }

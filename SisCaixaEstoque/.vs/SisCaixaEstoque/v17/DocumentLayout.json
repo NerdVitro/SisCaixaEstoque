@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|d:\\reposit\u00F3rios github\\siscaixaestoque\\siscaixaestoque\\siscaixaestoque\\formularios\\base\\frmrelatoriobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|solutionrelative:siscaixaestoque\\formularios\\base\\frmrelatoriobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|d:\\reposit\u00F3rios github\\siscaixaestoque\\siscaixaestoque\\siscaixaestoque\\relatorios\\relrelatoriovendas.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|solutionrelative:siscaixaestoque\\relatorios\\relrelatoriovendas.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\siscaixaestoque\\formularios\\relatorios\\frmrelatoriovendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|d:\\reposit\u00F3rios github\\siscaixaestoque\\siscaixaestoque\\siscaixaestoque\\formularios\\relatorios\\frmrelatoriovendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|solutionrelative:siscaixaestoque\\formularios\\relatorios\\frmrelatoriovendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\siscaixaestoque\\formularios\\relatorios\\frmrelatorios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|d:\\reposit\u00F3rios github\\siscaixaestoque\\siscaixaestoque\\siscaixaestoque\\classes\\businessobjects\\relatorios\\relatoriovendabo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|solutionrelative:siscaixaestoque\\classes\\businessobjects\\relatorios\\relatoriovendabo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|d:\\reposit\u00F3rios github\\siscaixaestoque\\siscaixaestoque\\siscaixaestoque\\formularios\\relatorios\\frmrelatorios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|solutionrelative:siscaixaestoque\\formularios\\relatorios\\frmrelatorios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\siscaixaestoque\\banco\\consultas\\bncselects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|solutionrelative:siscaixaestoque\\banco\\consultas\\bncselects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|d:\\reposit\u00F3rios github\\siscaixaestoque\\siscaixaestoque\\siscaixaestoque\\siscaixaestoque.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|solutionrelative:siscaixaestoque\\siscaixaestoque.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\siscaixaestoque\\formularios\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|solutionrelative:siscaixaestoque\\formularios\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|d:\\reposit\u00F3rios github\\siscaixaestoque\\siscaixaestoque\\siscaixaestoque\\banco\\consultas\\bncselects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C4ADDA7-A462-45A7-848E-F523ECEB4F66}|SisCaixaEstoque\\SisCaixaEstoque.csproj|solutionrelative:siscaixaestoque\\banco\\consultas\\bncselects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,40 +42,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrmRelatorioBase.cs",
-              "DocumentMoniker": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Formularios\\Base\\FrmRelatorioBase.cs",
-              "RelativeDocumentMoniker": "SisCaixaEstoque\\Formularios\\Base\\FrmRelatorioBase.cs",
-              "ToolTip": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Formularios\\Base\\FrmRelatorioBase.cs",
-              "RelativeToolTip": "SisCaixaEstoque\\Formularios\\Base\\FrmRelatorioBase.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAcwD8AAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T02:19:21.819Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FrmRelatorios.cs",
-              "DocumentMoniker": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorios.cs",
-              "RelativeDocumentMoniker": "SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorios.cs",
-              "ToolTip": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorios.cs",
-              "RelativeToolTip": "SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorios.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Title": "RelatorioVendaBO.cs",
+              "DocumentMoniker": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Classes\\BusinessObjects\\Relatorios\\RelatorioVendaBO.cs",
+              "RelativeDocumentMoniker": "SisCaixaEstoque\\Classes\\BusinessObjects\\Relatorios\\RelatorioVendaBO.cs",
+              "ToolTip": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Classes\\BusinessObjects\\Relatorios\\RelatorioVendaBO.cs",
+              "RelativeToolTip": "SisCaixaEstoque\\Classes\\BusinessObjects\\Relatorios\\RelatorioVendaBO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T02:16:41.308Z"
+              "WhenOpened": "2024-04-27T04:17:27.401Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BncSelects.cs",
-              "DocumentMoniker": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Banco\\Consultas\\BncSelects.cs",
-              "RelativeDocumentMoniker": "SisCaixaEstoque\\Banco\\Consultas\\BncSelects.cs",
-              "ToolTip": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Banco\\Consultas\\BncSelects.cs",
-              "RelativeToolTip": "SisCaixaEstoque\\Banco\\Consultas\\BncSelects.cs",
-              "ViewState": "AQIAALgCAAAAAAAAAAAowM8CAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T02:08:36.525Z"
+              "DocumentIndex": 4,
+              "Title": "SisCaixaEstoque.csproj",
+              "DocumentMoniker": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque.csproj",
+              "RelativeDocumentMoniker": "SisCaixaEstoque\\SisCaixaEstoque.csproj",
+              "ToolTip": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque.csproj",
+              "RelativeToolTip": "SisCaixaEstoque\\SisCaixaEstoque.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-27T04:17:07.097Z"
             },
             {
               "$type": "Document",
@@ -81,21 +72,46 @@
               "RelativeDocumentMoniker": "SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorioVendas.cs",
               "ToolTip": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorioVendas.cs",
               "RelativeToolTip": "SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorioVendas.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T02:08:33.519Z"
+              "WhenOpened": "2024-04-27T04:16:35.746Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FrmPrincipal.cs",
-              "DocumentMoniker": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Formularios\\FrmPrincipal.cs",
-              "RelativeDocumentMoniker": "SisCaixaEstoque\\Formularios\\FrmPrincipal.cs",
-              "ToolTip": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Formularios\\FrmPrincipal.cs",
-              "RelativeToolTip": "SisCaixaEstoque\\Formularios\\FrmPrincipal.cs",
-              "ViewState": "AQIAAO4AAAAAAAAAAAAAwA4BAAANAAAA",
+              "DocumentIndex": 0,
+              "Title": "relRelatorioVendas.rdlc [Criar]",
+              "DocumentMoniker": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Relatorios\\relRelatorioVendas.rdlc",
+              "RelativeDocumentMoniker": "SisCaixaEstoque\\Relatorios\\relRelatorioVendas.rdlc",
+              "ToolTip": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Relatorios\\relRelatorioVendas.rdlc [Criar]",
+              "RelativeToolTip": "SisCaixaEstoque\\Relatorios\\relRelatorioVendas.rdlc [Criar]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-04-27T04:10:43.052Z",
+              "EditorCaption": " [Criar]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmRelatorios.cs",
+              "DocumentMoniker": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorios.cs",
+              "RelativeDocumentMoniker": "SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorios.cs",
+              "ToolTip": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorios.cs",
+              "RelativeToolTip": "SisCaixaEstoque\\Formularios\\Relatorios\\FrmRelatorios.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T01:05:28.408Z"
+              "WhenOpened": "2024-04-14T02:16:41.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BncSelects.cs",
+              "DocumentMoniker": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Banco\\Consultas\\BncSelects.cs",
+              "RelativeDocumentMoniker": "SisCaixaEstoque\\Banco\\Consultas\\BncSelects.cs",
+              "ToolTip": "D:\\Reposit\u00F3rios GitHub\\SisCaixaEstoque\\SisCaixaEstoque\\SisCaixaEstoque\\Banco\\Consultas\\BncSelects.cs",
+              "RelativeToolTip": "SisCaixaEstoque\\Banco\\Consultas\\BncSelects.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAM8CAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T02:08:36.525Z"
             }
           ]
         }

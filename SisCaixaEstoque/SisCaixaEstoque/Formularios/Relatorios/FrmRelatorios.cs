@@ -29,10 +29,9 @@ namespace SisCaixaEstoque.Formularios.Relatorios
             {
                 new FrmRelatorioVendas().ShowDialog();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
     }

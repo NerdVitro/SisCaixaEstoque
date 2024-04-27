@@ -1,5 +1,6 @@
 ﻿using ClosedXML.Excel;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,18 @@ namespace SisCaixaEstoque.Formularios.Base
         {
             InitializeComponent();
         }
+        private void FrmRelatorioBase_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                //AjustarBotoes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
         private void BtnAbrirRelatorio_Click(object sender, EventArgs e)
         {
@@ -54,6 +67,21 @@ namespace SisCaixaEstoque.Formularios.Base
         {
 
         }
+        //private void AjustarBotoes()
+        //{
+        //    try 
+        //    {
+        //        BtnAbrirRelatorio.Location = new Point(10, 10);
+        //        BtnExportarPlanilha.Location = new Point(10, BtnAbrirRelatorio.Width + 16);
+        //        BtnFechar.Location = new Point(10, PnlLateral.Width - 10 - BtnFechar.Width);
+
+        //        // BtnFechar.Location = new Point(10, 341);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
 
 
         public static void ExportarDataGridViewToExcel(DataGridView dataGridView, string parNomeArquivo)
@@ -65,7 +93,7 @@ namespace SisCaixaEstoque.Formularios.Base
                 var worksheet = workbook.Worksheets.Add("DataGridView");
 
                 // Popula o Excel com os dados da DataGridView
-                DataTable dt = new ();
+                DataTable dt = new();
 
                 // Adiciona as colunas
                 foreach (DataGridViewColumn column in dataGridView.Columns)

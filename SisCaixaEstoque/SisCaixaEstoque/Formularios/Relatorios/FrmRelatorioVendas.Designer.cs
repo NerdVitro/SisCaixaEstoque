@@ -32,12 +32,15 @@
             TxbCliente = new TextBox();
             label2 = new Label();
             TxbProduto = new TextBox();
+            PnlLateral.SuspendLayout();
             PnlFiltros.SuspendLayout();
+            PnlDados.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // PnlLateral
             // 
-            PnlLateral.Size = new Size(58, 606);
+            PnlLateral.Size = new Size(58, 512);
             // 
             // PnlFiltros
             // 
@@ -47,10 +50,28 @@
             PnlFiltros.Controls.Add(TxbCliente);
             PnlFiltros.MinimumSize = new Size(0, 42);
             PnlFiltros.Size = new Size(785, 49);
+            PnlFiltros.Controls.SetChildIndex(panel1, 0);
             PnlFiltros.Controls.SetChildIndex(TxbCliente, 0);
             PnlFiltros.Controls.SetChildIndex(label1, 0);
             PnlFiltros.Controls.SetChildIndex(TxbProduto, 0);
             PnlFiltros.Controls.SetChildIndex(label2, 0);
+            // 
+            // BtnFiltrar
+            // 
+            BtnFiltrar.Location = new Point(3, 2);
+            // 
+            // BtnFechar
+            // 
+            BtnFechar.Location = new Point(10, 462);
+            // 
+            // PnlDados
+            // 
+            PnlDados.Size = new Size(785, 512);
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(678, 0);
+            panel1.Size = new Size(107, 49);
             // 
             // label1
             // 
@@ -89,11 +110,14 @@
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(843, 512);
-            MinimumSize = new Size(859, 551);
+            MinimumSize = new Size(800, 550);
             Name = "FrmRelatorioVendas";
             Text = "Relatórios de Vendas";
+            PnlLateral.ResumeLayout(false);
             PnlFiltros.ResumeLayout(false);
             PnlFiltros.PerformLayout();
+            PnlDados.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
